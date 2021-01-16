@@ -11,7 +11,7 @@ circlePosition();
 }
 
 function circlePosition() {
-	if (circle = 1) {
+	if (circle == 1) {
 		document.getElementById("leftButton").disabled = true;
 		document.getElementById("circleText").innerHTML = '🞄----';
 	}
@@ -19,19 +19,19 @@ function circlePosition() {
 		document.getElementById("leftButton").disabled = false;
 	}
 	
-	if (circle = 2) {
+	if (circle == 2) {
 		document.getElementById("circleText").innerHTML = '-🞄---';
 	}
 	
-	if (circle = 3) {
+	if (circle == 3) {
 		document.getElementById("circleText").innerHTML = '--🞄--';
 	}
 	
-	if (circle = 4) {
+	if (circle == 4) {
 		document.getElementById("circleText").innerHTML = '---🞄-';
 	}
 	
-	if (circle = 5) {
+	if (circle == 5) {
 		document.getElementById("rightButton").disabled = true;
 		document.getElementById("circleText").innerHTML = '----🞄';
 	}
