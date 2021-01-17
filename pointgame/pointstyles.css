@@ -16,6 +16,9 @@ h1, p, .segoe {
 body {
 	background-color: #FAFAFA
 }
+.defcur {
+	cursor: default;
+}
 #incrementButton {
 	background-color: #6767ED;
 	border-color: #7f7fc7;
