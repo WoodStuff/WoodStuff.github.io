@@ -3,6 +3,7 @@
 	width: 15%;
 	height: 100%;
 	left: 0px;
+	top: 0px;
 	background-color: gray;
 }
 #mainGame {
@@ -10,6 +11,7 @@
 	margin: auto;
 	width: 70%;
 	height: 100%;
+	top: 0px;
 	background-color: #FAFAFA;
 }
 #rightSidebar {
@@ -17,5 +19,6 @@
 	width: 15%;
 	height: 100%;
 	right: 0px;
+	top: 0px;
 	background-color: gray;
 }
