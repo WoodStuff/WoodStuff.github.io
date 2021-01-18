@@ -1,5 +1,6 @@
 body {
 	background-image: url("bg/main.png");
+	background-size: 100%;
 }
 .ui {
 	opacity: 70%;
@@ -19,7 +20,7 @@ body {
 	height: 100%;
 	left: 15%;
 	top: 0px;
-	background-color: #FAFAFA;
+	background-color: black;
 }
 #rightSidebar {
 	position: absolute;
