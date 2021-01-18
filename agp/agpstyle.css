@@ -1,3 +1,6 @@
+body {
+	background-image: bg/main.png
+}
 #leftSidebar {
 	position: absolute;
 	width: 15%;
