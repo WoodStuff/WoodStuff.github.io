@@ -1,0 +1,14 @@
+#leftSidebar {
+	position: absolute;
+	width: 15%;
+	left: 0px;
+}
+#mainGame {
+	position: absolute;
+	width: 70%;
+}
+#rightSidebar {
+	position: absolute;
+	width: 15%;
+	right: 0px;
+}
