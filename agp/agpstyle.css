@@ -1,5 +1,5 @@
 body {
-	background-image: bg/main.png
+	background-image: url("bg/main.png");
 }
 #leftSidebar {
 	position: absolute;
