@@ -1,10 +1,7 @@
 body {
 	background-image: url("bg/main.png");
 	background-size: 100%;
-}
-.ui {
-	opacity: 70%;
-}
+}=
 #leftSidebar {
 	position: absolute;
 	width: 15%;
