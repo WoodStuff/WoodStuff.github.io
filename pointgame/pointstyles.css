@@ -22,3 +22,6 @@ body {
 	border-color: #7f7fc7;
 	cursor: pointer;
 }
+button:hover {
+	opacity: 0.8;
+}
