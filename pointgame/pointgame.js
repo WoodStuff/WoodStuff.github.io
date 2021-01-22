@@ -1,6 +1,6 @@
-var points = 0;
+var points = {current: 0, total: 0}
 
 function increment() {
-	points += 1;
-	document.getElementById("counter").innerHTML = points;
+	points.current += 1;
+	document.getElementById("counter").innerHTML = points.current;
 }
