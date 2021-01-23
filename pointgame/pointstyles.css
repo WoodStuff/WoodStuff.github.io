@@ -19,6 +19,7 @@ body {
 .tooltip {
 	display: inline-block;
 	border-bottom-style: dotted;
+	cursor: help;
 }
 div.content {
 	margin: 30px;
