@@ -7,7 +7,7 @@ t {
 	font-family: "Segoe UI";
 	font-weight: bold;
 }
-h1, p, .segoe {
+h1, p, strong, .segoe {
 	font-family: "Segoe UI";
 }
 body {
