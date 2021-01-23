@@ -16,7 +16,7 @@ body {
 .defcur {
 	cursor: default;
 }
-div#points {
+div.content {
 	margin: 30px;
 }
 #incrementButton {
