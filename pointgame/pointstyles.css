@@ -16,6 +16,10 @@ body {
 .defcur {
 	cursor: default;
 }
+.tooltip {
+	display: inline-block;
+	border-style: dotted;
+}
 div.content {
 	margin: 30px;
 }
