@@ -18,7 +18,7 @@ body {
 }
 .tooltip {
 	display: inline-block;
-	border-style: dotted;
+	border-bottom-style: dotted;
 }
 div.content {
 	margin: 30px;
