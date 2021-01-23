@@ -27,10 +27,14 @@ div.content {
 #incrementButton {
 	background-color: #6767ED;
 	border-color: #7f7fc7;
-	cursor: pointer;
+}
+#cpButton {
+	background-color: #AD67ED;
+	border-color: #a87fc7;
 }
 button {
 	outline: none;
+	cursor: pointer;
 }
 button:hover {
 	opacity: 0.88;
