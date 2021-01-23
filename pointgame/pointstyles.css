@@ -12,10 +12,12 @@ h1, p, .segoe {
 }
 body {
 	background-color: #FAFAFA;
-	margin: 30px;
 }
 .defcur {
 	cursor: default;
+}
+div#points {
+	margin: 30px;
 }
 #incrementButton {
 	background-color: #6767ED;
