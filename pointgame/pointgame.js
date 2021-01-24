@@ -7,6 +7,7 @@ function increment() {
 	if (points.current)
 	changeCounters();
 	attemptUnlock();
+	cpDisable();
 }
 
 function attemptUnlock() {
@@ -28,6 +29,7 @@ function clickPoint() {
 		clickPoints.onCooldown = false;
 		document.getElementById("cpButton").disabled = false;
 	}, 5000)
+	cpDisable();
 }
 
 function cpDisable() {
