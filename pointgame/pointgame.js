@@ -13,6 +13,7 @@ function attemptUnlock() {
 	// cursors
 	if (points.total > 14) {
 		document.getElementById("cursors").style.display = "block";
+		cpDisable();
 	}
 }
 
@@ -22,10 +23,20 @@ function clickPoint() {
 	clickPoints.total += 1;
 	changeCounters();
 	document.getElementById("cpButton").disabled = true;
+	clickPoints.onCooldown = true;
 	setTimeout(function() {
-		clickPoints.onCooldown = true;
+		clickPoints.onCooldown = false;
 		document.getElementById("cpButton").disabled = false;
 	}, 5000)
+}
+
+function cpDisable() {
+	if (points.current < 10) {
+		document.getElementById("cpButton").disabled = true;
+	}
+	else if (!clickPoints.onCooldown) {
+		document.getElementById("cpButton").disabled = false;
+	}
 }
 
 function changeCounters() {
