@@ -17,7 +17,7 @@ function attemptUnlock() {
 }
 
 function clickPoint() {
-	points.current =- 10;
+	points.current -= 10;
 	clickPoints.current =+ 1;
 	clickPoints.total =+ 1;
 	changeCounters();
