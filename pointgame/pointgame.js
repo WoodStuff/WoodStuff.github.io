@@ -1,5 +1,8 @@
 var points = {current: 0, total: 0}
 var clickPoints = {current: 0, total: 0, onCooldown: false}
+var cursorArray = {pClick: [1, 2],
+		   names: ["Normal Cursor", "Wooden Cursor"],
+		   descs: ["Your average cursor.", "A stronger material for a stronger hit."]}
 
 function increment() {
 	points.current += 1;
