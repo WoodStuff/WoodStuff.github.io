@@ -24,8 +24,9 @@ function clickPoint() {
 	clickPoints.total += 1;
 	changeCounters();
 	document.getElementById("cpButton").disabled = true;
-	document.getElementById("cpButton").innerHTML = "0";
+	document.getElementById("cpButton").innerHTML = "+0";
 	clickPoints.onCooldown = true;
+	document.getElementById("cpButton").title = "On cooldown";
 	setTimeout(function() {
 		clickPoints.onCooldown = false;
 		document.getElementById("cpButton").disabled = false;
@@ -36,11 +37,15 @@ function clickPoint() {
 function cpDisable() {
 	if (points.current < 10) {
 		document.getElementById("cpButton").disabled = true;
-		document.getElementById("cpButton").innerHTML = "Not enough points";
+		document.getElementById("cpButton").innerHTML = "+0";
+		if (!clickPoints.onCooldown) {
+			document.getElementById("cpButton").title = "Not enough points";
+		}
 	}
 	else if (!clickPoints.onCooldown) {
 		document.getElementById("cpButton").disabled = false;
 		document.getElementById("cpButton").innerHTML = "+1";
+		document.getElementById("cpButton").title = "Get 1 CP";
 	}
 }
 
