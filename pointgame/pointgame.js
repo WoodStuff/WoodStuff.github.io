@@ -24,6 +24,7 @@ function clickPoint() {
 	clickPoints.total += 1;
 	changeCounters();
 	document.getElementById("cpButton").disabled = true;
+	document.getElementById("cpButton").innerHTML = "0";
 	clickPoints.onCooldown = true;
 	setTimeout(function() {
 		clickPoints.onCooldown = false;
@@ -35,6 +36,7 @@ function clickPoint() {
 function cpDisable() {
 	if (points.current < 10) {
 		document.getElementById("cpButton").disabled = true;
+		document.getElementById("cpButton").innerHTML = "Not enough points";
 	}
 	else if (!clickPoints.onCooldown) {
 		document.getElementById("cpButton").disabled = false;
