@@ -40,6 +40,7 @@ function cpDisable() {
 	}
 	else if (!clickPoints.onCooldown) {
 		document.getElementById("cpButton").disabled = false;
+		document.getElementById("cpButton").innerHTML = "+1";
 	}
 }
 
