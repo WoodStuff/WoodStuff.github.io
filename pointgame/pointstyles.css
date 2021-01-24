@@ -39,3 +39,7 @@ button {
 button:hover {
 	opacity: 0.88;
 }
+button:disabled {
+	cursor: default;
+	opacity: 0.5;
+}
