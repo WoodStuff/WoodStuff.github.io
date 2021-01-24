@@ -28,8 +28,8 @@ function clickPoint() {
 	setTimeout(function() {
 		clickPoints.onCooldown = false;
 		document.getElementById("cpButton").disabled = false;
+		cpDisable();
 	}, 5000)
-	cpDisable();
 }
 
 function cpDisable() {
