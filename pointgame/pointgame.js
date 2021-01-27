@@ -1,8 +1,12 @@
 var points = {current: 0, total: 0}
 var clickPoints = {current: 0, total: 0, onCooldown: false}
-var cursorArray = {pClick: [1, 2],
-		   names: ["Normal Cursor", "Wooden Cursor"],
-		   descs: ["Your average cursor.", "A stronger material for a stronger hit."]}
+var cursorArray = {
+					current: 0,
+					pClick: [1, 2],
+					cost: [3, 4],
+					names: ["Normal Cursor", "Wooden Cursor"],
+					descs: ["Your average cursor.", "A stronger material for a stronger hit."]
+				  }
 
 function increment() {
 	points.current += 1;
@@ -18,6 +22,11 @@ function attemptUnlock() {
 	if (points.total > 14) {
 		document.getElementById("cursors").style.display = "block";
 		cpDisable();
+	}
+	// vault
+	if (points.total > 59 && clickPoints.total > 0) {
+		document.getElementById("vault").style.display = "block";
+		updateVault();
 	}
 }
 
