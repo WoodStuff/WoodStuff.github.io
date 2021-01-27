@@ -1,0 +1,20 @@
+.content {
+	border: 2px;
+	box-shadow: 0 0 10px 2px black;
+}
+#top {
+	top: 0px;
+	width: 100%;
+}
+#page {
+	margin: 125px;
+	width: 50%;
+	height: 75%
+}
+#links {
+	right: 0px;
+	margin-top: 125px;
+	margin-bottom: 125px;
+	width: 25%;
+	height: 75%;
+}
