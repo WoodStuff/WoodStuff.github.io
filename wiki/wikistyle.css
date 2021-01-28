@@ -1,8 +1,6 @@
 t {
-	text-transform: uppercase;
-	font-size: 3em;
+	font-size: 3e;
 	font-family: "Segoe UI";
-	font-weight: bold;
 }
 h1, p, .segoe {
 	font-family: "Segoe UI";
@@ -12,6 +10,8 @@ body {
 }
 .content {
 	border: solid 2px;
+}
+.shadow {
 	box-shadow: 0 0 10px 2px black;
 }
 #top {
@@ -22,7 +22,13 @@ body {
 #page {
 	margin: 125px;
 	width: 67%;
-	min-height: 700px;
+	min-height: 50em;
+}
+#article {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	min-height: 47em;
 }
 #links {
 	position: absolute;
