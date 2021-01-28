@@ -7,6 +7,9 @@ t {
 h1, p, .segoe {
 	font-family: "Segoe UI";
 }
+body {
+	margin: 0px;
+}
 .content {
 	border: solid 2px;
 	box-shadow: 0 0 10px 2px black;
