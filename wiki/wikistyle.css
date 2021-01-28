@@ -30,6 +30,7 @@ body {
 	position: absolute;
 	width: inherit;
 	min-height: 45.5em;
+	padding: 10px;
 }
 #links {
 	position: absolute;
