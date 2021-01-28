@@ -19,7 +19,7 @@ h1, p, .segoe {
 #page {
 	margin: 125px;
 	width: 67%;
-	minheight: 700px;
+	min-height: 700px;
 }
 #links {
 	position: absolute;
