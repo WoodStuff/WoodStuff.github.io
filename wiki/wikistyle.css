@@ -8,6 +8,11 @@ h1, p, .segoe {
 body {
 	margin: 0px 4px 0px 0px;
 }
+cat {
+	font-size: 0.75em;
+	text-align: right;
+	display: inline;
+}
 .content {
 	border: solid 2px;
 	background-color: #FAFAFA;
