@@ -8,7 +8,7 @@ h1, p, .segoe {
 	font-family: "Segoe UI";
 }
 body {
-	margin: 0px;
+	margin: 0px 4px 0px 4px;
 }
 .content {
 	border: solid 2px;
