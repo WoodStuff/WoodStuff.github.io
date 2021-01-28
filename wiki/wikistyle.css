@@ -14,16 +14,19 @@ h1, p, .segoe {
 #top {
 	top: 0px;
 	width: 100%;
+	height: 100px;
 }
 #page {
 	margin: 125px;
-	width: 50%;
-	height: 75%
+	width: 67%;
+	minheight: 700px;
 }
 #links {
+	position: absolute;
 	right: 0px;
 	margin-top: 125px;
 	margin-bottom: 125px;
-	width: 25%;
-	height: 75%;
+	width: 200px;
+	height: 200px;
+	top: 104px;
 }
