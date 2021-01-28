@@ -1,5 +1,5 @@
 t {
-	font-size: 3e;
+	font-size: 3em;
 	font-family: "Segoe UI";
 }
 h1, p, .segoe {
@@ -10,6 +10,7 @@ body {
 }
 .content {
 	border: solid 2px;
+	background-color: #FAFAFA;
 }
 .shadow {
 	box-shadow: 0 0 10px 2px black;
@@ -25,10 +26,10 @@ body {
 	min-height: 50em;
 }
 #article {
+	top: 19em;
 	position: absolute;
-	bottom: 0px;
-	width: 100%;
-	min-height: 47em;
+	width: inherit;
+	min-height: 45.5em;
 }
 #links {
 	position: absolute;
@@ -37,5 +38,5 @@ body {
 	margin-bottom: 125px;
 	width: 200px;
 	height: 200px;
-	top: 104px;
+	top: 179px;
 }
