@@ -32,7 +32,7 @@ function attemptUnlock() {
 	}
 }
 
-// convert 10 points to 1 click point
+// convert 10 points to 1 cursor point
 function clickPoint() {
 	points.current -= 10;
 	clickPoints.current += 1;
@@ -50,6 +50,12 @@ function clickPoint() {
 	}, 5000)
 }
 
+// buy a new cursor
+function buyCursor() {
+	clickPoints.current -= curArray.cost[curArray.current]
+	curArray.current += 1;
+	action();
+}
 // things done on every action
 function action() {
 	// disable cp button
