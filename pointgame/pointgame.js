@@ -68,10 +68,10 @@ function action() {
 	
 	// update new cursor button
 	if (points.current >= curArray.cost[curArray.current]) {
-		document.getElementById("cursorShop").disabled = false;
+		document.getElementById("cursorShop").disabled = true;
 	}
 	else {
-		document.getElementById("cursorShop").disabled = true;
+		document.getElementById("cursorShop").disabled = false;
 	}
 }
 
