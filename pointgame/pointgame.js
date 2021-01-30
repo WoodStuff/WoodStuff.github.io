@@ -79,6 +79,7 @@ function action() {
 	else {
 		document.getElementById("cursorShop").disabled = true;
 	}
+	changeCounters();
 }
 
 // change the visual counters
