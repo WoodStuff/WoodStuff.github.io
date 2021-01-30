@@ -67,7 +67,7 @@ function action() {
 	}
 	
 	// update new cursor button
-	if (points.current >= curArray.cost[curArray.current]) {
+	if (clickPoints.current >= curArray.cost[curArray.current]) {
 		document.getElementById("cursorShop").disabled = true;
 	}
 	else {
