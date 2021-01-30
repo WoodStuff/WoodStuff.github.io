@@ -52,6 +52,7 @@ function clickPoint() {
 
 // things done on every action
 function action() {
+	// disable cp button
 	if (points.current < 10) {
 		document.getElementById("cpButton").disabled = true;
 		document.getElementById("cpButton").innerHTML = "+0";
@@ -63,6 +64,14 @@ function action() {
 		document.getElementById("cpButton").disabled = false;
 		document.getElementById("cpButton").innerHTML = "+1";
 		document.getElementById("cpButton").title = "Get 1 CP";
+	}
+	
+	// update new cursor button
+	if (points.current >= curArray.cost[curArray.current]) {
+		document.getElementById("cursorShop").disabled = false;
+	}
+	else {
+		document.getElementById("cursorShop").disabled = true;
 	}
 }
 
