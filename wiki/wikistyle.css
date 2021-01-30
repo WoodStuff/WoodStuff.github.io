@@ -9,9 +9,11 @@ body {
 	margin: 0px 4px 0px 0px;
 }
 cat {
-	font-size: 0.75em;
-	text-align: right;
-	display: inline;
+	display: block;
+	font-family: "Segoe UI";
+	margin: 50px 0px 1em 0px;
+	bottom: 0px;
+	position: absolute;
 }
 .content {
 	border: solid 2px;
