@@ -6,13 +6,13 @@ h1, p, .segoe {
 	font-family: "Segoe UI";
 }
 body {
-	margin: 0px 4px 0px 0px;
+	margin: 0 4px 0 0px;
 }
 cat {
 	display: block;
 	font-family: "Segoe UI";
-	margin: 50px 0px 1em 0px;
-	bottom: 0px;
+	margin: 50px 0 1em 0;
+	bottom: 0;
 	position: absolute;
 }
 .content {
@@ -28,8 +28,8 @@ cat {
 	height: 100px;
 }
 #page {
-	margin: 125px;
-	width: 67%;
+	margin: 100px;
+	width: 70px;
 	min-height: 50em;
 }
 #article {
