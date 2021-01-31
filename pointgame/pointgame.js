@@ -53,10 +53,11 @@ function clickPoint() {
 
 // buy a new cursor
 function buyCursor() {
-	clickPoints.current -= curArray.cost[curArray.current]
+	clickPoints.current -= curArray.cost[curArray.current + 1];
 	curArray.current += 1;
-	document.getElementById("curname").innerHTML = curArray.names[curArray.current]
-	document.getElementById("curdesc").innerHTML = curArray.descs[curArray.current]
+	document.getElementById("curname").innerHTML = curArray.names[curArray.current];
+	document.getElementById("curdesc").innerHTML = curArray.descs[curArray.current];
+	document.getElementById("curimg").src = "img/cursors/" + curArray.img[curArray.current]
 	action();
 }
 // things done on every action
@@ -76,7 +77,7 @@ function action() {
 	}
 	
 	// update new cursor button
-	if (clickPoints.current >= curArray.cost[curArray.current]) {
+	if (clickPoints.current >= curArray.cost[curArray.current + 1]) {
 		document.getElementById("cursorShop").disabled = false;
 	}
 	else {
