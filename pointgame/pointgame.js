@@ -27,7 +27,7 @@ function attemptUnlock() {
 		action();
 	}
 	// vault
-	if (points.total > 59 && clickPoints.total > 0) {
+	if (points.total > 49 && clickPoints.total > 0) {
 		document.getElementById("vault").style.display = "block";
 		action();
 	}
