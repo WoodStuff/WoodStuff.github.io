@@ -60,7 +60,7 @@ function buyCursor() {
 	document.getElementById("curimg").src = "img/cursors/" + curArray.img[curArray.current];
 	document.getElementById("curimg").alt = curArray.names[curArray.current];
 	document.getElementById("cursorShop").innerHTML = `Buy cursor (${curArray.cost[curArray.current + 1]} CP)`;
-	document.getElementById("incrementButton").innerHTML = `+${curArray.pClick[curArray.current]};`
+	document.getElementById("incrementButton").innerHTML = `+${curArray.pClick[curArray.current]}`;
 	action();
 }
 // things done on every action
