@@ -32,6 +32,9 @@ div.content {
 	background-color: #AD67ED;
 	border-color: #a87fc7;
 }
+#cursorShop {
+	position: absolute;
+}
 button {
 	outline: none;
 	cursor: pointer;
