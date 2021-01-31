@@ -48,7 +48,7 @@ function clickPoint() {
 		clickPoints.onCooldown = false;
 		document.getElementById("cpButton").disabled = false;
 		action();
-	}, 3000)
+	}, 1000)
 }
 
 // buy a new cursor
