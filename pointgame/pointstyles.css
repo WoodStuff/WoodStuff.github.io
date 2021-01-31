@@ -21,9 +21,12 @@ body {
 	background-color: #dcdcdc;
 	left: 0;
 }
-#footer > p {
+#footer p {
 	margin: 0;
 	text-align: center;
+}
+#footer a {
+	color: #336dd7;
 }
 .defcur {
 	cursor: default;
