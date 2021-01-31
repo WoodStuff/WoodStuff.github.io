@@ -20,6 +20,9 @@ body {
 	height: 50px;
 	background-color: #b3b3b3;
 }
+#footer > p {
+	margin: 0;
+}
 .defcur {
 	cursor: default;
 }
