@@ -17,12 +17,13 @@ body {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	height: 50px;
+	height: 25px;
 	background-color: #dcdcdc;
 	left: 0;
 }
 #footer > p {
 	margin: 0;
+	text-align: center;
 }
 .defcur {
 	cursor: default;
