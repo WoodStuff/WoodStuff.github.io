@@ -3,9 +3,10 @@ var clickPoints = {current: 0, total: 0, onCooldown: false}
 var curArray = {
 		current: 0,
 		pClick: [1, 2],
-		cost: [3, 4],
+		cost: [0, 3],
 		names: ["Normal Cursor", "Wooden Cursor"],
-		descs: ["Your average cursor.", "A stronger material for a stronger hit."]
+		descs: ["Your average cursor.", "A stronger material for a stronger hit."],
+		img: ["normal.png", "wooden.png"]
 	       }
 
 // give a point
@@ -54,6 +55,8 @@ function clickPoint() {
 function buyCursor() {
 	clickPoints.current -= curArray.cost[curArray.current]
 	curArray.current += 1;
+	document.getElementById("curname").innerHTML = curArray.names[curArray.current]
+	document.getElementById("curdesc").innerHTML = curArray.descs[curArray.current]
 	action();
 }
 // things done on every action
