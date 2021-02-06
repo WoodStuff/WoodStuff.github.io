@@ -7,10 +7,17 @@ var level = {
 }
 
 var coins = {
-	normal: 50
+	normal: {
+		current: 50,
+		total: 50,
+	}
 }
 
 function chapterMenu() {
 	document.getElementById("menu").style.display = "none";
 	document.getElementById("chapters").style.display = "block";
+}
+
+function updateTopbar() {
+	document.getElementById("tbcoins").innerHTML = "Coins: " + coins.normal.current + <br /> + "testo"
 }
