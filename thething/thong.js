@@ -19,5 +19,5 @@ function chapterMenu() {
 }
 
 function updateTopbar() {
-	document.getElementById("tbcoins").innerHTML = "Coins: " + coins.normal.current + <br /> + "testo"
+	document.getElementById("tbcoins").innerHTML = "Coins: " + coins.normal.current + "<br />" + "testo"
 }
