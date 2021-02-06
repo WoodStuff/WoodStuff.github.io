@@ -11,6 +11,6 @@ var coins = {
 }
 
 function chapterMenu() {
-	document.getElementById("menu").display = "none";
-	document.getElementById("chapters").display = "block";
+	document.getElementById("menu").style.display = "none";
+	document.getElementById("chapters").style.display = "block";
 }
