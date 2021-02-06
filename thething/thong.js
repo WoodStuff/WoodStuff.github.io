@@ -10,7 +10,7 @@ var coins = {
 	normal: 50
 }
 
-function chapterMenu {
+function chapterMenu() {
 	document.getElementById("menu").display = "none";
 	document.getElementById("chapters").display = "block";
 }
