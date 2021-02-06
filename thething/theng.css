@@ -20,6 +20,6 @@ h1, p, .segoe {
 	height: 100px;
 	font-size: 32px;
 }
-body {
+#content {
 	margin: 65px;
 }
