@@ -6,6 +6,8 @@
 	height: 75px;
 	background-color: #2c3133;
 	color: #FFFFFF;
+	padding: 100px;
+	vertical-align: center;
 }
 t {
 	text-transform: uppercase;
