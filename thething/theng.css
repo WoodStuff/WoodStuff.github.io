@@ -28,6 +28,11 @@ h1, p, .segoe {
 	height: 100px;
 	font-size: 32px;
 }
+.wide {
+	width: 175px;
+	height: 100px;
+	font-size: 32px;
+}
 #content {
 	margin: 65px;
 }
