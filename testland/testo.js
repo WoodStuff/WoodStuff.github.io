@@ -26,6 +26,7 @@ function load() {
 	var counter = getCookie("number")
 	if (counter != "") {
 		document.getElementById("ctext").innerHTML = counter;
+		n = counter;
 	}
 }
 
