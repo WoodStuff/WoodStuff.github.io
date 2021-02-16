@@ -2,17 +2,29 @@ var points = {current: 0, total: 0}
 var clickPoints = {current: 0, total: 0, onCooldown: false}
 var curArray = {
 		current: 0,
-		pClick: [1, 2, 3],
+		pClick: [1, 2, 3, 5],
 		cost: [0, 3, 4, 10],
-		names: ["Normal Cursor", "Wooden Cursor", "Plastic Cursor"],
-		descs: ["Your average cursor.", "A stronger material for a stronger hit.", "The world's waste material."],
-		img: ["normal.png", "wooden.png", "plastic.png"]
+		names: ["Normal Cursor", "Wooden Cursor", "Plastic Cursor", "Stone Cursor"],
+		descs: ["Your average cursor.", "A stronger material for a stronger hit.", "The world's waste material.", "Hard enough to do critical hits."],
+		img: ["normal.png", "wooden.png", "plastic.png", "stone.png"],
+		ability: ["", "", "", "crit"]
 	       }
+
+// the rng function, outpts a random number from min to max
+function rng(min, max) {
+	return Math.floor(Math.random() * ((max + 1) - min) ) + min;
+}
 
 // give a point
 function increment() {
-	points.current += curArray.pClick[curArray.current];
-	points.total += curArray.pClick[curArray.current];
+	var pointsGained = curArray.pClick[curArray.current];
+	if (curArray.ability[curArray.current] == "crit") {
+		if (rng(1, 20) == 14) {
+			pointsGained = pointsGained * 2;
+		}
+	} 
+	points.current += pointsGained;
+	points.total += pointsGained;
 	
 	changeCounters();
 	attemptUnlock();
