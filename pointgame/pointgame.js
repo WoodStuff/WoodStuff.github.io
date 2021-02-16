@@ -10,7 +10,7 @@ var curArray = {
 		ability: ["", "", "", "crit"]
 	       }
 
-var autoSave = setInterval(save, 10000)
+// var autoSave = setInterval(save, 10000)
 
 // set a cookie
 function setCookie(cname, cvalue, exdays) {
@@ -36,10 +36,10 @@ function getCookie(cname) {
 	return "";
 }
 
-if (getCookie("pg_played") != 5) {
+/* if (getCookie("pg_played") != "Hi.") {
 	setCookie("pg_played", "Hi.");
 	setCookie("pg_points", 0);
-}
+} */
 
 // the rng function, outpts a random number from min to max
 function rng(min, max) {
