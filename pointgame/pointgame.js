@@ -2,11 +2,11 @@ var points = {current: 0, total: 0}
 var clickPoints = {current: 0, total: 0, onCooldown: false}
 var curArray = {
 		current: 0,
-		pClick: [1, 2],
-		cost: [0, 3, 4],
-		names: ["Normal Cursor", "Wooden Cursor"],
-		descs: ["Your average cursor.", "A stronger material for a stronger hit."],
-		img: ["normal.png", "wooden.png"]
+		pClick: [1, 2, 3],
+		cost: [0, 3, 4, 10],
+		names: ["Normal Cursor", "Wooden Cursor", "Plastic Cursor"],
+		descs: ["Your average cursor.", "A stronger material for a stronger hit.", "The world's waste material."],
+		img: ["normal.png", "wooden.png", "plastic.png"]
 	       }
 
 // give a point
