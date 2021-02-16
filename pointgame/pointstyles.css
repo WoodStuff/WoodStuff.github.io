@@ -53,6 +53,10 @@ div.content {
 	background-color: #AD67ED;
 	border-color: #a87fc7;
 }
+#ability {
+	border-style: solid;
+	background-color: #DCDCDC;
+}
 #cursorShop {
 	position: absolute;
 }
