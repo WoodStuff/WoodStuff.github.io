@@ -76,8 +76,7 @@ function buyCursor() {
 	if (curArray.ability[curArray.current] != "") {
 		document.getElementById("abilityimage").style.display = "block"
 		if (curArray.ability[curArray.current] == "crit") {
-			document.getElementById("abilityimage").title = "Crit
-Has a 10% chance to do a critical hit, doubling the point input.";
+			document.getElementById("abilityimage").title = "Crit\nHas a 10% chance to do a critical hit, doubling the point input.";
 		}
 	}
 	else (
