@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<script>
+		function setCookie(cname, cvalue, exdays) {
+			var d = new Date();
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+			var expires = "expires="+d.toUTCString();
+			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		}
+		
+		function getCookie(cname) {
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+			for(var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+			}
+			return "";
+		}
+		
+		if (getCookie(visits) == "") {
+			setCookie(visits, 0, 1362)
+		}
+		setCookie(visits, visits + 1, 1362)
+		if (getCookie(visits) != 1) {
+			document.getElementById("visitcounter").innerHTML = `You have visited this page ${getCookie.visits} times.`
+		}
+		</script>
+		<title>Visit Counter</title>
+	</head>
+
+	<body>
+		<p id="visitcounter">You have visited this page 1 time.</p>
+	</body>
+</html>
