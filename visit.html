@@ -29,7 +29,7 @@
 			setCookie("visits", 0, 1362)
 		}
 		setCookie("visits", getCookie("visits") + 1, 1362)
-		document.getElementById("visitcounter").innerHTML = `You have visited this page ${getCookie("visits")} times.`
+		console.log(document.getElementById("visitcounter").innerHTML);// = `You have visited this page ${getCookie("visits")} times.`
 		</script>
 		<title>Visit Counter</title>
 	</head>
