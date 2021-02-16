@@ -74,7 +74,7 @@ function buyCursor() {
 	document.getElementById("cursorShop").innerHTML = `Buy cursor (${curArray.cost[curArray.current + 1]} CP)`;
 	document.getElementById("incrementButton").innerHTML = `+${curArray.pClick[curArray.current]}`;
 	if (curArray.ability[curArray.current] != "") {
-		document.getElementById("abilityimage").style.display = "block"
+		document.getElementById("abilityimage").style.display = "inline"
 		if (curArray.ability[curArray.current] == "crit") {
 			document.getElementById("abilityimage").title = "Crit\nHas a 10% chance to do a critical hit, doubling the point input.";
 		}
