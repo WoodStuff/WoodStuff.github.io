@@ -10,9 +10,44 @@ var curArray = {
 		ability: ["", "", "", "crit"]
 	       }
 
+var autoSave = setInterval(save, 10000)
+
+// set a cookie
+function setCookie(cname, cvalue, exdays) {
+	var d = new Date();
+	d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+	var expires = "expires="+d.toUTCString();
+	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+// get a cookie
+function getCookie(cname) {
+	var name = cname + "=";
+	var ca = document.cookie.split(';');
+	for(var i = 0; i < ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0) == ' ') {
+			c = c.substring(1);
+		}
+		if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length);
+		}
+	}
+	return "";
+}
+
+if (getCookie("pg_played") != 5) {
+	setCookie("pg_played", "Hi.");
+	setCookie("pg_points", 0);
+}
+
 // the rng function, outpts a random number from min to max
 function rng(min, max) {
 	return Math.floor(Math.random() * ((max + 1) - min) ) + min;
+}
+
+function save() {
+	
 }
 
 // give a point
