@@ -29,9 +29,7 @@
 			setCookie("visits", 0, 1362)
 		}
 		setCookie("visits", getCookie("visits") + 1, 1362)
-		if (getCookie("visits") != 1) {
-			document.getElementById("visitcounter").innerHTML = `You have visited this page ${getCookie("visits")} times.`
-		}
+		document.getElementById("visitcounter").innerHTML = `You have visited this page ${getCookie("visits")} times.`
 		</script>
 		<title>Visit Counter</title>
 	</head>
