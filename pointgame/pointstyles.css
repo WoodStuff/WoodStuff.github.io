@@ -74,6 +74,7 @@ div.vaultup {
 	border: solid 2px lightgray;
 	border-radius: 5px;
 	padding: 10px;
+	width: fit-content;
 }
 button {
 	outline: none;
