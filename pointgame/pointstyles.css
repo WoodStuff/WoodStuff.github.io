@@ -74,6 +74,10 @@ div.content {
 	background-color: #AD67ED;
 	border-color: #A87FC7;
 }
+.vbuy {
+	background-color: #6BD86C;
+	border-color: #7AB67B;
+}
 #cursorShop {
 	position: absolute;
 }
