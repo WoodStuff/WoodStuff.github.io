@@ -10,6 +10,8 @@ var curArray = {
 		ability: ["", "", "", "crit"]
 	       }
 
+// multiple-use functions
+
 // the rng function, outpts a random number from min to max
 function rng(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -23,6 +25,19 @@ function visible(vis, oid, mode) {
 	}
 	else {
 		document.getElementById(oid).style.display = "none";
+	}
+}
+
+// make a vault item buyable
+// oid: id of the div that has the item      rpoints: cost in points      rcpoints: cost in cursor points
+function newItem(oid, rpoints, rcpoints) {
+	if (document.getElementById(oid).style.display != "none") {
+		if (points.current > (rpoints - 1) && clickPoints.current > (rcpoints - 1)) {
+			document.getElementById("b" + oid).disabled = false;
+		}
+		else {
+			document.getElementById("b" + oid).disabled = true;
+		}
 	}
 }
 
@@ -121,6 +136,7 @@ function action() {
 		document.getElementById("cursorShop").disabled = true;
 	}
 	changeCounters();
+	newItem("fastcp")
 }
 
 // change the visual counters
