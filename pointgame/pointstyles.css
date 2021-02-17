@@ -62,6 +62,14 @@ div.content {
 #cursorShop {
 	position: absolute;
 }
+vtitle {
+	font-weight: bold;
+	display: inline-block;
+	border-bottom-style: dotted;
+	border-bottom-width: 2px;
+	cursor: help;
+	font-size: 0.9em;
+}
 button {
 	outline: none;
 	cursor: pointer;
