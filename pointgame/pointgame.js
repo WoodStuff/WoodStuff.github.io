@@ -10,45 +10,23 @@ var curArray = {
 		ability: ["", "", "", "crit"]
 	       }
 
-// var autoSave = setInterval(save, 10000)
-
-// set a cookie
-function setCookie(cname, cvalue, exdays) {
-	var d = new Date();
-	d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-	var expires = "expires="+d.toUTCString();
-	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-// get a cookie
-function getCookie(cname) {
-	var name = cname + "=";
-	var ca = document.cookie.split(';');
-	for(var i = 0; i < ca.length; i++) {
-		var c = ca[i];
-		while (c.charAt(0) == ' ') {
-			c = c.substring(1);
-		}
-		if (c.indexOf(name) == 0) {
-			return c.substring(name.length, c.length);
-		}
-	}
-	return "";
-}
-
-/* if (getCookie("pg_played") != "Hi.") {
-	setCookie("pg_played", "Hi.");
-	setCookie("pg_points", 0);
-} */
-
 // the rng function, outpts a random number from min to max
 function rng(min, max) {
-	return Math.floor(Math.random() * ((max + 1) - min) ) + min;
+	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function save() {
-	
+// hide or show an object           oid to not conflict with id which is probably a property of many objects
+// vis: a boolean, true = show      oid: id of the object to toggle visibility      mode: if show, choose block, inline-block or inline, if hide, 0 (many objects are either block or i-b)
+function visible(vis, oid, mode) {
+	if (vis) {
+		document.getElementById(oid).style.display = mode;
+	}
+	else {
+		document.getElementById(oid).style.display = "none";
+	}
 }
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // give a point
 function increment() {
@@ -70,12 +48,12 @@ function increment() {
 function attemptUnlock() {
 	// cursors
 	if (points.total > 14) {
-		document.getElementById("cursors").style.display = "block";
+		visible(true, "cursors", block)
 		action();
 	}
 	// vault
 	if (points.total > 49 && clickPoints.total > 0) {
-		document.getElementById("vault").style.display = "block";
+		visible(true, "vault", block)
 		action();
 	}
 }
