@@ -1,3 +1,6 @@
+// all colors should have capital letters, write an issue with tag "code" if you find any that have small letters
+
+// basic: the site's design
 * {
 	color: #121212;
 }
@@ -7,18 +10,24 @@ t {
 	font-family: "Segoe UI";
 	font-weight: bold;
 }
-h1, p, strong, .segoe, vtitle {
+h1, p, strong, .segoe, vtitle, vpoints, vcpoints {
 	font-family: "Segoe UI";
 }
 body {
 	background-color: #FAFAFA;
 }
+div.content {
+	margin: 30px;
+}
+// basic
+
+// footer: for the footer
 #footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 	height: 25px;
-	background-color: #dcdcdc;
+	background-color: #DCDCDC;
 	left: 0;
 }
 #footer p {
@@ -26,17 +35,23 @@ body {
 	text-align: center;
 }
 #footer a {
-	color: #336dd7;
+	color: #336DD7;
 }
 #footer a.danger {
-	color: #d73333;
+	color: #D73333;
 }
+// footer
+
+// credits: for the credits page
 #credits h1 {
 	margin: 1em 0 0 0;
 }
 #credits h1#start {
 	margin: 0;
 }
+// credits
+
+// visuals: visual effects for text
 .defcur {
 	cursor: default;
 }
@@ -45,37 +60,26 @@ body {
 	border-bottom-style: dotted;
 	cursor: help;
 }
-div.content {
-	margin: 30px;
-}
-#incrementButton {
-	background-color: #6767ED;
-	border-color: #7f7fc7;
-}
 .help {
 	cursor: help;
 }
+// visuals
+
+// specific buttons: settings of individual buttons like color
+#incrementButton {
+	background-color: #6767ED;
+	border-color: #7F7FC7;
+}
 #cpButton, #cursorShop {
 	background-color: #AD67ED;
-	border-color: #a87fc7;
+	border-color: #A87FC7;
 }
 #cursorShop {
 	position: absolute;
 }
-vtitle {
-	font-weight: bold;
-	display: inline-block;
-	border-bottom-style: dotted;
-	border-bottom-width: 2px;
-	cursor: help;
-	font-size: 0.9em;
-}
-div.vaultup {
-	border: solid 2px lightgray;
-	border-radius: 5px;
-	padding: 10px;
-	width: fit-content;
-}
+// specific buttons
+
+// all buttons: settings of all buttons like when hovered over
 button {
 	outline: none;
 	cursor: pointer;
@@ -87,3 +91,31 @@ button:disabled {
 	cursor: default;
 	opacity: 0.5;
 }
+// all buttons
+
+// vault: how the upgrades in the vault should look like
+vtitle {
+	font-weight: bold;
+	display: inline-block;
+	border-bottom-style: dotted;
+	border-bottom-width: 2px;
+	cursor: help;
+	font-size: 0.9em;
+}
+vtitle, vpoints, vcpoints {
+	text-align: center;
+	display: inline-block;
+}
+vpoints {
+	color: #6767ED;
+}
+vcpoints {
+	color: #AD67ED;
+}
+div.vaultup {
+	border: solid 2px lightgray;
+	border-radius: 5px;
+	padding: 10px;
+	width: fit-content;
+}
+// vault
