@@ -48,12 +48,12 @@ function increment() {
 function attemptUnlock() {
 	// cursors
 	if (points.total > 14) {
-		visible(true, "cursors", block)
+		visible(true, "cursors", "block")
 		action();
 	}
 	// vault
 	if (points.total > 49 && clickPoints.total > 0) {
-		visible(true, "vault", block)
+		visible(true, "vault", "block")
 		action();
 	}
 }
