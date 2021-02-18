@@ -75,6 +75,8 @@ div.content {
 	border-color: #A87FC7;
 }
 .vbuy {
+	margin: auto;
+	display: block;
 	background-color: #6BD86C;
 	border-color: #7AB67B;
 }
