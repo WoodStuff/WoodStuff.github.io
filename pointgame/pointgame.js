@@ -10,7 +10,7 @@ var curArray = {
 		ability: ["", "", "", "crit"]
 	       }
 var vault = {
-	fastcp: false;
+	fastcp: false
 }
 
 // multiple-use functions
