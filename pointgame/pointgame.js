@@ -112,6 +112,14 @@ function buyCursor() {
 	)
 	action();
 }
+
+// buy from the vault
+function buy() {
+	switch(up) {
+		case 1:
+	}
+}
+
 // things done on every action
 function action() {
 	// disable cp button
