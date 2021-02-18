@@ -130,6 +130,7 @@ function buy() {
 			clickPoints.current -= 3;
 		}
 	}
+	action();
 }
 
 // things done on every action
