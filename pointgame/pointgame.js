@@ -9,6 +9,9 @@ var curArray = {
 		img: ["normal.png", "wooden.png", "plastic.png", "stone.png"],
 		ability: ["", "", "", "crit"]
 	       }
+var vault = {
+	fastcp: false;
+}
 
 // multiple-use functions
 
@@ -84,11 +87,13 @@ function clickPoint() {
 	clickPoints.onCooldown = true;
 	document.getElementById("cpButton").title = "On cooldown";
 	action();
-	setTimeout(function() {
-		clickPoints.onCooldown = false;
-		document.getElementById("cpButton").disabled = false;
-		action();
-	}, 1000)
+	if (!vault.fastcp) {
+		setTimeout(function() {
+			clickPoints.onCooldown = false;
+			document.getElementById("cpButton").disabled = false;
+			action();
+		}, 1000)
+	}
 }
 
 // buy a new cursor
@@ -116,7 +121,10 @@ function buyCursor() {
 // buy from the vault
 function buy() {
 	switch(up) {
-		case 1:
+		case 1: {
+			vault.fastcp = true;
+			visible("fastcp", false, 0)
+		}
 	}
 }
 
