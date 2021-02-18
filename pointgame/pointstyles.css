@@ -49,6 +49,9 @@ div.content {
 #subpage h1#start {
 	margin: 0;
 }
+#subpage smol {
+	font-size: 0.25em;
+}
 /* subpages */
 
 /* visuals: visual effects for text */
