@@ -108,7 +108,6 @@ vtitle {
 }
 vtitle, vpoints, vcpoints {
 	text-align: center;
-	display: inline-block;
 }
 vpoints {
 	color: #6767ED;
