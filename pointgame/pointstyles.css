@@ -42,11 +42,11 @@ div.content {
 }
 /* footer */
 
-/* credits: for the credits page */
-#credits h1 {
+/* subpages: for the subpages such as credits and about */
+#subpage h1 {
 	margin: 1em 0 0 0;
 }
-#credits h1#start {
+#subpage h1#start {
 	margin: 0;
 }
 /* credits */
