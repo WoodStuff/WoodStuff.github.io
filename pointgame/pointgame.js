@@ -20,9 +20,9 @@ function rng(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// hide or show an object           oid to not conflict with id which is probably a property of many objects
-// vis: a boolean, true = show      oid: id of the object to toggle visibility      mode: if show, choose block, inline-block or inline, if hide, 0 (many objects are either block or i-b)
-function visible(vis, oid, mode) {
+// hide or show an object      oid to not conflict with id which is probably a property of many objects
+// oid: id of the object to toggle visibility      vis: a boolean, true = show      mode: if show, choose block, inline-block or inline, if hide, 0 (many objects are either block or i-b)
+function visible(oid, vis, mode) {
 	if (vis) {
 		document.getElementById(oid).style.display = mode;
 	}
@@ -66,12 +66,12 @@ function increment() {
 function attemptUnlock() {
 	// cursors
 	if (points.total > 14) {
-		visible(true, "cursors", "block")
+		visible("cursors", true, "block")
 		action();
 	}
 	// vault
 	if (points.total > 49 && clickPoints.total > 0) {
-		visible(true, "vault", "block")
+		visible("vault", true, "block")
 		action();
 	}
 }
@@ -107,7 +107,7 @@ function buyCursor() {
 	document.getElementById("cursorShop").innerHTML = `Buy cursor (${curArray.cost[curArray.current + 1]} CP)`;
 	document.getElementById("incrementButton").innerHTML = `+${curArray.pClick[curArray.current]}`;
 	if (curArray.ability[curArray.current] != "") {
-		visible(true, "cursors", "inline")
+		visible("cursors", true, "inline")
 		if (curArray.ability[curArray.current] == "crit") {
 			document.getElementById("abilityimage").title = "Crit\nHas a 10% chance to do a critical hit, doubling the point input.";
 		}
