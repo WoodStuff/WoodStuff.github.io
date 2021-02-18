@@ -82,6 +82,7 @@ function clickPoint() {
 	clickPoints.current += 1;
 	clickPoints.total += 1;
 	changeCounters();
+	action();
 	if (!vault.fastcp) {
 		document.getElementById("cpButton").disabled = true;
 		document.getElementById("cpButton").innerHTML = "+0";
@@ -94,6 +95,7 @@ function clickPoint() {
 			action();
 		}, 1000)
 	}
+	action();
 }
 
 // buy a new cursor
