@@ -136,7 +136,7 @@ function action() {
 		document.getElementById("cursorShop").disabled = true;
 	}
 	changeCounters();
-	newItem("fastcp")
+	newItem("fastcp", 50, 3)
 }
 
 // change the visual counters
