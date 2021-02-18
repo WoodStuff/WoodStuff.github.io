@@ -82,12 +82,12 @@ function clickPoint() {
 	clickPoints.current += 1;
 	clickPoints.total += 1;
 	changeCounters();
-	document.getElementById("cpButton").disabled = true;
-	document.getElementById("cpButton").innerHTML = "+0";
-	clickPoints.onCooldown = true;
-	document.getElementById("cpButton").title = "On cooldown";
-	action();
 	if (!vault.fastcp) {
+		document.getElementById("cpButton").disabled = true;
+		document.getElementById("cpButton").innerHTML = "+0";
+		clickPoints.onCooldown = true;
+		document.getElementById("cpButton").title = "On cooldown";
+		action();
 		setTimeout(function() {
 			clickPoints.onCooldown = false;
 			document.getElementById("cpButton").disabled = false;
@@ -124,6 +124,8 @@ function buy() {
 		case 1: {
 			vault.fastcp = true;
 			visible("fastcp", false, 0)
+			points.current -= 50;
+			clickPoints.current -= 3;
 		}
 	}
 }
