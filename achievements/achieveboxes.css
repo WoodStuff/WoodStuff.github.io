@@ -1,0 +1,21 @@
+* {
+	color: #121212;
+}
+.content {
+	margin: 65px;
+}
+t {
+	text-transform: uppercase;
+	font-size: 3em;
+	font-family: "Segoe UI";
+	font-weight: bold;
+}
+h1, p, .segoe {
+	font-family: "Segoe UI";
+}
+a {
+	color: #1A73E8;
+}
+body {
+	background-color: #FAFAFA;
+}
