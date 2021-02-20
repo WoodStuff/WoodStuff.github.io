@@ -32,15 +32,16 @@ function visible(oid, vis, mode) {
 }
 
 // make a vault item buyable
-// oid: id of the div that has the item      rpoints: cost in points      rcpoints: cost in cursor points
-function newItem(oid, rpoints, rcpoints) {
+// oid: id of the div that has the item      rpoints/rcpoints: cost in points/cpoints      reqpoints/reqcpoints/requp: required points/cpoints/upgrade for the upgrade to show up
+function newItem(oid, rpoints, rcpoints, reqpoints, reqcpoints, requp) {
+	
 	if (document.getElementById(oid).style.display != "none") {
-		if (points.current > (rpoints - 1) && clickPoints.current > (rcpoints - 1)) {
-			document.getElementById("b" + oid).disabled = false;
-		}
-		else {
-			document.getElementById("b" + oid).disabled = true;
-		}
+	}
+	if (points.current > (rpoints - 1) && clickPoints.current > (rcpoints - 1)) {
+		document.getElementById("b" + oid).disabled = false;
+	}
+	else {
+		document.getElementById("b" + oid).disabled = true;
 	}
 }
 
