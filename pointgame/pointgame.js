@@ -2,12 +2,12 @@ var points = {current: 0, total: 0}
 var clickPoints = {current: 0, total: 0, onCooldown: false}
 var curArray = {
 		current: 0,
-		pClick: [1, 2, 3, 5, 8],
-		cost: [0, 3, 5, 10, 30],
-		names: ["Normal Cursor", "Wooden Cursor", "Plastic Cursor", "Stone Cursor", "Blue-wooden Cursor"],
-		descs: ["Your average cursor.", "A stronger material for a stronger hit.", "The world's waste material.", "Hard enough to do critical hits.", "From very rare islands, this special wood is designed to click."],
+		pClick: [1, 2, 3, 5, 8, 12],
+		cost: [0, 3, 5, 10, 30, 0],
+		names: ["Normal Cursor", "Wooden Cursor", "Plastic Cursor", "Stone Cursor", "Blue-wooden Cursor", "Copper Cursor"],
+		descs: ["Your average cursor.", "A stronger material for a stronger hit.", "The world's waste material.", "Hard enough to do critical hits.", "From very rare islands, this special wood is designed to click.", "Compressed into a cursor so it won't turn green."],
 		img: ["normal.png", "wooden.png", "plastic.png", "stone.png", "bluewood.png"],
-		ability: ["", "", "", "crit", ""]
+		ability: ["", "", "", "crit", "", ""]
 	       }
 var vault = {
 	fastcp: false,
