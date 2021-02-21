@@ -126,5 +126,6 @@ div.vaultup {
 	border-radius: 5px;
 	padding: 10px;
 	width: fit-content;
+	display: inline-block;
 }
 /* vault */
