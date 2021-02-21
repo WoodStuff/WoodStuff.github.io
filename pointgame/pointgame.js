@@ -10,7 +10,8 @@ var curArray = {
 		ability: ["", "", "", "crit", ""]
 	       }
 var vault = {
-	fastcp: false
+	fastcp: false,
+	maxcp: false
 }
 document.cookie = "a-pg=true; expires:Sat, 20 Apr 2069 12:00:00 UTC;"
 // multiple-use functions
@@ -34,8 +35,10 @@ function visible(oid, vis, mode) {
 // make a vault item buyable
 // oid: id of the div that has the item      rpoints/rcpoints: cost in points/cpoints      reqpoints/reqcpoints/requp: required points/cpoints/upgrade for the upgrade to show up
 function newItem(oid, rpoints, rcpoints, reqpoints, reqcpoints, requp) {
-	
-	if (document.getElementById(oid).style.display != "none") {
+	if (document.getElementById(oid).style.display == "none" && vault[oid] == false) {
+		if (points.current > reqpoints && clickPoints.current > reqcpoints && (vault[requp] == true || requp == 0)) {
+			visible(oid, true, "inline-block")
+		}
 	}
 	if (points.current > (rpoints - 1) && clickPoints.current > (rcpoints - 1)) {
 		document.getElementById("b" + oid).disabled = false;
@@ -106,10 +109,25 @@ function buyCursor() {
 	curArray.current += 1;
 	document.getElementById("curname").innerHTML = curArray.names[curArray.current];
 	document.getElementById("curdesc").innerHTML = curArray.descs[curArray.current];
-	document.getElementById("curimg").src = "img/cursors/" + curArray.img[curArray.current];
+	
+	if (curArray.img[curArray.current] != "") {
+		document.getElementById("curimg").src = "img/cursors/" + curArray.img[curArray.current];
+	}
+	else {
+		document.getElementById("curimg").src = "img/cursors/none.png";
+	}
+	
 	document.getElementById("curimg").alt = curArray.names[curArray.current];
-	document.getElementById("cursorShop").innerHTML = `Buy cursor (${curArray.cost[curArray.current + 1]} CP)`;
+	
+	if (curArray.cost[curArray.current + 1] != undefined) {
+		document.getElementById("cursorShop").innerHTML = `Buy cursor (${curArray.cost[curArray.current + 1]} CP)`;
+	}
+	else {
+		document.getElementById("cursorShop").innerHTML = "Max cursor reached";
+	}
+	
 	document.getElementById("incrementButton").innerHTML = `+${curArray.pClick[curArray.current]}`;
+	
 	if (curArray.ability[curArray.current] != "") {
 		visible("abilityimage", true, "inline")
 		if (curArray.ability[curArray.current] == "crit") {
