@@ -16,7 +16,7 @@ var vault = {
 document.cookie = "a-pg=true; expires:Sat, 20 Apr 2069 12:00:00 UTC;"
 // multiple-use functions
 
-// the rng function, outpts a random number from min to max
+// the rng function, outputs a random number from min to max
 function rng(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
