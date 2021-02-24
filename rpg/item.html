@@ -3,32 +3,35 @@
 <html>
 	<head>
 		<style>
-		* {
-			color: #121212;
-		}
-		t {
-			text-transform: uppercase;
-			font-size: 3em;
-			font-family: "Segoe UI";
-			font-weight: bold;
-		}
-		h1, p, .segoe, span {
-			font-family: "Segoe UI";
-		}
-		.card p {
-			margin: 0;
-		}
-		body {
-			background-color: #FAFAFA;
-			margin: 100px auto;
-			width: 50%;
-		}
-		.border {
-			border-style: solid;
-			border-radius: 5px;
-			border-color: #D2D2D2;
-			padding: 5px;
-		}
+			* {
+				color: #121212;
+			}
+			t {
+				text-transform: uppercase;
+				font-size: 3em;
+				font-family: "Segoe UI";
+				font-weight: bold;
+			}
+			h1, p, .segoe, span {
+				font-family: "Segoe UI";
+			}
+			.card p {
+				margin: 0;
+			}
+			#imgdiv {
+				display: inline-block;
+			}
+			body {
+				background-color: #FAFAFA;
+				margin: 100px auto;
+				width: 50%;
+			}
+			.border {
+				border-style: solid;
+				border-radius: 5px;
+				border-color: #D2D2D2;
+				padding: 5px;
+			}
 		</style>
 		<script></script>
 		<title>the egg site</title>
@@ -36,8 +39,8 @@
 
 	<body>
 		<div class="border" id="card">
-			<div class="border">
-				<img id="imegg" src="#" width="64" height="64">
+			<div class="border" id="imgdiv">
+				<img id="img" src="#" width="64" height="64">
 			</div>
 			<span>JAJKO</span>
 		</div>
