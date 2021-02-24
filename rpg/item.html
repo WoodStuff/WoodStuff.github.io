@@ -21,10 +21,16 @@
 			#imgdiv {
 				display: inline-block;
 			}
+			#name {
+				font-weight: bold;
+			}
 			body {
 				background-color: #FAFAFA;
 				margin: 100px auto;
 				width: 50%;
+			}
+			span.top {
+				vertical-align: top;
 			}
 			.border {
 				border-style: solid;
@@ -33,7 +39,19 @@
 				padding: 5px;
 			}
 		</style>
-		<script></script>
+		<script>
+			function save(a) {
+				if (a == 0) {
+					var name = prompt("ID of the item? (no spaces allowed)")
+				}
+				else {
+					var name = prompt("ID includes space!\nID of the item? (no spaces allowed)")
+				}
+				if (name.includes(" ")) {
+					save(1);
+				}
+			}
+		</script>
 		<title>the egg site</title>
 	</head>
 
@@ -42,8 +60,8 @@
 			<div class="border" id="imgdiv">
 				<img id="img" src="#" width="64" height="64">
 			</div>
-			<span>JAJKO</span>
+			<span class="top" id="name"></span>
 		</div>
-		<button onclick="save();">Save</button>
+		<button onclick="save(0);">Save</button>
 	</body>
 </html>
