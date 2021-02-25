@@ -50,6 +50,12 @@
 			}
 		</style>
 		<script>
+			function innerhtml(oid, set) {
+				document.getElementById(oid).innerHTML = set;
+			}
+			function value(oid) {
+				return document.getElementById(oid).value;
+			}
 			function save(a) {
 				// a is the variable used when your item contains a space
 				if (a == 0) {
@@ -62,6 +68,9 @@
 					save(1);
 				}
 			}
+			function display() {
+				innerhtml("name", value("nameInput"))
+			}
 		</script>
 		<title>the egg site</title>
 	</head>
@@ -69,7 +78,7 @@
 	<body>
 		<div id="settings">
 			<label for="nameInput">Name:</label><br>
-			<input name="nameInput" id="nameInput" class="text" placeholder="Item name">
+			<input name="nameInput" id="nameInput" class="text" placeholder="Item name" oninput="display();">
 		</div><hr>
 		
 		<div class="border" id="card">
