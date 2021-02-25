@@ -12,7 +12,7 @@
 				font-family: "Segoe UI";
 				font-weight: bold;
 			}
-			h1, p, .segoe, span {
+			h1, p, .segoe, span, label {
 				font-family: "Segoe UI";
 			}
 			.card p {
@@ -38,6 +38,13 @@
 				border-color: #D2D2D2;
 				padding: 5px;
 			}
+			#saveButton {
+				margin: 0;
+				position: absolute;
+				left: 50%;
+				-ms-transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
+			}
 		</style>
 		<script>
 			function save(a) {
@@ -56,14 +63,17 @@
 	</head>
 
 	<body>
-		<label for="nameInput">Name:</label>
-		<input name="nameInput" id="nameInput">
+		<div id="settings">
+			<label for="nameInput">Name:</label><br>
+			<input name="nameInput" id="nameInput" placeholder="nameInput">
+		</div>
+		
 		<div class="border" id="card">
 			<div class="border" id="imgdiv">
 				<img id="img" src="#" width="64" height="64">
 			</div>
 			<span class="top" id="name"></span>
 		</div>
-		<button onclick="save(0);">Save</button>
+		<button id="saveButton" onclick="save(0);">Save</button>
 	</body>
 </html>
