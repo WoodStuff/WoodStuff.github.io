@@ -48,6 +48,7 @@
 		</style>
 		<script>
 			function save(a) {
+				// a is the variable used when your item contains a space
 				if (a == 0) {
 					var name = prompt("ID of the item? (no spaces allowed)")
 				}
@@ -65,7 +66,7 @@
 	<body>
 		<div id="settings">
 			<label for="nameInput">Name:</label><br>
-			<input name="nameInput" id="nameInput" placeholder="nameInput">
+			<input name="nameInput" id="nameInput" placeholder="Item name">
 		</div><br>
 		
 		<div class="border" id="card">
