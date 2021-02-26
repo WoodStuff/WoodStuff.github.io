@@ -16,3 +16,7 @@ Boolean.prototype.rev = function() {
 
 // FUNCTIONS (normal)
 
+// Set the contents of an object (oid) to the second argument (set)
+function innerhtml(oid, set) {
+	document.getElementById(oid).innerHTML = set;
+}
