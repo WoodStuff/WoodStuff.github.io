@@ -71,8 +71,15 @@
 					save(1);
 				}
 			}
+			function update(oid) {
+				innerhtml(oid, value(oid + "Input"));
+			}
 			function display() {
-				innerhtml("name", value("nameInput"))
+				var updatos = ["name", "desc"]
+				
+				for (i = 0; i < updatos.length; i++) {
+					update(updatos[i])
+				}
 			}
 		</script>
 		<title>the egg site</title>
@@ -80,8 +87,13 @@
 
 	<body>
 		<div id="settings">
-			<label for="nameInput">Name:</label><br>
-			<input name="nameInput" id="nameInput" class="text" placeholder="Item name" oninput="display();">
+			<div id="sIdentifiers">
+				<label for="nameInput">Name:</label><br>
+				<input name="nameInput" id="nameInput" class="text" placeholder="Item name" oninput="display();">
+				
+				<label for="descInput">Description:</label><br>
+				<input name="descInput" id="descInput" class="text" placeholder="Item description" oninput="display();">
+			</div>
 		</div><hr>
 		
 		<div class="border" id="card">
@@ -91,6 +103,7 @@
 			
 			<div id="detailsdiv">
 				<span class="top" id="name"></span>
+				<span class="top" id="desc"></span>
 			</div>
 		</div><br>
 		<button id="saveButton" onclick="save(0);">Save</button>
