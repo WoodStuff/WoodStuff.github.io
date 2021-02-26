@@ -9,15 +9,14 @@
 
 	<body>
 		<div id="settings">
-			<span id="sname" class="inputs">
+			<div id="sIdentifiers" class="inputs">
 				<label for="nameInput">Name:</label><br>
-				<input name="nameInput" id="nameInput" class="text" placeholder="Item name" oninput="display();">
-			</span>
-			
-			<span id="sdesc" class="inputs">
+				<input name="nameInput" id="nameInput" class="text" placeholder="Item name" oninput="display();"><br><br>
 				<label for="descInput">Description:</label><br>
-				<input name="descInput" id="descInput" class="text" placeholder="Item description" oninput="display();">
-			</span>
+				<input name="descInput" id="descInput" class="text" placeholder="Item description" oninput="display();"><br><br>
+				<label for="imgInput">Image:</label><br>
+				<input name="imgInput" id="imgInput" type="file" class="text" oninput="display();">
+			</div>
 		</div><hr>
 		
 		<div class="border" id="card">
