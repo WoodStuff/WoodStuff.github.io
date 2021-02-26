@@ -51,6 +51,9 @@
 			input.text {
 				padding: 3px;
 			}
+			div.inputs {
+				display: inline;
+			}
 		</style>
 		<script>
 			function innerhtml(oid, set) {
@@ -87,12 +90,12 @@
 
 	<body>
 		<div id="settings">
-			<div id="sname">
+			<div id="sname" class="inputs">
 				<label for="nameInput">Name:</label><br>
 				<input name="nameInput" id="nameInput" class="text" placeholder="Item name" oninput="display();">
 			</div>
 			
-			<div id="sdesc">
+			<div id="sdesc" class="inputs">
 				<label for="descInput">Description:</label><br>
 				<input name="descInput" id="descInput" class="text" placeholder="Item description" oninput="display();">
 			</div>
