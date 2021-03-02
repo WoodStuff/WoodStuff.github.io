@@ -8,27 +8,31 @@ p, a, strong, .segoe {
 /* main */
 
 /* header: everything about the header */
-div#top {
+#top {
 	background-color: #202124;
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 60px;
+	height: 120px;
 }
-div#top p {
+#top p {
 	color: #F4F4F4;
 	text-align: center;
 	margin: 0;
 	transform: translate(0, 100%);
 	font-family: "Bahnschrift";
 }
-div#biomebar {
+#coinparagraph {
+	font-size: 3em;
+	transform: translate(0, 30%);
+}
+#biomebar {
 	background-color: #277b39;
 	left: 0;
 	width: 100%;
 	height: 40px;
 }
-div#biomebar p {
+#biomebar p {
 	color: #F4F4F4;
 	text-align: center;
 	margin: 0;
