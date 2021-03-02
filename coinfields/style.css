@@ -1,3 +1,9 @@
+/* main: stuff that makes the page look good */
+body {
+	margin: 0;
+}
+/* main */
+
 /* header: everything about the header */
 div#top {
 	background-color: #202124;
