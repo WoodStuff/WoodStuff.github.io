@@ -1,6 +1,7 @@
 /* main: stuff that makes the page look good */
 body {
 	margin: 0;
+	background-color: #45b35c;
 }
 p, a, strong, .segoe {
 	font-family: "Segoe UI";
@@ -27,10 +28,10 @@ p, a, strong, .segoe {
 	transform: translate(0, 30%) !important;
 }
 #biomebar {
-	background-color: #277b39;
+	background-color: #45b35c;
 	left: 0;
 	width: 100%;
-	height: 40px;
+	height: 60px;
 }
 #biomebar p {
 	color: #F4F4F4;
