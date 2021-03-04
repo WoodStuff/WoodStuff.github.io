@@ -23,7 +23,7 @@ p, a, strong, .segoe {
 	transform: translate(0, 100%);
 	font-family: "Bahnschrift";
 }
-#coinparagraph {
+#coinsp {
 	font-size: 3em;
 	transform: translate(0, 30%) !important;
 }
