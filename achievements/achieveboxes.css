@@ -1,3 +1,4 @@
+/* basic stuff */
 * {
 	color: #121212;
 }
@@ -19,3 +20,10 @@ a {
 body {
 	background-color: #FAFAFA;
 }
+/* basic stuff */
+
+/* actual formatting of the stuff */
+.unplayed {
+	color: #B9B9B9;
+}
+/* actual formatting of the stuff */
