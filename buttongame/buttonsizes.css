@@ -1,0 +1,20 @@
+/* basic */
+* {
+	color: #121212;
+}
+.content {
+	margin: 65px;
+}
+t {
+	text-transform: uppercase;
+	font-size: 3em;
+	font-family: "Segoe UI";
+	font-weight: bold;
+}
+h1, p, .segoe {
+	font-family: "Segoe UI";
+}
+body {
+	background-color: #FAFAFA
+}
+/* basic */
