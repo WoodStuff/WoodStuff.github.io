@@ -1,4 +1,8 @@
 #sidebar {
-	float: right;
-	border-left: solid 3px;
+	border-right: dashed 3px;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 25%;
 }
