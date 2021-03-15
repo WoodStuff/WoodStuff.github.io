@@ -25,16 +25,18 @@
 			return "";
 		}
 		
-		if (getCookie("visits") == "") {
-			setCookie("visits", 0, 1362)
+		function thing() {
+			if (getCookie("visits") == "") {
+				setCookie("visits", 0, 1362)
+			}
+			setCookie("visits", getCookie("visits") + 1, 1362)
+			console.log(document.getElementById("visitcounter").innerHTML);// = `You have visited this page ${getCookie("visits")} times.`
 		}
-		setCookie("visits", getCookie("visits") + 1, 1362)
-		console.log(document.getElementById("visitcounter")/*.innerHTML*/);// = `You have visited this page ${getCookie("visits")} times.`
 		</script>
 		<title>Visit Counter</title>
 	</head>
 
-	<body>
+	<body onload="thing();">
 		<p id="visitcounter">You have visited this page 1 time.</p>
 	</body>
 </html>
