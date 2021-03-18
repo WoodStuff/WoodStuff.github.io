@@ -11,3 +11,15 @@ body {
 	background-color: #FAFAFA;
 	margin: 30px;
 }
+#header {
+	background-color: #121212;
+	width: 100%;
+	height: 150px;
+	left: 0;
+	top: 0;
+}
+#header p {
+	font-size: 2em;
+	font-weight: bold;
+	color: #FFFFFF;
+}
