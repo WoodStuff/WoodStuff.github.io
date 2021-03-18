@@ -21,3 +21,6 @@ body {
 	font-weight: bold;
 	color: #FFFFFF;
 }
+ol.levels li:before {
+	content: "Level ";
+}
