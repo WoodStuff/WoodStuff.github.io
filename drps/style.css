@@ -26,6 +26,3 @@ body {
 	color: #FFFFFF;
 	margin: 0;
 }
-ol.levels li:before {
-	content: "Level ";
-}
