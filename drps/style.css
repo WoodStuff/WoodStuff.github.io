@@ -29,3 +29,8 @@ body {
 #content {
 	margin: 3em;
 }
+pre {
+	background-color: #eaeaea;
+	border-radius: 5px;
+	padding: 5px;
+}
