@@ -4,6 +4,16 @@
 	<head>
 		<link rel="stylesheet" href="style.css">
 		<title>haha funny character generator</title>
+		<script>
+			function get(oid) {
+				return document.getElementById(oid);
+			}
+			function generate() {
+				emoji = get("emoji").value;
+				name = get("name").value;
+				get("generated").innerHTML = `:${emoji}: ${name}`;
+			}
+		</script>
 	</head>
 
 	<body id="content">
