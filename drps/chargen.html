@@ -13,6 +13,9 @@
 				name = get("name").value;
 				get("generated").innerHTML = `:${emoji}: ${name}`;
 			}
+			function togglenoemoji() {
+				
+			}
 		</script>
 	</head>
 
@@ -23,9 +26,9 @@
 		<input id="emoji" name="emoji">
 		<span>     </span>
 		<label for="noemoji">No emoji?</label>
-		<input type="checkbox" id="noemoji" name="noemoji"><br><br>
-		<button id="submit" onclick="generate()">Generate!</button><br><br><br>
+		<input type="checkbox" id="noemoji" name="noemoji" oninput="togglenoemoji();"><br><br>
+		<button id="submit" onclick="generate();">Generate!</button><br><br><br>
 		
-		<pre id="generated">egg</pre>
+		<pre id="generated"></pre>
 	</body>
 </html>
