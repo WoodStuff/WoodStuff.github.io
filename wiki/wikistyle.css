@@ -70,3 +70,8 @@ t#linktext {
 	top: -75px;
 	position: absolute;
 }
+#logo {
+	height: 100%;
+	width: 150px;
+	background-image: url("treeland.png");
+}
