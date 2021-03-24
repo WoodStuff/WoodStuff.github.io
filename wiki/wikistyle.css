@@ -2,16 +2,19 @@ t {
 	font-size: 3em;
 	font-family: "Segoe UI";
 }
-h1, p, .segoe {
+h1, p, cat, strong, .segoe {
 	font-family: "Segoe UI";
+}
+p {
+	margin-block-end: 0.5em;
+	margin-block-start: 0;
 }
 body {
 	margin: 0 4px 0 0px;
 }
 cat {
 	display: block;
-	font-family: "Segoe UI";
-	margin: 50px 0 1em 0;
+	margin: 50px 0 0.75em 0;
 	bottom: 0;
 	position: absolute;
 }
@@ -37,7 +40,7 @@ cat {
 	position: absolute;
 	width: inherit;
 	min-height: 45.5em;
-	padding: 0 0.75em 0 0.75em;
+	padding: 0.75em;
 }
 #links {
 	position: absolute;
@@ -47,4 +50,8 @@ cat {
 	width: 200px;
 	height: 200px;
 	top: 179px;
+}
+t#linktext {
+	top: -75px;
+	position: absolute;
 }
