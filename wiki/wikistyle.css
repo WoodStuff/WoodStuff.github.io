@@ -18,7 +18,10 @@ a {
 }
 a:hover {
 	text-decoration: underline;
-	color: #1212df;
+	color: #4747eb;
+}
+a:active {
+	color: limegreen;
 }
 body {
 	margin: 0;
