@@ -1,3 +1,6 @@
+* {
+	box-sizing: border-box;
+}
 t {
 	font-size: 3em;
 	font-family: "Segoe UI";
@@ -50,6 +53,7 @@ cat {
 	width: 200px;
 	height: 200px;
 	top: 179px;
+	padding: 20px;
 }
 t#linktext {
 	top: -75px;
