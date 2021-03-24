@@ -5,12 +5,15 @@ t {
 	font-size: 3em;
 	font-family: "Segoe UI";
 }
-h1, p, cat, strong, .segoe {
+h1, p, a, cat, strong, .segoe {
 	font-family: "Segoe UI";
 }
 p {
 	margin-block-end: 0.5em;
 	margin-block-start: 0;
+}
+a {
+	color: #0000d0;
 }
 body {
 	margin: 0;
