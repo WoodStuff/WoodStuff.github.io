@@ -78,3 +78,6 @@ t#linktext {
 #logo:hover {
 	filter: brightness(110%);
 }
+#logo:active {
+	filter: brightness(85%);
+}
