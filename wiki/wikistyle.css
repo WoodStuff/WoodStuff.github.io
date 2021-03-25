@@ -75,3 +75,6 @@ t#linktext {
 	width: 150px;
 	border-right: solid 2px black;
 }
+#logo:hover {
+	filter: brightness(120%);
+}
