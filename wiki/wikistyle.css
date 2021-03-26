@@ -81,3 +81,8 @@ t#linktext {
 #logo:active {
 	filter: brightness(85%);
 }
+#searching {
+	position: absolute;
+	left: 25%;
+	top: 42px;
+}
