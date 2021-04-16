@@ -13,9 +13,10 @@ body {
 }
 input {
 	padding: 5px;
-	border: solid 0.2px lightgray;
+	border: solid .2px lightgray;
 	border-radius: 2px;
 	border-bottom: solid #b7b7b7;
+	outline: 0;
 }
 
 
