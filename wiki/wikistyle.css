@@ -86,3 +86,9 @@ t#linktext {
 	left: 25%;
 	top: 42px;
 }
+#search {
+	margin-right: 5px;
+	border: inset 2px lightgray;
+	border-radius: 5px;
+	outline: 0;
+}
