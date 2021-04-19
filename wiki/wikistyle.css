@@ -91,4 +91,5 @@ t#linktext {
 	border: inset 2px lightgray;
 	border-radius: 5px;
 	outline: 0;
+	padding: 5px;
 }
