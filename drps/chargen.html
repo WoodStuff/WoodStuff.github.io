@@ -11,10 +11,13 @@
 			function generate() {
 				emoji = get("emoji").value;
 				name = get("name").value;
-				get("generated").innerHTML = `:${emoji}: ${name}`;
-			}
-			function togglenoemoji() {
-				
+				level = get("level").value;
+				if (!get("noemoji").checked) {
+					get("generated").innerHTML = `:${emoji}: ${name} - Level ${level} | ${10 * level + 150} HP`;
+				}
+				else {
+					get("generated").innerHTML = `${name} - Level ${level} | ${10 * level + 150} HP`;
+				}
 			}
 		</script>
 	</head>
@@ -26,7 +29,9 @@
 		<input id="emoji" name="emoji">
 		<span>     </span>
 		<label for="noemoji">No emoji?</label>
-		<input type="checkbox" id="noemoji" name="noemoji" oninput="togglenoemoji();"><br><br>
+		<input type="checkbox" id="noemoji" name="noemoji"><br>
+		<label for="level">Level</label>
+		<input id="level" name="level"><br><br>
 		<button id="submit" onclick="generate();">Generate!</button><br><br><br>
 		
 		<pre id="generated"></pre>
