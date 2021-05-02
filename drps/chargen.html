@@ -13,10 +13,10 @@
 				name = get("name").value;
 				level = get("level").value;
 				if (!get("noemoji").checked) {
-					get("generated").innerHTML = `:${emoji}: ${name} - Level ${level} | ${10 * level + 150} HP`;
+					get("generated").innerHTML = `:${emoji}: ${name} - Level ${level} | ${10 * level + 140} HP`;
 				}
 				else {
-					get("generated").innerHTML = `${name} - Level ${level} | ${10 * level + 150} HP`;
+					get("generated").innerHTML = `${name} - Level ${level} | ${10 * level + 140} HP`;
 				}
 			}
 		</script>
@@ -31,7 +31,7 @@
 		<label for="noemoji">No emoji?</label>
 		<input type="checkbox" id="noemoji" name="noemoji"><br>
 		<label for="level">Level</label>
-		<input id="level" name="level"><br><br>
+		<input id="level" name="level" value="1"><br><br>
 		<button id="submit" onclick="generate();">Generate!</button><br><br><br>
 		
 		<pre id="generated"></pre>
