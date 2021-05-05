@@ -9,7 +9,8 @@ h1, p, input, .segoe, {
 	font-family: "Segoe UI";
 }
 body {
-	background-color: #FAFAFA
+	background-color: #FAFAFA;
+	margin: 0;
 }
 input {
 	padding: 5px;
@@ -17,6 +18,18 @@ input {
 	border-radius: 2px;
 	border-bottom: solid #b7b7b7;
 	outline: 0;
+}
+#game {
+	margin: 2em;
+}
+
+
+/* panel */
+#panel {
+	margin: 0.5em;
+}
+#nextlevel {
+	float: right;
 }
 
 
