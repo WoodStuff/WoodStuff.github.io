@@ -1,4 +1,7 @@
 /* general stuff */
+* {
+	box-sizing: border-box;
+}
 t {
 	text-transform: uppercase;
 	font-size: 3em;
