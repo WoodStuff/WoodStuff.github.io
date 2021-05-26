@@ -20,7 +20,7 @@ p, a, strong, .segoe {
 #top p {
 	color: #F4F4F4;
 	text-align: center;
-	margin: 0;
+	margin: 0 150px;
 	transform: translate(0, 100%);
 	font-family: "Bahnschrift";
 }
@@ -52,5 +52,6 @@ p, a, strong, .segoe {
 	font-size: 3em;
 	transform: translate(10px,10%);
 	right: 20px;
+	transition: 0.4s;
 }
 /* header */
