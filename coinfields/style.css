@@ -41,4 +41,16 @@ p, a, strong, .segoe {
 	margin: 0;
 	transform: translate(0, 15%);
 }
+#settings {
+	position: absolute;
+	background-color: #00000000;
+	color: #F4F4F4;
+	border: solid #F4F4F4;
+	width: 90px;
+	height: 90px;
+	border-radius: 20px;
+	font-size: 3em;
+	transform: translate(10px,10%);
+	right: 20px;
+}
 /* header */
