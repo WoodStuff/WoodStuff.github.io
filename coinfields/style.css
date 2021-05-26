@@ -52,6 +52,11 @@ p, a, strong, .segoe {
 	font-size: 3em;
 	transform: translate(10px,10%);
 	right: 20px;
-	transition: 0.4s;
+	transition: 0.3s;
+	cursor: pointer;
+}
+#settings:hover {
+	color: #202124;
+	background-color: #F4F4F4;
 }
 /* header */
