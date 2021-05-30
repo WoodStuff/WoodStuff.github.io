@@ -3,14 +3,11 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="style.css">
-		<script src="https://unpkg.com/blockly/blockly.min.js"></script>
-		<script src="blockly_compressed.js"></script>
-		<script src="blocks_compressed.js"></script>
 		<title>the egg site</title>
 	</head>
 
 	<body>
-		<p>test</p>
+		<p id="txt">test</p>
 		<div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
 		<xml id="toolbox" style="display: none">
 			<block type="controls_if"></block>
@@ -23,6 +20,13 @@
 		</xml>
 		<script>
 			var workspace = Blockly.inject('blocklyDiv', {toolbox: document.getElementById('toolbox')});
+			
+			function edit(text) {
+				document.getElementById('txt').innerHTML = text;
+			}
 		</script>
+		<script src="https://unpkg.com/blockly/blockly.min.js"></script>
+		<script src="blockly_compressed.js"></script>
+		<script src="blocks_compressed.js"></script>
 	</body>
 </html>
