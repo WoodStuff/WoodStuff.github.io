@@ -10,8 +10,21 @@
 	</head>
 
 	<body>
-		<p id="txt">test</p>
-		<div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+		<table>
+			<tbody>
+				<tr><td>
+					<p id="txt">test</p>
+				</td></tr>
+				<tr><td id="blocklyArea">Blockly will be positioned here.</td></tr>
+			</tbody>
+		</table>
+		<script>
+			var workspace = Blockly.inject('blocklyDiv', {toolbox: document.getElementById('toolbox')});
+			
+			function edit(text) {
+				document.getElementById('txt').innerHTML = text;
+			}
+		</script>
 		<xml id="toolbox" style="display: none">
 			<block type="controls_if"></block>
 			<block type="controls_repeat_ext"></block>
@@ -21,12 +34,5 @@
 			<block type="text"></block>
 			<block type="text_print"></block>
 		</xml>
-		<script>
-			var workspace = Blockly.inject('blocklyDiv', {toolbox: document.getElementById('toolbox')});
-			
-			function edit(text) {
-				document.getElementById('txt').innerHTML = text;
-			}
-		</script>
 	</body>
 </html>
