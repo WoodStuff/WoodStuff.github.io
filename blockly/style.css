@@ -8,3 +8,6 @@ p {
 	margin-inline-start: 0;
 	margin-inline-end: 0;
 }
+#blocklyArea {
+	height: 99%;
+}
