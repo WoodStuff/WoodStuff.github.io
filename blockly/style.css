@@ -1,4 +1,4 @@
-* {
+nj* {
 	box-sizing: border-box;
 	font-family: "Segoe UI";
 }
@@ -21,4 +21,9 @@ html, body {
 }
 body {
 	overflow: hidden;
+}
+#blocklyArea {
+	height: 99%;
+	background: #fc9;
+	text-align: center;
 }
