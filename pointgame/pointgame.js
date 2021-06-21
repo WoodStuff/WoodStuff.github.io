@@ -51,13 +51,14 @@ function newItem(oid, rpoints, rcpoints, reqpoints, reqcpoints, requp) {
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // give a point
-function increment() {
+function increment(mult) {
 	var pointsGained = curArray.pClick[curArray.current];
 	if (curArray.ability[curArray.current] == "crit") {
 		if (rng(1, 20) == 14) {
-			pointsGained = pointsGained * 2;
+			pointsGained *= 2;
 		}
-	} 
+	}
+	pointsgained *= mult;
 	points.current += pointsGained;
 	points.total += pointsGained;
 	
