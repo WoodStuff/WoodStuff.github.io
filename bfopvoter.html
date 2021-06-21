@@ -22,7 +22,6 @@
 				for (i = 1; i <= parts; i++) {
 					para.push(letters[i]);
 				}
-				result(para);
 				for (i = 1; i <= votes; i++) {
 					vote = Math.floor(Math.random() * parts) + 1;
 					count[vote]++;
@@ -30,6 +29,8 @@
 				for (i = 1; i <= votes; i++) {
 					para[i] += count[i];
 				}
+				count = count.filter(voter => voter != 0);
+				result(count);
 			}
 		</script>
 		<title>the egg site</title>
