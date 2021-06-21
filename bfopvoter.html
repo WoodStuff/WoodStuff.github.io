@@ -11,11 +11,17 @@
 				id('result').innerHTML = a;
 			}
 			function generate() {
+				para = [];
 				parts = id('parts').value;
 				votes = id('votes').value;
 				if (isNaN(parts) || parts < 2 || parts > 10 || isNaN(votes) || votes < 2 || votes > 100000000) {
 					return result('Invalid number!');
 				}
+				letters = ['', '[A] ', '[B] ', '[C] ', '[D] ', '[E] ', '[F] ', '[G] ', '[H] ', '[I] ', '[J] ',]
+				for (i = 1; i == parts; i++) {
+					para.push(letters[i]);
+				}
+				result(para);
 			}
 		</script>
 		<title>the egg site</title>
