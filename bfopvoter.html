@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<script>
+			function id(a) {
+				return document.getElementById(a);
+			}
+			function result(a) {
+				id('result').innerHTML = a;
+			}
+			function generate() {
+				parts = id('parts').value;
+				votes = id('votes').value;
+				if (isNaN(parts) || parts < 2 || parts > 10 || isNaN(votes) || votes < 2 || votes > 100000000) {
+					return result('Invalid number!');
+				}
+			}
+		</script>
+		<title>the egg site</title>
+	</head>
+
+	<body>
+		<input id="parts" placeholder="Participants (max 10)">
+		<input id="votes" placeholder="Amount of votes (max 100 000 000)">
+		<button onclick="generate();">Generate votes</button>
+		<p id="result">Votes...</p>
+	</body>
+</html>
