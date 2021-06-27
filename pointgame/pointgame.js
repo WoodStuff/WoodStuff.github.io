@@ -58,7 +58,7 @@ function increment(mult) {
 			pointsGained *= 2;
 		}
 	}
-	pointsgained *= mult;
+	pointsGained *= mult;
 	points.current += pointsGained;
 	points.total += pointsGained;
 	
