@@ -4,6 +4,7 @@
 	<head>
 		<script>
 			function generate() {
+				chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z']
 				fates = ['Use only uppercase for 1 hour',
 					 'Extend the next punishment time 2 times, roll again, if the punishment is not timed, reroll',
 					 'You are freed from all curses for 5 minutes (this includes the ones you got from the group)',
@@ -21,6 +22,7 @@
 					 'Set your status to idle and make it clear you\'re going afk but you\'re not actually going to for an hour',
 					 'Your messages have to switch between uppercase and lowercase for the next 30 minutes',
 					 'Roll 2 more times, pick the one you want least',
+					 `You are disallowed to use the letter ${chars[Math.floor(Math.random() * chars.length)]} for 3 hours`
 					];
 				//document.getElementById("button").disabled = true;
 				document.getElementById("fate").innerHTML = fates[Math.floor(Math.random() * fates.length)];
