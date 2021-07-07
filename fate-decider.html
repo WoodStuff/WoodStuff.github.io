@@ -6,11 +6,12 @@
 			function generate() {
 				fates = ['Use only uppercase for 1 hour',
 					 'Extend the next punishment time 2 times, roll again',
-					 'You are freed from all curses for 5 minutes',
+					 'You are freed from all curses for 5 minutes (this includes the ones you got from the group)',
 					 'Type in backwards for the next 10 hours',
 					 'Get OBS, record what you\'re doing for the next 5 minutes then send it to the group',
-					 'Take a screenshot of the DMs of the person you last DMed'];
-				document.getElementById("button").disabled = false;
+					 'Take a screenshot of the DMs of the person you last DMed',
+					];
+				//document.getElementById("button").disabled = true;
 				document.getElementById("fate").innerHTML = fates[Math.floor(Math.random() * fates.length)];
 			}
 		</script>
