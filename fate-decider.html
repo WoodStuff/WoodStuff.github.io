@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<script>
+			function generate() {
+				fates = ['test', 'tset'];
+				document.getElementById("button").remove();
+				document.getElementById("fate").innerHTML = fates[Math.floor(Math.random() * fates.length)];
+			}
+		</script>
+		<title>the egg site</title>
+	</head>
+
+	<body>
+		<p>Click the button to decide your fate.</p>
+		<button id="button" onclick="generate();">button</button>
+		<p id="fate">a</p>
+	</body>
+</html>
