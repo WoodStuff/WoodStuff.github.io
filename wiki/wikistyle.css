@@ -3,9 +3,8 @@
 }
 t {
 	font-size: 3em;
-	font-family: "Segoe UI";
 }
-h1, p, a, cat, strong, .segoe {
+h1, p, a, t, cat, strong, .segoe {
 	font-family: "Segoe UI";
 }
 p {
