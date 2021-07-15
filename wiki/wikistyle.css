@@ -11,7 +11,7 @@ p {
 	margin-block-end: 0.5em;
 	margin-block-start: 0;
 }
-a {
+a, a.dead {
 	color: #0000d0;
 	text-decoration: none;
 }
@@ -91,4 +91,10 @@ t#linktext {
 	border-radius: 5px;
 	outline: 0;
 	padding: 5px;
+}
+a.dead {
+	color: #d00000;
+}
+a.dead:hover {
+	color: #eb4747;
 }
