@@ -10,7 +10,7 @@ player = {
 gameLoop = setInterval(() => {
 	game.clearRect(0, 0, canvas.width, canvas.height);
 	render();
-	player.y++;
+	player.y--;
 }, 1000 / config.FRAMERATE);
 
 function render() {
