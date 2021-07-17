@@ -7,8 +7,16 @@ player = {
 	mass: 20,
 };
 
-var playerimg = new Image();
-playerimg.src = 'media/circle.png';
-playerimg.addEventListener('load', function() {
-	game.drawImage(playerimg, player.x, player.y, player.mass * 6.4, player.mass * 6.4);
-}, false);
+gameLoop = setInterval(() => {
+	game.clearRect(0, 0, canvas.width, canvas.height);
+	render();
+	player.y++;
+}, 1000 / config.FRAMERATE);
+
+function render() {
+	var circle = new Image();
+	circle.src = 'media/circle.png';
+	circle.addEventListener('load', function() {
+		game.drawImage(circle, player.x, player.y, player.mass * 6.4, player.mass * 6.4);
+	}, false);
+};
