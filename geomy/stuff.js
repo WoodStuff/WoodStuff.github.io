@@ -1,2 +1,5 @@
 var canvas = document.getElementById('game');
-var board = canvas.getContext('2d');
+var game = canvas.getContext('2d');
+
+game.fillStyle = 'rgb(255, 0, 0)';
+game.fillRect(0, 0, 20000, 2000);
