@@ -1,4 +1,4 @@
-body { /* makes the margin 0 so canvas covers whole screen */
+body { /* makes the margin 0 so there are no white borders */
 	margin: 0;
 }
 canvas#game, html, body { /* makes the canvas actually cover 100% of the screen */
