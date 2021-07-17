@@ -1,2 +1,2 @@
 var canvas = document.getElementById('game');
-var ctx = canvas.getContext('2d');
+var board = canvas.getContext('2d');
