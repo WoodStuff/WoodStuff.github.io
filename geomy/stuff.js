@@ -10,15 +10,24 @@ player = {
 	tier: 'circle',
 };
 
+canPaint = [false];
+
+readyLoop = setInterval(() => {
+	ready();
+}, 1000 / config.FRAMERATE);
 gameLoop = setInterval(() => {
-	render();
-	player.y -= tiers[player.tier].speed;
+	if (canPaint.every(a => a == true)) render();
 }, 1000 / config.FRAMERATE);
 
-function render() {
+function ready() {
 	circle.src = 'media/circle.png';
 	circle.addEventListener('load', function() {
-		game.clearRect(0, 0, canvas.width, canvas.height);
-		game.drawImage(circle, player.x, player.y, player.mass * 6.4, player.mass * 6.4);
+		canPaint[0] = true;
 	}, false);
 };
+function render() {
+	game.clearRect(0, 0, canvas.width, canvas.height);
+	
+	game.drawImage(circle, player.x, player.y, player.mass * 6.4, player.mass * 6.4);
+	player.y -= tiers[player.tier].speed;
+}
