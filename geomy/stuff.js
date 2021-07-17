@@ -1,8 +1,13 @@
 var canvas = document.getElementById('game');
 var game = canvas.getContext('2d');
 
-game.beginPath();
-game.moveTo(100, 100);
-game.lineTo(200, 100);
-game.lineTo(100, 200);
-game.fill();
+player = {
+	x: 300,
+	y: 500,
+};
+
+var playerimg = new Image();
+playerimg.src = 'media/circle.png';
+playerimg.addEventListener('load', function() {
+	game.drawImage(playerimg, player.x, player.y);
+}, false);
