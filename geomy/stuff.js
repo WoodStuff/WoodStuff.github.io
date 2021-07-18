@@ -9,15 +9,25 @@ player = {
 	mass: 20,
 	tier: 'circle',
 };
+mouse = {
+	x: 0,
+	y: 0,
+}
 
 canPaint = [false];
 
 readyLoop = setInterval(() => {
 	ready();
 }, 1000 / config.FRAMERATE);
+
 gameLoop = setInterval(() => {
 	if (canPaint.every(a => a == true)) render();
 }, 1000 / config.FRAMERATE);
+
+window.addEventListener('mousemove', function (e) {
+	mouse.x = e.pageX;
+	mouse.y = e.pageY;
+})
 
 function ready() {
 	circle.src = 'media/circle.png';
@@ -27,7 +37,7 @@ function ready() {
 };
 function render() {
 	game.clearRect(0, 0, canvas.width, canvas.height);
-	
+
 	game.drawImage(circle, player.x, player.y, player.mass * 6.4, player.mass * 6.4);
 	player.y -= tiers[player.tier].speed;
 }
