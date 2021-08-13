@@ -1,6 +1,9 @@
 var canvas = document.getElementById('game');
 var game = canvas.getContext('2d');
 
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
 var circle = new Image();
 
 player = {
@@ -27,6 +30,8 @@ gameLoop = setInterval(() => {
 window.addEventListener('mousemove', function (e) {
 	mouse.x = e.pageX;
 	mouse.y = e.pageY;
+	player.x = mouse.x - player.mass * 3.2;
+	player.y = mouse.y - player.mass * 3.2;
 })
 
 function ready() {
@@ -39,5 +44,5 @@ function render() {
 	game.clearRect(0, 0, canvas.width, canvas.height);
 
 	game.drawImage(circle, player.x, player.y, player.mass * 6.4, player.mass * 6.4);
-	player.y -= tiers[player.tier].speed;
+	//player.y -= tiers[player.tier].speed;
 }
