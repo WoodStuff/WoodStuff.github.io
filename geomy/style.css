@@ -1,7 +1,3 @@
 body { /* makes the margin 0 so there are no white borders */
 	margin: 0;
 }
-canvas#game, html, body { /* makes the canvas actually cover 100% of the screen */
-	width: 100%;
-	height: 100%;
-}
