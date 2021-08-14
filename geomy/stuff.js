@@ -32,8 +32,10 @@ function init() {
 	player.x += (((average([player.x, mouse.x, mouse.x, mouse.x, mouse.x]) - player.x) / 200 ) * tiers[player.tier].speed);
 	player.y += (((average([player.y, mouse.y, mouse.y, mouse.y, mouse.y]) - player.y) / 200 ) * tiers[player.tier].speed);
 
-	//player.x -= player.mass * 3.2;
-	//player.y -= player.mass * 3.2;
+	player.x = Math.max(64, player.x);
+	player.x = Math.min(canvas.width - 64, player.x);
+	player.y = Math.max(64, player.y);
+	player.y = Math.min(canvas.height - 64, player.y);
 
 	game.drawImage(circle, player.x - player.mass * 3.2, player.y - player.mass * 3.2, player.mass * 6.4, player.mass * 6.4);
 	requestAnimationFrame(init);
