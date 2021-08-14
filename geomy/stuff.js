@@ -17,32 +17,20 @@ mouse = {
 	y: 0,
 }
 
-canPaint = [false];
+canvas.addEventListener('mousemove', mousepos, false);
 
-readyLoop = setInterval(() => {
-	ready();
-}, 1000 / config.FRAMERATE);
-
-gameLoop = setInterval(() => {
-	if (canPaint.every(a => a == true)) render();
-}, 1000 / config.FRAMERATE);
-
-window.addEventListener('mousemove', function (e) {
-	mouse.x = e.pageX;
-	mouse.y = e.pageY;
-	player.x = mouse.x - player.mass * 3.2;
-	player.y = mouse.y - player.mass * 3.2;
-})
-
-function ready() {
+function mousepos(e) {
+	mouse.x = e.clientX;
+	mouse.y = e.clientY;
+}
+function init() {
 	circle.src = 'media/circle.png';
-	circle.addEventListener('load', function() {
-		canPaint[0] = true;
-	}, false);
-};
-function render() {
 	game.clearRect(0, 0, canvas.width, canvas.height);
 
+	player.x = mouse.x - player.mass * 3.2;
+	player.y = mouse.y - player.mass * 3.2;
+
 	game.drawImage(circle, player.x, player.y, player.mass * 6.4, player.mass * 6.4);
-	//player.y -= tiers[player.tier].speed;
+	requestAnimationFrame(init);
+	player.y -= tiers[player.tier].speed;
 }
