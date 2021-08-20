@@ -8,7 +8,12 @@
 				return document.getElementById(a);
 			}
 			function result(a) {
-				id('result').innerHTML = a;
+				res = [];
+				for (v in a) {
+					res[v] = letters[v] + count[v];
+				}
+				res = res.join('<br>');
+				id('result').innerHTML = res;
 			}
 			function generate() {
 				para = [];
@@ -17,7 +22,7 @@
 				if (isNaN(parts) || parts < 2 || parts > 10 || isNaN(votes) || votes < 2 || votes > 100000000) {
 					return result('Invalid number!');
 				}
-				letters = ['', '[A] ', '[B] ', '[C] ', '[D] ', '[E] ', '[F] ', '[G] ', '[H] ', '[I] ', '[J] ',]
+				letters = ['[A] ', '[B] ', '[C] ', '[D] ', '[E] ', '[F] ', '[G] ', '[H] ', '[I] ', '[J] ',]
 				count = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,]
 				for (i = 1; i <= parts; i++) {
 					para.push(letters[i]);
