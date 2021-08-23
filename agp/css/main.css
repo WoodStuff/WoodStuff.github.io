@@ -7,10 +7,10 @@ body {
 	overflow: hidden;
 }
 
-div#main {
+.section {
 	position: absolute;
 	margin: auto;
-	width: 70%;
+	width: 85%;
 	height: 100%;
 	left: 15%;
 	top: 0px;
@@ -30,6 +30,34 @@ div.side {
 	top: 0px;
 	background-color: rgba(128, 128, 128, 0.329);
 	padding: 0 1%;
+}
+
+.icon {
+	width: 32px;
+	height: 32px;
+	transform: translateY(10.5px);
+	display: inline;
+}
+
+.back, .next {
+	width: 64px;
+	height: 64px;
+	transform: translate(32px, 32px);
+}
+.back {
+	background-image: url(../media/back.png);
+}
+.next {
+	background-image: url(../media/next.png);
+}
+.back:hover, .next:hover {
+	filter: brightness(110%);
+}
+.back:active, .next:active {
+	width: 60px;
+	height: 60px;
+	filter: brightness(80%);
+	transform: translate(34px, 34px);
 }
 
 

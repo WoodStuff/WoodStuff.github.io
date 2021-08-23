@@ -5,6 +5,8 @@
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/menu.css">
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<script src="js/main.js"></script>
+		<script src="js/functions.js"></script>
 		<title>AGP</title>
 	</head>
 
@@ -12,12 +14,19 @@
 		<img src="media/bg/main.png" id="bg" alt="Menu">
 		<div class="ui">
 			<div id="left" class="side">
-				<p>test</p>
+				<p><img class="icon" title="Currencies" alt="Currencies" src="media/currency.png"> <span id="currencyDisplay">0</span></p>
+				<p><img class="icon" title="RBU" alt="RBU" src="media/rbu.png"> <span id="rbuDisplay">0</span></p>
 			</div>
-			<div id="main">
-				<div id="menu">
-					<div class="tile" id="tileEnemy"></div>
+			<div id="game">
+				<div class="section" id="main">
+					<div class="tile" id="tileEnemy" onclick="switchTab('enemy');"></div>
 					<div class="tile locked" id="tileArea"></div>
+				</div>
+				<div class="section" id="enemy" style="display: none;">
+					<div class="back" onclick="switchTab()"></div>
+				</div>
+				<div class="section" id="area" style="display: none;">
+					<div class="back" onclick="switchTab()"></div>
 				</div>
 			</div>
 		</div>
