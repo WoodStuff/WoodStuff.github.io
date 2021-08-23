@@ -1,0 +1,33 @@
+.tile {
+	width: 169px;
+	height: 169px;
+	position: absolute;
+	--bg: url(../media/tiles/test.png);
+	background-image: var(--bg);
+}
+.locked {
+	filter: grayscale(100%);
+	opacity: 0.35;
+}
+
+.tile:not(.locked):hover {
+	filter: brightness(110%);
+}
+.tile:not(.locked):active {
+	width: 166px;
+	height: 166px;
+	filter: brightness(80%);
+	transform: translate(3px, 3px);
+}
+
+#tileEnemy {
+	left: 169px;
+	top: 169px;
+	--bg: url(../media/tiles/enemy.png);
+}
+
+#tileArea {
+	left: 169px;
+	bottom: 169px;
+	--bg: url(../media/tiles/area.png);
+}
