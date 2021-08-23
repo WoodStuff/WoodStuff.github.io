@@ -8,6 +8,7 @@
 .locked {
 	filter: grayscale(100%);
 	opacity: 0.35;
+	cursor: not-allowed;
 }
 
 .tile:not(.locked):hover {
