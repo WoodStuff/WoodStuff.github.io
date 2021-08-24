@@ -1,4 +1,4 @@
-const spawnerEhances = [10];
+const spawnerChances = [10];
 const spawnerEnemies = [];
 
 function getEnemy(enemy) {
@@ -7,5 +7,9 @@ function getEnemy(enemy) {
 }
 
 function spawnEnemy(number) {
+	
+}
+
+function addEnemies() {
 	
 }

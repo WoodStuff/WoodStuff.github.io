@@ -23,12 +23,30 @@ var player = {
 		[],
 	],
 	allbuffs: [],
+	tab: 'main',
 };
 
-var tab = 'main';
+function load(save = 'agpSave') {
+	if (localStorage.getItem(save) == null) return false;
+	player = JSON.parse(localStorage.getItem(save));
+	return true;
+}
+function save(save = 'agpSave') {
+	localStorage.setItem('agpSave', JSON.stringify(player));
+	return player;
+}
+function hardReset(save = 'agpSave') {
+	const p = player;
+	localStorage.removeItem('agpSave');
+	return p;
+}
 
 const updateStats = setInterval(() => {
 	document.getElementById('currencyDisplay').innerHTML = player.currency.toString();
 	document.getElementById('rbuDisplay').innerHTML = player.rbu.toString();
-	player.allbuffs = player.buffs[0].concat(player.buffs[1].concat(player.buffs[2].concat(player.buffs[3])))
+	player.allbuffs = player.buffs[0].concat(player.buffs[1], player.buffs[2], player.buffs[3])
 }, 100/6);
+
+const autoSave = setInterval(() => {
+	save();
+}, 15000);

@@ -13,6 +13,8 @@ function switchTab(tabp = 'main') {
 	document.getElementById(tabp).style.display = 'block';
 	document.getElementById('bg').src = `media/bg/${bgs[tabp]}.png`;
 
-	tab = tabp;
-	return tabp;
+	player.tab = tabp;
+
+	if (player.tab = 'enemy') addEnemies();
+	return player.tab;
 };
