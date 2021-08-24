@@ -1,4 +1,4 @@
-const enemynames = ['none', 'redsquare', 'greensquare'];
+const enemynames = ['redsquare', 'greensquare', 'bluesquare'];
 
 const enemies = [
 	{
@@ -10,8 +10,8 @@ const enemies = [
 		isBoss: false, group: 'square',
 		img: '../media/enemies/red square.png',
 		spawner: {
-			level: 1,
-			chance: 55,
+			level: [1],
+			chance: [55],
 		},
 	},
 	{
@@ -23,8 +23,8 @@ const enemies = [
 		isBoss: false, group: 'square',
 		img: '../media/enemies/green square.png',
 		spawner: {
-			level: 1,
-			chance: 40,
+			level: [1],
+			chance: [40],
 		},
 	},
 	{
@@ -36,8 +36,8 @@ const enemies = [
 		isBoss: false, group: 'square',
 		img: '../media/enemies/green square.png',
 		spawner: {
-			level: 1,
-			chance: 5,
+			level: [1, 2],
+			chance: [5, 65],
 		},
 	},
 ];
