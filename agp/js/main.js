@@ -1,18 +1,23 @@
 var player = {
-	currency: 50,
+	currency: new Decimal(50),
 	xp: {
-		level: 1,
-		current: 0,
-		max: 25,
-		total: 0,
+		level: new Decimal(1),
+		current: new Decimal(0),
+		max: new Decimal(25),
+		total: new Decimal(0),
 	},
-	rbu: 0,
+	rbu: new Decimal(0),
 	sword: 1,
 	shield: 0,
 	battles: {
 		total: 0,
 		won: 0,
 		tied: 0,
+		lost: 0,
+	},
+	areas: {
+		total: 0,
+		won: 0,
 		lost: 0,
 	},
 	spawner: 0,
@@ -44,7 +49,7 @@ function hardReset(save = 'agpSave') {
 const updateStats = setInterval(() => {
 	document.getElementById('currencyDisplay').innerHTML = player.currency.toString();
 	document.getElementById('rbuDisplay').innerHTML = player.rbu.toString();
-	player.allbuffs = player.buffs[0].concat(player.buffs[1], player.buffs[2], player.buffs[3])
+	player.allbuffs = player.buffs[new Decimal(0)].concat(player.buffs[1], player.buffs[2], player.buffs[3])
 }, 100/6);
 
 const autoSave = setInterval(() => {

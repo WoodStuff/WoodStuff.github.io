@@ -5,8 +5,12 @@
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/menu.css">
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
 		<script src="js/main.js"></script>
 		<script src="js/functions.js"></script>
+
+		<script src="js/lib/break_eternity.js"></script>
+		<script src="js/lib/format.js"></script>
 
 		<script src="js/enemy.js"></script>
 		<script src="js/enemies.js"></script>
@@ -16,19 +20,23 @@
 
 	<body onload="load();">
 		<img src="media/bg/main.png" id="bg" alt="Menu">
+		
 		<div class="ui">
 			<div id="left" class="side">
 				<p><img class="icon" title="Currencies" alt="Currencies" src="media/currency.png"> <span id="currencyDisplay">0</span></p>
 				<p><img class="icon" title="RBU" alt="RBU" src="media/rbu.png"> <span id="rbuDisplay">0</span></p>
 			</div>
+
 			<div id="game">
 				<div class="section" id="main">
 					<div class="tile" id="tileEnemy" onclick="switchTab('enemy');"></div>
 					<div class="tile locked" id="tileArea"></div>
 				</div>
+
 				<div class="section" id="enemy" style="display: none;">
 					<div class="back" onclick="switchTab()"></div>
 				</div>
+
 				<div class="section" id="area" style="display: none;">
 					<div class="back" onclick="switchTab()"></div>
 				</div>
