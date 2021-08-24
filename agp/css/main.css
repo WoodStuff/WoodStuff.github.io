@@ -64,4 +64,5 @@ div.side {
 * {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	box-sizing: border-box;
+	transition: 0.1s;
 }
