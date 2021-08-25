@@ -15,6 +15,6 @@ function switchTab(tabp = 'main') {
 
 	player.tab = tabp;
 
-	if (player.tab = 'enemy') addEnemies();
+	if (player.tab == 'enemy') addEnemies();
 	return player.tab;
 };
