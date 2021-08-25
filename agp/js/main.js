@@ -71,7 +71,6 @@ function load(savefile = 'agpSave') {
 	} // its not worth adding comments to it anyway because too much work
 	
 	switchTab(player.tab);
-
 	return true;
 }
 function save(savefile = 'agpSave') {
@@ -80,17 +79,23 @@ function save(savefile = 'agpSave') {
 }
 function hardReset(savefile = 'agpSave') {
 	if (!confirm('Are you sure you want to hard reset? There is no going back!')) return false;
+
 	const p = player;
 	localStorage.removeItem(savefile);
 	location.reload();
 	return p;
 }
 function firststart(savefile = 'agpSave') {
-	if (localStorage.getItem(savefile) != null) return load();
+	if (localStorage.getItem(savefile) != null) {
+		load();
+		return false;
+	}
+	
 	start();
 	save(savefile);
 	load(savefile);
-	return false;
+
+	return true;
 }
 
 const updateStats = setInterval(() => {
@@ -100,5 +105,5 @@ const updateStats = setInterval(() => {
 }, 50);
 
 const autoSave = setInterval(() => {
-	//save();
+	save();
 }, 15000);
