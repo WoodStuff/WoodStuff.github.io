@@ -12,6 +12,7 @@ function start() {
 
 const updateStats = setInterval(() => {
 	document.getElementById('coins').innerHTML = formatWhole(player.coins);
+	document.getElementById('cps').innerHTML = formatWhole(player.cps);
 }, 50);
 
 const autoSave = setInterval(() => {
