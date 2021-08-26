@@ -1,5 +1,5 @@
 var player;
-const decimals = ['currency', 'rbu',];
+const decimals = ['currency', 'rbu', 'rocks', 'attack', 'hp', 'accy', 'block'];
 const objdecimals = {};
 const allobjdec = ['xp', 'bars']
 
@@ -12,7 +12,12 @@ function start() {
 			max: new Decimal(25),
 			total: new Decimal(0),
 		},
+		attack: new Decimal(2),
+		hp: new Decimal(10),
+		accy: new Decimal(75),
+		block: new Decimal(0),
 		rbu: new Decimal(0),
+		rocks: new Decimal(0),
 		sword: 1,
 		shield: 0,
 		battles: {
@@ -26,7 +31,12 @@ function start() {
 			won: 0,
 			lost: 0,
 		},
-		spawner: 0,
+		spawner: {
+			on: false,
+			level: 0,
+			limit: 3,
+			content: [],
+		},
 		buffs: [
 			[],
 			[],
@@ -44,59 +54,6 @@ function start() {
 		tab: 'main',
 	};
 };
-
-function load(savefile = 'agpSave') {
-	if (localStorage.getItem(savefile) == null) start();
-	player = JSON.parse(decodeURIComponent(escape(atob(localStorage.getItem(savefile)))));
-
-	for (const v in player) {// some random af code i dont understand that converts some strings into decimals because json sucks
-		if (typeof player[v] != 'object') {
-			if (decimals.includes(v)) player[v] = new Decimal(player[v]);
-		}
-		else {
-			if (objdecimals.hasOwnProperty(v) || allobjdec.includes(v)) {
-				for (const val in player[v]) {
-					if (allobjdec.includes(v)) {
-						if (typeof player[v][val] != 'object') player[v][val] = new Decimal(player[v][val]);
-						else {
-							for (const value in player[v][val]) {
-								if (typeof player[v][val][value] == 'string') player[v][val][value] = new Decimal(player[v][val][value]);
-							}
-						}
-					}
-					else if (objdecimals[v].includes(val)) player[v][val] = new Decimal(player[v][val]);
-				}
-			}
-		}
-	} // its not worth adding comments to it anyway because too much work
-	
-	switchTab(player.tab);
-	return true;
-}
-function save(savefile = 'agpSave') {
-	localStorage.setItem(savefile, btoa(unescape(encodeURIComponent(JSON.stringify(player)))));
-	return player;
-}
-function hardReset(savefile = 'agpSave') {
-	if (!confirm('Are you sure you want to hard reset? There is no going back!')) return false;
-
-	const p = player;
-	localStorage.removeItem(savefile);
-	location.reload();
-	return p;
-}
-function firststart(savefile = 'agpSave') {
-	if (localStorage.getItem(savefile) != null) {
-		load();
-		return false;
-	}
-	
-	start();
-	save(savefile);
-	load(savefile);
-
-	return true;
-}
 
 const updateStats = setInterval(() => {
 	document.getElementById('currencyDisplay').innerHTML = formatWhole(player.currency);

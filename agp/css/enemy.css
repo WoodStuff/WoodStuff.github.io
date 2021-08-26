@@ -1,0 +1,16 @@
+div#toggle-spawn {
+    border: solid #010101;
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    background-color: #f31515;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+
+div#toggle-spawn div#toggle-spawn-bin {
+    font-size: 50px;
+    font-weight: 400;
+    margin: 0;
+}

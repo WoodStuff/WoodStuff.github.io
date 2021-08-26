@@ -6,8 +6,11 @@
 		<link rel="stylesheet" href="css/menu.css">
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
+		<link rel="stylesheet" href="css/enemy.css">
+
 		<script src="js/main.js"></script>
 		<script src="js/functions.js"></script>
+		<script src="js/saving.js"></script>
 
 		<script src="js/lib/break_eternity.js"></script>
 		<script src="js/lib/format.js"></script>
@@ -29,12 +32,15 @@
 
 			<div id="game">
 				<div class="section" id="main">
-					<div class="tile" id="tileEnemy" onclick="switchTab('enemy');"></div>
-					<div class="tile locked" id="tileArea"></div>
+					<div class="tile" id="tile-enemy" onclick="switchTab('enemy');"></div>
+					<div class="tile locked" id="tile-area"></div>
 				</div>
 
 				<div class="section" id="enemy" style="display: none;">
 					<div class="back" onclick="switchTab()"></div>
+					<div id="toggle-spawn">
+						<div id="toggle-spawn-bin">O</div>
+					</div>
 				</div>
 
 				<div class="section" id="area" style="display: none;">

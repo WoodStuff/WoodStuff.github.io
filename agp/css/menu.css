@@ -21,13 +21,13 @@
 	transform: translate(3px, 3px);
 }
 
-#tileEnemy {
+#tile-enemy {
 	left: 169px;
 	top: 169px;
 	--bg: url(../media/tiles/enemy.png);
 }
 
-#tileArea {
+#tile-area {
 	left: 169px;
 	bottom: 169px;
 	--bg: url(../media/tiles/area.png);

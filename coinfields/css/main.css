@@ -1,4 +1,3 @@
-/* main: stuff that makes the page look good */
 body {
 	margin: 0;
 	background-color: #45b35c;
@@ -6,10 +5,11 @@ body {
 p, a, strong, .segoe {
 	font-family: "Segoe UI";
 }
-/* main */
+* {
+	box-sizing: border-box;
+}
 
-/* header: everything about the header */
-#top {
+div#top {
 	background-color: #202124;
 	top: 0;
 	left: 0;
@@ -17,31 +17,33 @@ p, a, strong, .segoe {
 	height: 110px;
 	user-select: none;
 }
-#top p {
+div#top p {
 	color: #F4F4F4;
 	text-align: center;
 	margin: 0 150px;
 	transform: translate(0, 100%);
 	font-family: "Bahnschrift";
 }
-#coinsp {
+p#coinsp {
 	font-size: 3em;
 	transform: translate(0, 30%) !important;
 }
-#biomebar {
+
+div#biomebar {
 	background-color: #45b35c;
 	left: 0;
 	width: 100%;
 	height: 30px;
 	filter: brightness(95%);
 }
-#biomebar p {
+div#biomebar p {
 	color: #F4F4F4;
 	text-align: center;
 	margin: 0;
 	transform: translate(0, 15%);
 }
-#settings {
+
+button#settings {
 	position: absolute;
 	background-color: #00000000;
 	color: #F4F4F4;
@@ -55,8 +57,10 @@ p, a, strong, .segoe {
 	transition: 0.3s;
 	cursor: pointer;
 }
-#settings:hover {
+button#settings:hover {
 	color: #202124;
 	background-color: #F4F4F4;
 }
-/* header */
+button#settings:active {
+	background-color: #e7e7e7;
+}
