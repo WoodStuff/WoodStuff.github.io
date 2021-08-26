@@ -1,7 +1,7 @@
 const spawnerChances = [10];
 const spawnerEnemies = [];
 
-const spawnTypes = ['enemy', 'resource', 'xp', 'progress', 'special']
+const spawnTypes = ['enemy', 'resource', 'xp', 'progress', 'special'];
 
 const limitSpawner = setInterval(() => {
 	if (!(player.spawner.content.length > player.spawner.limit)) return;

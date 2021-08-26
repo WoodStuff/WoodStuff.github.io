@@ -1,7 +1,7 @@
 var player;
 const decimals = ['currency', 'rbu', 'rocks', 'attack', 'hp', 'accy', 'block'];
 const objdecimals = {};
-const allobjdec = ['xp', 'bars']
+const allobjdec = ['xp', 'bars'];
 
 function start() {
 	player = {
