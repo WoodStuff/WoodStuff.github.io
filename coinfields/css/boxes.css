@@ -1,0 +1,22 @@
+.box {
+	background-color: #252525;
+	color: #0f0f0f;
+	border: solid #0f0f0f;
+	border-radius: 5%;
+	transition: 0.3s;
+	cursor: pointer;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+}
+.box:hover {
+	background-color: #505050;
+}
+.box:active {
+	background-color: #666666;
+}
+
+#box1 {
+	top: 30%;
+	left: 25%;
+}

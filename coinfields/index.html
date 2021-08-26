@@ -3,16 +3,21 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/boxes.css">
 
-		<script type="text/javascript" src="js/main.js"></script>
+		<script src="js/lib/break_eternity.js"></script>
+		<script src="js/lib/format.js"></script>
+
+		<script src="js/main.js"></script>
+		<script src="js/saving.js"></script>
 
 		<script src="https://kit.fontawesome.com/8c07ded0d5.js" crossorigin="anonymous"></script>
 		<title>0 coins | Coin Fields</title>
 	</head>
 
-	<body>
+	<body onload="firststart();">
 		<div id="top">
-			<button title="Settings" id="settings">
+			<button class="button" title="Settings" id="settings">
 				<i class="fas fa-cog"></i>
 			</button>
 			<p title="Coins" id="coinsp">₵<span id="coins">0</span></p>
