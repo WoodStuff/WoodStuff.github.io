@@ -63,15 +63,6 @@ button:active {
 	background-color: #e7e7e7;
 }
 
-button#settings {
-	position: absolute;
-	width: 90px;
-	height: 90px;
-	font-size: 3em;
-	top: 10px;
-	right: 10px;
-}
-
 .biomebar-button {
 	position: absolute;
 }
