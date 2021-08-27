@@ -8,11 +8,14 @@ div#settings {
 	transition: .5s;
 }
 
-button#settings-button {
+button#settings-button, button#close-settings-button {
 	position: absolute;
 	width: 90px;
 	height: 90px;
 	font-size: 3em;
 	top: 10px;
 	right: 10px;
+}
+button#close-settings-button {
+	left: 10px !important;
 }
