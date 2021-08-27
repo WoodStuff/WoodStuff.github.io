@@ -5,13 +5,13 @@ const allobjdec = [];
 
 function start() {
 	player = {
-		coins: new Decimal(0),
+		coins: new Decimal(5),
 		cps: new Decimal(0),
 	};
 };
 
 function updateCps() {
-	cps = new Decimal(1);
+	cps = new Decimal(0);
 	return cps;
 }
 
