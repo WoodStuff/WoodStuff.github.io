@@ -17,5 +17,5 @@ button#settings-button, button#close-settings-button {
 	right: 10px;
 }
 button#close-settings-button {
-	left: 10px !important;
+	left: 10px;
 }
