@@ -6,16 +6,19 @@ div#settings {
     z-index: 9999;
     top: 0;
 	transition: .5s;
+	padding: 30px;
 }
 
+button#settings-button {
+	top: 10px;
+}
 button#settings-button, button#close-settings-button {
 	position: absolute;
 	width: 90px;
 	height: 90px;
 	font-size: 3em;
-	top: 10px;
 	right: 10px;
 }
 button#close-settings-button {
-	left: 10px;
+	left: 0px;
 }

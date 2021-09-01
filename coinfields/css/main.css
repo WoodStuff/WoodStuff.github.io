@@ -6,7 +6,7 @@ body {
 	margin: 0;
 	background-color: #45b35c;
 }
-p, a, strong, .segoe {
+h1, h2, p, a, strong, .segoe {
 	font-family: "Segoe UI";
 }
 * {
