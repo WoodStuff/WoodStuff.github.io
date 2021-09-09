@@ -5,3 +5,8 @@ div#powermenu {
     float: right;
     transform: translateY(-30px);
 }
+
+h2#power-title {
+	color: white;
+    text-align: center;
+}
