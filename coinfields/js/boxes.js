@@ -22,3 +22,13 @@ function openPowers(area, id) {
 
 	return true;
 }
+
+function closePowers() {
+	openpower = [null, null];
+
+	el('powermenu').style.display = 'none';
+	el('fields').style.width = '100%';
+	el('biomebar').style.width = '100%';
+
+	return true;
+}

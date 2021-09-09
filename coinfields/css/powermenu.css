@@ -1,12 +1,29 @@
 div#powermenu {
 	width: 15%;
-    height: calc(100% - 110px);
-    background-color: #1e1e1e;
-    float: right;
-    transform: translateY(-30px);
+	height: calc(100% - 110px);
+	background-color: #1e1e1e;
+	float: right;
+	transform: translateY(-30px);
 }
 
 h2#power-title {
 	color: white;
-    text-align: center;
+    float: right;
+    display: inline;
+    transform: translateX(-1em);
+}
+
+i#back-power-button {
+	color: white;
+	font-size: 2em;
+	transform: translate(0.5em, 0.65em);
+	position: absolute;
+	cursor: pointer;
+	transition: 0.2s;
+}
+i#back-power-button:hover {
+	color: #dedede;
+}
+i#back-power-button:active {
+	color: #c7c7c7;
 }
