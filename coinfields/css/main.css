@@ -14,7 +14,7 @@ h1, h2, p, a, strong, .segoe {
 }
 
 div#top {
-	background-color: #202124;
+	background-color: #212121;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -48,7 +48,7 @@ div#biomebar p {
 }
 
 .button {
-	background-color: #202124;
+	background-color: #212121;
 	color: #F4F4F4;
 	border: solid #F4F4F4;
 	border-radius: 22.2222%;
@@ -56,7 +56,7 @@ div#biomebar p {
 	cursor: pointer;
 }
 button:hover {
-	color: #202124;
+	color: #212121;
 	background-color: #F4F4F4;
 }
 button:active {

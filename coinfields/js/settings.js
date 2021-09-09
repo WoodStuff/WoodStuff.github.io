@@ -1,8 +1,12 @@
 function openSettings() {
-	document.getElementById('settings').style.visibility = 'visible';
-	document.getElementById('settings').style.opacity = '1';
+	el('settings').style.visibility = 'visible';
+	el('settings').style.opacity = '1';
 }
 function closeSettings() {
-	document.getElementById('settings').style.visibility = 'hidden';
-	document.getElementById('settings').style.opacity = '0';
+	el('settings').style.visibility = 'hidden';
+	el('settings').style.opacity = '0';
 }
+
+const updateSettings = setInterval(() => {
+	el('s-autosave-output').innerHTML = `${el('s-autosave').value} seconds`;
+}, 50);

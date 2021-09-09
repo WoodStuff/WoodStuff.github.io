@@ -40,12 +40,19 @@ function hardReset(savefile = 'coinfieldsSave') {
 function firststart(savefile = 'coinfieldsSave') {
 	if (localStorage.getItem(savefile) != null) {
 		load();
+
+		document.title = `${player.coins} coins | Coin Fields`;
+		setTimeout(autoSave, player.settings.autoSaveDuration);
+		
 		return false;
 	}
 	
 	start();
 	save(savefile);
 	load(savefile);
+
+	document.title = `${player.coins} coins | Coin Fields`;
+	setTimeout(autoSave, player.settings.autoSaveDuration);
 
 	return true;
 }

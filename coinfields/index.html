@@ -4,7 +4,8 @@
 	<head>
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/boxes.css">
-		<link rel="stylesheet" href="css/settings.css"></link>
+		<link rel="stylesheet" href="css/settings.css">
+		<link rel="stylesheet" href="css/powermenu.css">
 
 		<script src="js/lib/break_eternity.js"></script>
 		<script src="js/lib/format.js"></script>
@@ -12,6 +13,8 @@
 		<script src="js/main.js"></script>
 		<script src="js/saving.js"></script>
 		<script src="js/settings.js"></script>
+		<script src="js/boxinfo.js"></script>
+		<script src="js/boxes.js"></script>
 
 		<script src="https://kit.fontawesome.com/8c07ded0d5.js" crossorigin="anonymous"></script>
 		<title>0 coins | Coin Fields</title>
@@ -28,6 +31,7 @@
 		<div id="biomebar">
 			<p id="biome">Plains</div>
 		</div>
+
 		<div id="settings" style="visibility:hidden;opacity:0;">
 			<div style="width:100%;transform:translateX(0);height:90px;">
 				<button class="button" title="Close Settings" id="close-settings-button" onclick="closeSettings();">
@@ -37,10 +41,28 @@
 			
 			<div class="setting">
 				<h2>Autosave Duration</h2>
+
+				<button id="as-off">OFF</button>
+				<button id="as-on">ON</button>
+				<br>
+
+				<span>5</span><input type="range" name="s-autosave" id="s-autosave" min="5" max="60" value="15" list="as-dl"><span>60</span><br>
+				<span id="s-autosave-output"></span>
+
+				<datalist id="as-dl">
+					<option value="15"></option>
+					<option value="30"></option>
+					<option value="45"></option>
+				</datalist>
 			</div>
 		</div>
+
+		<div id="powermenu" style="display:none;">
+
+		</div>
+
 		<div id="fields">
-			<div class="box" id="box1"></div>
+			<div class="box" id="box1" onclick="openPowers('fields', 1);"><i class="fas fa-circle"></i></div>
 		</div>
 	</body>
 </html>
