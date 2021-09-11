@@ -1,6 +1,7 @@
 function load(savefile = 'coinfieldsSave') {
 	if (localStorage.getItem(savefile) == null) start();
 	player = JSON.parse(decodeURIComponent(escape(atob(localStorage.getItem(savefile)))));
+	BOXES = JSON.parse(decodeURIComponent(escape(atob(localStorage.getItem(savefile + '_Boxes')))));
 
 	for (const v in player) {// some random af code i dont understand that converts some strings into decimals because json sucks
 		if (typeof player[v] != 'object') {
@@ -27,6 +28,7 @@ function load(savefile = 'coinfieldsSave') {
 }
 function save(savefile = 'coinfieldsSave') {
 	localStorage.setItem(savefile, btoa(unescape(encodeURIComponent(JSON.stringify(player)))));
+	localStorage.setItem(savefile + '_Boxes', btoa(unescape(encodeURIComponent(JSON.stringify(BOXES)))));
 	return player;
 }
 function hardReset(savefile = 'coinfieldsSave') {
@@ -34,6 +36,7 @@ function hardReset(savefile = 'coinfieldsSave') {
 
 	const p = player;
 	localStorage.removeItem(savefile);
+	localStorage.removeItem(savefile + '_Boxes');
 	location.reload();
 	return p;
 }

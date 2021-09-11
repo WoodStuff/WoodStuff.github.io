@@ -4,7 +4,7 @@ div#fields {
 	height: calc(100% - 140px);
 }
 
-.box {
+div.box {
 	background-color: #252525;
 	color: #0f0f0f;
 	border: solid #0f0f0f;
@@ -15,11 +15,22 @@ div#fields {
 	height: 100px;
 	position: relative;
 }
-.box:hover {
+div.box:before {
+	content: '₵10';
+    position: absolute;
+    transform: translateY(-125%);
+    font-family: 'Bahnschrift';
+    width: 100%;
+    text-align: center;
+}
+div.box:hover {
 	background-color: #505050;
 }
-.box:active {
+div.box:active {
 	background-color: #666666;
+}
+div.box.box-locked {
+	opacity: 0.5;
 }
 
 div.box i.fas {
