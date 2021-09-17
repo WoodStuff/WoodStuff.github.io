@@ -29,8 +29,8 @@ function init() {
 	circle.src = 'media/circle.png';
 	game.clearRect(0, 0, canvas.width, canvas.height);
 
-	player.x += (((mouse.x - player.x) / 200 ) * tiers[player.tier].speed);
-	player.y += (((mouse.y - player.y) / 200 ) * tiers[player.tier].speed);
+	player.x += Math.max(Math.min((((mouse.x - player.x) / 200 ) * tiers[player.tier].speed) * 5, tiers[player.tier].speed * 10/3), tiers[player.tier].speed * 10/3 * -1);
+	player.y += Math.max(Math.min((((mouse.y - player.y) / 200 ) * tiers[player.tier].speed) * 5, tiers[player.tier].speed * 10/3), tiers[player.tier].speed * 10/3 * -1);
 
 	player.x = Math.max(64, player.x);
 	player.x = Math.min(canvas.width - 64, player.x);
