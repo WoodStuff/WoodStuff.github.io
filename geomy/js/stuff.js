@@ -13,6 +13,18 @@ player = {
 	mass: 20,
 	tier: 'circle',
 	direction: 0,
+	speed: 0,
+	moving() {
+		dir = player.direction;
+		sp = player.speed;
+		return Math.min(sp / 5, 10);
+	},
+	move() {
+		dir = player.direction;
+		sp = player.moving();
+		player.x += Math.sin(dir) * sp;
+		player.y += Math.cos(dir) * sp;
+	},
 };
 mouse = {
 	x: 0,
@@ -29,6 +41,11 @@ function mousepos(e) {
 function init() {
 	circle.src = 'media/circle.png';
 	game.clearRect(0, 0, canvas.width, canvas.height);
+
+	player.direction = pointing(player, mouse);
+	player.speed = distance(player, mouse);
+
+	player.move();
 
 	player.x = Math.max(64, player.x);
 	player.x = Math.min(canvas.width - 64, player.x);

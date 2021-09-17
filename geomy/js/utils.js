@@ -9,3 +9,10 @@ function pointing(first, second) {
 	let y = first.y - second.y;
 	return Math.atan2(y, x) / Math.PI * 180;
 }
+
+// get distance of 2 points
+function distance(first, second) {
+	var x = first.x - second.x;
+	var y = first.y - second.y;
+	return Math.hypot(x, y);
+}
