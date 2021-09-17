@@ -5,22 +5,7 @@ function average(array) {
 
 // get direction of pointing
 function pointing(first, second) { // using scratch workaround code because i suck at math lmao
-	let deltax = first.x - second.x;
-	let deltay = first.y - second.y;
-	if (deltay == 0) {
-		if (deltax < 0) {
-			return -90;
-		}
-		else {
-			return 90;
-		}
-	}
-	else {
-		if (deltay < 0) {
-			return 180 + Math.atan(deltax / deltay);
-		}
-		else {
-			return Math.atan(deltax / deltay);
-		}
-	}
+	let x = first.x - second.x;
+	let y = first.y - second.y;
+	return Math.atan2(y, x) / Math.PI * 180;
 }
