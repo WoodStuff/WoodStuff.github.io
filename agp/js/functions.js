@@ -18,3 +18,7 @@ function switchTab(tabp = 'main') {
 	if (player.tab == 'enemy') addEnemies();
 	return player.tab;
 };
+
+function chance(ch) {
+	return Math.random() < (ch / 100);
+}
