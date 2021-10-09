@@ -4,38 +4,58 @@
 	<head>
 		<link rel="stylesheet" href="style.css">
 		<script>
+			letters = ['[A] ', '[B] ', '[C] ', '[D] ', '[E] ', '[F] ', '[G] ', '[H] ', '[I] ', '[J] ',];
+			cletters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',];
 			function id(a) {
 				return document.getElementById(a);
 			}
 			function result(a) {
 				res = [];
 				for (v in a) {
-					res[v] = letters[v] + count[v];
+					res[v] = letters[v] + a[v];
 				}
 				res = res.join('<br>');
 				id('result').innerHTML = res;
 			}
 			function generate() {
-				para = [];
-				parts = id('parts').value;
-				votes = id('votes').value;
-				if (isNaN(parts) || parts < 2 || parts > 10 || isNaN(votes) || votes < 2 || votes > 100000000) {
+				let parts = parseInt(id('parts').value);
+				let votes = parseInt(id('votes').value);
+				let lvb = id('lvb').value.split('');
+				if (isNaN(parts) || parts < 2 || parts > 10 || isNaN(votes) || votes < 2 || votes > 1000000000000) {
 					return result('Invalid number!');
 				}
-				letters = ['[A] ', '[B] ', '[C] ', '[D] ', '[E] ', '[F] ', '[G] ', '[H] ', '[I] ', '[J] ',]
-				count = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,]
-				for (i = 1; i <= parts; i++) {
-					para.push(letters[i]);
+				let count = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,];
+				let throws = [];
+
+				if (!lvb.length == 0) {
+					for (let i = 0; i < lvb.length; i++) {
+						throws.push(toNumber(lvb[i]));
+					}
 				}
-				for (i = 1; i <= votes; i++) {
-					vote = Math.floor(Math.random() * parts) + 1;
+				for (let i = 1; i <= parts; i++) {
+					throws.push(i - 1);
+					throws.push(i - 1);
+					throws.push(i - 1);
+				}
+				throws.push(Math.floor(Math.random() * (parts - 1)));
+				
+				for (let i = 1; i <= votes; i++) {
+					let thing = Math.floor(Math.random() * (throws.length - 1)) + 1;
+					let vote = throws[thing];
 					count[vote]++;
 				}
-				for (i = 1; i <= votes; i++) {
-					para[i] += count[i];
-				}
 				count = count.filter(voter => voter != 0);
+				console.log({
+					parts: parts,
+					votes: votes,
+					lvb: lvb,
+					count: count,
+					throws: throws,
+				});
 				result(count);
+			}
+			function toNumber(letter) {
+				return cletters.indexOf(letter);
 			}
 		</script>
 		<title>the egg site</title>
@@ -43,8 +63,11 @@
 
 	<body>
 		<input id="parts" placeholder="Participants (max 10)">
-		<input id="votes" placeholder="Amount of votes (max 100 000 000)">
-		<button onclick="generate();">Generate votes</button>
+		<input id="votes" placeholder="Amount of votes (max 1 trillion)">
+		<button onclick="generate();">Generate votes</button><br>
+		<input id="lvb" placeholder="Input letter voting box here">
+		<span>Optional | For example, if A has 2 votes, and B and E both have one, input "AABE"</span>
 		<p id="result">Votes...</p>
+		<p>For bigger values, it may take a while to generate (1 trillion probably takes no less than 3 minutes and froze my browser lmfao)</p>
 	</body>
 </html>
