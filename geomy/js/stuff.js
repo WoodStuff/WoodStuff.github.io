@@ -17,7 +17,7 @@ player = {
 	moving() {
 		dir = player.direction;
 		sp = player.speed;
-		return Math.min(sp / 5, 10);
+		return limit(-10, sp / 5, 10);
 	},
 	move() {
 		dir = player.direction;
