@@ -45,7 +45,7 @@ function firststart(savefile = 'coinfieldsSave') {
 		load();
 
 		document.title = `${player.coins} coins | Coin Fields`;
-		setTimeout(autoSave, player.settings.autoSaveDuration);
+		setTimeout(autoSave, player.settings.autoSaveDuration * 1000);
 		
 		return false;
 	}

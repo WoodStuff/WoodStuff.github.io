@@ -17,11 +17,11 @@ div.box {
 }
 div.box:before {
 	content: '₵10';
-    position: absolute;
-    transform: translateY(-125%);
-    font-family: 'Bahnschrift';
-    width: 100%;
-    text-align: center;
+	position: absolute;
+	transform: translateY(-125%);
+	font-family: 'Bahnschrift';
+	width: 100%;
+	text-align: center;
 }
 div.box:hover {
 	background-color: #505050;
@@ -41,10 +41,17 @@ div.box i.fas {
 }
 i.fa-circle:before {
 	position: absolute;
-    transform: translate(25%, 25%);
+	transform: translate(25%, 25%);
+}
+div.box:not(.box-locked):before {
+	content: '' !important;
 }
 
+/* box positions here */
 #box1 {
 	top: 15%;
 	left: 25%;
 }
+
+/* costs here */
+#box1:before { content: '₵1'; }
