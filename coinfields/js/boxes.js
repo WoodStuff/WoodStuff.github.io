@@ -11,7 +11,7 @@ function buyBox(area, id) {
 	BOXES[area][id].unlocked = true;
 	player.coins = player.coins.sub(BOXES[area][id].cost);
 	let boxelement = el(`box${id}`);
-	boxelement.classList.value = 'box';
+	boxelement.classList.remove('box-locked');
 }
 
 function openPowers(area, id) {

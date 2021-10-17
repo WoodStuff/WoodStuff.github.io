@@ -8,7 +8,7 @@ function start() {
 		coins: new Decimal(5),
 		cps: new Decimal(0),
 		settings: {
-			autoSave: true,
+			autoSave: false,
 			autoSaveDuration: 15,
 		},
 	};
@@ -32,7 +32,7 @@ const updateTitle = setInterval(() => {
 }, 5000);
 
 function autoSave() {
-	//if (player.settings.autoSave) save();
+	if (player.settings.autoSave) save();
 	setTimeout(autoSave, player.settings.autoSaveDuration);
 }
 
