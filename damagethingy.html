@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<style>
+			span { font-family: Segoe UI }
+			p#bold { font-weight: bold }
+		</style>
+		<script>
+			var max = 20;
+			function el(e) { return document.getElementById(e) }
+			function v(e) { return parseInt(document.getElementById(e).value) }
+			function va(e) { return parseInt(document.getElementById(e).innerHTML) }
+			function rng(e) {
+				el(e).innerHTML = Math.floor(Math.random() * max) + 1;
+			}
+			function swap() {
+				var first = [el('attack1').value,
+				el('defense1').value,
+				el('health1').value]
+
+				var second = [el('attack2').value,
+				el('defense2').value,
+				el('health2').value]
+				console.log(first)
+				console.log(second)
+
+				el('attack1').value = second[0];
+				el('defense1').value = second[1];
+				el('health1').value = second[2];
+				el('attack2').value = first[0];
+				el('defense2').value = first[1];
+				el('health2').value = first[2];
+			}
+			function generate() {
+				if (va('rng2') == 0) return el('result').innerHTML = Math.round(v('health2') - ((v('attack1') * va('rng1')) / (va('rng2')) * 10));
+				el('result').innerHTML = Math.round(v('health2') - ((v('attack1') * va('rng1')) / (v('defense2') * va('rng2')) * 10));
+			}
+		</script>
+		<title>the egg site</title>
+	</head>
+
+	<body>
+		<h1>Damage output calculator thing</h1>
+		<input id="attack1" placeholder="Attack 1">
+		<input id="defense1" placeholder="Defense 1">
+		<input id="health1" placeholder="Health 1"><br>
+		<button onclick="rng('rng1');">Generate 1st RNG</button><span> </span><span id="rng1">-</span><br><br>
+		<input id="attack2" placeholder="Attack 2">
+		<input id="defense2" placeholder="Defense 2">
+		<input id="health2" placeholder="Health 2"><br>
+		<button onclick="rng('rng2');">Generate 2nd RNG</button><span> </span><span id="rng2">-</span><br><br>
+		<button onclick="swap();">Switch inputs</button><br>
+		<button onclick="generate();">Generate</button>
+		<p id="bold">Result: <span id="result">-</span></p><br><br>
+		<p>thing to write stuff on</p>
+		<textarea></textarea>
+	</body>
+</html>
