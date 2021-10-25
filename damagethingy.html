@@ -4,7 +4,7 @@
 	<head>
 		<link rel="stylesheet" href="style.css">
 		<style>
-			span { font-family: Segoe UI }
+			span, label { font-family: Segoe UI }
 			p#bold { font-weight: bold }
 		</style>
 		<script>
@@ -34,8 +34,15 @@
 				el('health2').value = first[2];
 			}
 			function generate() {
-				if (va('rng2') == 0) return el('result').innerHTML = Math.round(v('health2') - ((v('attack1') * va('rng1')) / (va('rng2')) * 10));
+				if (el('ranged1').checked && chance(1 - (v('accy1') / 10))) return el('result').innerHTML = 'Missed!';
 				el('result').innerHTML = Math.round(v('health2') - ((v('attack1') * va('rng1')) / (v('defense2') * va('rng2')) * 10));
+			}
+			function range(host, e) {
+				if (el(host).checked) el(e).style.display = 'inline';
+				else el(e).style.display = 'none';
+			}
+			function chance(ch) {
+				return Math.random() < ch;
 			}
 		</script>
 		<title>the egg site</title>
@@ -43,14 +50,29 @@
 
 	<body>
 		<h1>Damage output calculator thing</h1>
+
 		<input id="attack1" placeholder="Attack 1">
 		<input id="defense1" placeholder="Defense 1">
 		<input id="health1" placeholder="Health 1"><br>
+
+		<input type="checkbox" name="ranged1" id="ranged1" oninput="range('ranged1', 'accy1')">
+		<label for="ranged1">Ranged?</label>
+		<input id="accy1" placeholder="Accuracy 1" style="display:none;"><br>
+
 		<button onclick="rng('rng1');">Generate 1st RNG</button><span> </span><span id="rng1">-</span><br><br>
+
+
 		<input id="attack2" placeholder="Attack 2">
 		<input id="defense2" placeholder="Defense 2">
 		<input id="health2" placeholder="Health 2"><br>
+
+		<input type="checkbox" name="ranged2" id="ranged2" oninput="range('ranged2', 'accy2')">
+		<label for="ranged2">Ranged?</label>
+		<input id="accy2" placeholder="Accuracy 2" style="display:none;"><br>
+
 		<button onclick="rng('rng2');">Generate 2nd RNG</button><span> </span><span id="rng2">-</span><br><br>
+
+
 		<button onclick="swap();">Switch inputs</button><br>
 		<button onclick="generate();">Generate</button>
 		<p id="bold">Result: <span id="result">-</span></p><br><br>
