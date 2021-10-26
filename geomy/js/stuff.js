@@ -22,13 +22,13 @@ player = {
 	move() {
 		dir = player.direction;
 		sp = player.moving();
-		player.x += -(Math.cos(rtd(dir)) * sp);
-		player.y += -(Math.sin(rtd(dir)) * sp);
+		player.x += -(Math.cos(rtd(dir)) * sp) * tiers[player.tier].speed / 4.5;
+		player.y += -(Math.sin(rtd(dir)) * sp) * tiers[player.tier].speed / 4.5;
 	},
 };
 mouse = {
-	x: 0,
-	y: 0,
+	x: player.x,
+	y: player.y
 }
 
 canvas.addEventListener('mousemove', mousepos, false);
