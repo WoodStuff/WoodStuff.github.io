@@ -21,3 +21,8 @@ function distance(first, second) {
 function limit(first, thing, second) {
 	return Math.min(Math.max(thing, first), second);
 }
+
+// convert radians to degrees
+function rtd(radians) {
+	return radians * (1 / (180 / Math.PI));
+}

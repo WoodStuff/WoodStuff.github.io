@@ -22,8 +22,8 @@ player = {
 	move() {
 		dir = player.direction;
 		sp = player.moving();
-		player.x += Math.sin(dir) * sp;
-		player.y += Math.cos(dir) * sp;
+		player.x += -(Math.cos(rtd(dir)) * sp);
+		player.y += -(Math.sin(rtd(dir)) * sp);
 	},
 };
 mouse = {
