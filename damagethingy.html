@@ -34,7 +34,7 @@
 				el('health2').value = first[2];
 			}
 			function generate() {
-				if (el('ranged1').checked && chance(1 - (v('accy1') / 10))) return el('result').innerHTML = 'Missed!';
+				if (el('ranged1').checked && chance(1 - (v('accy1') / 20))) return el('result').innerHTML = 'Missed!';
 				el('result').innerHTML = Math.round(v('health2') - ((v('attack1') * va('rng1')) / (v('defense2') * va('rng2')) * 10));
 			}
 			function range(host, e) {
