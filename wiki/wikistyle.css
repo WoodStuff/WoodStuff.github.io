@@ -4,7 +4,7 @@
 t {
 	font-size: 3em;
 }
-h1, p, a, t, cat, strong, .segoe {
+h1, p, a, t, cat, strong, ul, ol, .segoe {
 	font-family: "Segoe UI";
 }
 p {
