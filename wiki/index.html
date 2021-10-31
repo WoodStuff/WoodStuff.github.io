@@ -4,11 +4,12 @@
 	<head>
 		<link rel="stylesheet" href="wikistyle.css">
 		<script type="text/javascript" src="wikijs.js"></script>
+		<script type="text/javascript" src="catdesc.js"></script>
 		<script src="https://kit.fontawesome.com/8c07ded0d5.js" crossorigin="anonymous"></script>
 		<title>Main Page | Egg Wiki</title>
 	</head>
 
-	<body>
+	<body onload="specifyCategories()">
 		<div id="top" class="content shadow">
 			<iframe src="iframes/header.html" style="border:0;width:-webkit-fill-available;"></iframe>
 		</div>
@@ -33,7 +34,7 @@
 
 
 				<!-- categories -->
-				<cat>Categories: <a href="category/main">Main</a>, <a href="category/base">Base</a></cat>
+				<cat>Categories: <a data-cat="main">Main</a>, <a data-cat="base">Base</a></cat>
 			</div>
 		</div>
 		<div id="links" class="content shadow">
