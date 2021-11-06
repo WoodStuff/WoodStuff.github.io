@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<style>
+			span, label { font-family: Segoe UI }
+			p#bold { font-weight: bold }
+			div#box {
+				width: 100px;
+				height: 100px;
+				border: solid black 1px;
+				border-radius: 10%;
+			}
+		</style>
+		<script>
+			const el = e => document.getElementById(e);
+			white = true;
+			function tick() {
+				el('box').style.backgroundColor = white ? '#1da1ff' : '#ffffff';
+				white = !white;
+			}
+			function start() {
+				type = el('type').options[el('type').selectedIndex].value;
+				time = el('timing').value;
+				if (isNaN(time) || time <= 0.01 || time >= 2147483647 * (10 ** 32)) return alert('Invalid time! Can only be bigger than 0.01 and smaller than 2147483647 * (10 ^ 32).');
+				times = {
+					secs: 1000,
+					ms: 1,
+					rb1frames: 1/0.031,
+					rbframes: 1/0.03,
+				}
+				msconvert = time * times[type];
+				tick();
+				a = setInterval(() => {
+					tick();
+				}, msconvert);
+			}
+			function stop() {
+				clearInterval(a);
+				el('box').style.backgroundColor = '#ffffff';
+				white = true;
+			}
+		</script>
+		<title>the egg site</title>
+	</head>
+
+	<body>
+		<h1>Timing tester thingy</h1>
+		<p>Warning: This may cause epilepsy for lower values.</p>
+
+		<input name="timing" id="timing" placeholder="Timing">
+		<select name="type" id="type">
+			<option value="secs">seconds</option>
+			<option value="ms">milliseconds</option>
+			<option value="rb1frames">red ball 1 frames</option>
+			<option value="rbframes">red ball 2+ frames</option>
+		</select>
+		<br><br>
+		<div id="box" style="background-color:#ffffff"></div>
+		<br>
+		<button onclick="start();">Start</button>
+		<button onclick="stop();">Stop</button>
+	</body>
+</html>
