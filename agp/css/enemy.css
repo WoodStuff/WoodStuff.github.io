@@ -62,3 +62,8 @@ img#battle-player-img {
 img#battle-enemy-img {
 	transform: translateX(64px);
 }
+
+p#battle-player-decrease, p#battle-enemy-decrease {
+	position: absolute;
+	transform: translate(calc(128px - 50%), -1em);
+}
