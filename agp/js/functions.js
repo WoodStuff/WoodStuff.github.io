@@ -19,6 +19,22 @@ function switchTab(tabp = 'main') {
 	return player.tab;
 };
 
+function addXP(amount) {
+	player.xp.current = player.xp.current.add(amount);
+	player.xp.total = player.xp.total.add(amount);
+	if (player.xp.current.gte(player.xp.max)) {
+		do {
+			player.xp.current = player.xp.current.sub(player.xp.max);
+			let temp = player.xp.max;
+			player.xp.max = player.xp.max.add(25);
+			if (player.xp.max.eq(temp)) {
+				player.xp.max = player.xp.max.times(25);
+			}
+		} while (player.xp.current.gte(player.xp.max));
+	}
+}
+
+// utility
 function chance(ch) {
 	return Math.random() < (ch / 100);
 }

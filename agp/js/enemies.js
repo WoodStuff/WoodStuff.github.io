@@ -10,7 +10,7 @@ const enemies = [
 		curr: d(5), xp: d(5), levelt: d(2), type: 'normal',
 		accyfactor: d(1), drops: 0, id: 'redsquare',
 		isBoss: false, group: 'square',
-		img: '../media/enemies/red square.png',
+		img: '../media/enemies/redsquare.png',
 		rbuworth: d(10),
 		spawner: {
 			level: [0, 1],
@@ -24,7 +24,7 @@ const enemies = [
 		curr: d(10), xp: d(10), levelt: d(3), type: 'normal',
 		accyfactor: d(1), drops: 0, id: 'greensquare',
 		isBoss: false, group: 'square',
-		img: '../media/enemies/green square.png',
+		img: '../media/enemies/greensquare.png',
 		rbuworth: d(15),
 		spawner: {
 			level: [1],
@@ -38,7 +38,7 @@ const enemies = [
 		curr: d(15), xp: d(15), levelt: d(4), type: 'normal',
 		accyfactor: d(1), drops: 0, id: 'bluesquare',
 		isBoss: false, group: 'square',
-		img: '../media/enemies/green square.png',
+		img: '../media/enemies/bluesquare.png',
 		rbuworth: d(30),
 		spawner: {
 			level: [1, 2],

@@ -1,5 +1,5 @@
-var playerHP, playerMaxHP, playerATK, playerACCY, playerBLK;
-var enemyHP, enemyMaxHP, enemyATK, enemyACCY, enemyBLK;
+var playerHP, playerMaxHP, playerATK, playerACCY, playerBLK, playerMiss;
+var enemyHP, enemyMaxHP, enemyATK, enemyACCY, enemyBLK, enemyMiss, factor;
 var battleTurns;
 var pastEHP, pastPHP;
 
@@ -25,7 +25,9 @@ function fightEnemy(id) {
 	enemyATK = getEnemy(id).atk;
 	enemyACCY = getEnemy(id).accy;
 	enemyBLK = getEnemy(id).blk;
+	factor = getEnemy(id).accyfactor;
 
+	document.getElementById('battle-rewards').style.display = 'none';
 	document.getElementById('battle-title').innerHTML = `Vs. ${getEnemy(id).name}`;
 	document.getElementById('battle-enemy-img').src = `media/enemies/${id}.png`;
 	
@@ -42,10 +44,13 @@ function fightEnemy(id) {
 function battleTurn(id) {
 	if (!player.inBattle) return false;
 
+	playerMiss = chance(factor.times(100).sub(playerACCY).div(factor).max(0).min(100).mag);
+	enemyMiss = chance(new Decimal(100).sub(enemyACCY).mag);
+
 	pastEHP = enemyHP;
 	pastPHP = playerHP;
-	enemyHP = enemyHP.sub(Decimal.max(playerATK.sub(enemyBLK), new Decimal(0)));
-	playerHP = playerHP.sub(Decimal.max(enemyATK.sub(playerBLK), new Decimal(0)));
+	if (!playerMiss) enemyHP = enemyHP.sub(Decimal.max(playerATK.sub(enemyBLK), new Decimal(0)));
+	if (!enemyMiss) playerHP = playerHP.sub(Decimal.max(enemyATK.sub(playerBLK), new Decimal(0)));
 	updateBattleStats();
 
 	if (!(enemyHP.lte(0) || playerHP.lte(0))) return; // battle has ended if continues past this
@@ -56,6 +61,11 @@ function battleTurn(id) {
 	if (enemyHP.lte(0) && !playerHP.lte(0)) { // win
 		console.log('win');
 		document.getElementById('battle-result').innerHTML = 'You won!';
+		document.getElementById('battle-rewards').style.display = 'block';
+		document.getElementById('b-cr-value').innerHTML = format(getEnemy(id).curr);
+		document.getElementById('b-xp-value').innerHTML = format(getEnemy(id).xp);
+		player.currency = player.currency.add(getEnemy(id).curr);
+		addXP(getEnemy(id).xp);
 	}
 	if (enemyHP.lte(0) && playerHP.lte(0)) { // tie
 		console.log('tie');
@@ -80,11 +90,11 @@ function updateBattleStats(first = false) {
 	document.getElementById('battle-enemy-blk').innerHTML = `${format(enemyBLK)} BLK`;
 
 	if (first) return true;
-	document.getElementById('battle-player-decrease').innerHTML = `-${pastPHP - playerHP}`;
-	document.getElementById('battle-enemy-decrease').innerHTML = `-${pastEHP - enemyHP}`;
+	document.getElementById('battle-player-decrease').innerHTML = enemyMiss ? 'Missed!' : `-${pastPHP - playerHP}`;
+	document.getElementById('battle-enemy-decrease').innerHTML = playerMiss ? 'Missed!' : `-${pastEHP - enemyHP}`;
 	document.getElementById('battle-player-decrease').style.color = '#790000';
 	document.getElementById('battle-enemy-decrease').style.color = '#790000';
-	setTimeout(decreaseStuff, 1);
+	setTimeout(decreaseStuff, 200);
 	return true;
 }
 
@@ -96,7 +106,7 @@ function decreaseStuff() {
 	setTimeout(() => {
 		document.getElementById('battle-player-decrease').style.transition = '0s';
 		document.getElementById('battle-enemy-decrease').style.transition = '0s';
-	}, 501)
+	}, 520)
 	return true;
 }
 
