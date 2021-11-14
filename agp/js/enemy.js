@@ -51,6 +51,11 @@ function spawnEnemy(id) { // actually spawn the enemies now
 	enemydiv.classList.add('enemy', `enemy-${id}`);
 	enemydiv.style.left = `${randomNumber(0, 100)}%`;
 	enemydiv.style.top = `${randomNumber(0, 100)}%`;
+	enemydiv.oncontextmenu = function() {
+		cancelEnemy(this.classList[1].slice(6));
+		this.remove();
+		return false;
+	}
 
 	let enemyimg = document.createElement('img');
 	enemyimg.src = `media/enemies/${id}.png`;
@@ -59,10 +64,11 @@ function spawnEnemy(id) { // actually spawn the enemies now
 	document.getElementById('enemy-field').appendChild(enemydiv);
 }
 
-function addEnemies() { // create the enemies when you reenter enemy page
-	
-}
-
-function removeEnemies() { // remove enemies when leave enemy page
-
+function cancelEnemy(id) {
+	let index = player.spawner.content.indexOf(id);
+	let original = player.spawner.content;
+	if (index > -1) {
+		player.spawner.content.splice(index, 1);
+	}
+	return player.spawner.content != original;
 }

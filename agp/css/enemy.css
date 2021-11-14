@@ -13,10 +13,10 @@ img#toggle-spawn-img, div.enemy img {
 	width: 100%;
 	height: 100%;
 }
-img#toggle-spawn-img:hover {
+img#toggle-spawn-img:hover, div.enemy:hover {
 	filter: brightness(110%);
 }
-img#toggle-spawn-img:active {
+img#toggle-spawn-img:active, div.enemy:active {
 	filter: brightness(80%);
 }
 
