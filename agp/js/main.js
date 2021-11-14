@@ -22,6 +22,9 @@ function start() {
 		sword: 1,
 		shield: 0,
 		inBattle: false,
+		tilesUnlocked: [
+			'enemy',
+		],
 		battles: {
 			total: 0,
 			won: 0,
