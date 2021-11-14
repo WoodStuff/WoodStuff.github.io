@@ -22,3 +22,11 @@ function switchTab(tabp = 'main') {
 function chance(ch) {
 	return Math.random() < (ch / 100);
 }
+
+function countValues(array, value) {
+    return array.filter((v) => (v === value)).length;
+}
+
+function randomValue(array) {
+	return array[Math.floor(Math.random() * array.length)];
+}

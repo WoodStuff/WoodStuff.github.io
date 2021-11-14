@@ -1,27 +1,65 @@
-const spawnerChances = [10]; // chance for an enemy to spawn in every spawner per second
-const spawnerEnemies = [[0, 1, 2]]; // enemies that spawn in every spawner by id
+const spawnerChances = [0, 40]; // chance for an enemy to spawn in every spawner per second
+const spawnerEnemies = [[0], [0, 1, 2]]; // enemies that spawn in every spawner by id
 
-const spawnTypes = ['enemy', 'resource', 'xp', 'progress', 'special'];
+const spawnTypes = ['enemy', 'resource', 'xp', 'progress', 'special']; // the different types of spawns there can be
+
+const breedEnemies = setInterval(() => {
+	if (!player.spawner.on) return;
+	console.log(attemptSpawn());
+}, 1000);
 
 const limitSpawner = setInterval(() => {
 	if (!(player.spawner.content.length > player.spawner.limit)) return;
 	player.spawner.content = player.spawner.content.slice(0, player.spawner.limit);
 }, 50);
 
-function getEnemy(enemy) {
+function toggleSpawner() { // what happens when clicking on top right toggle enemy spawner
+	player.spawner.on = !player.spawner.on;
+}
+
+function getEnemy(enemy) { // enter an enemy name, get its stats
 	if (!enemynames.includes(enemy)) throw new ReferenceError('Enemy does not exist');
 	return enemies[enemynames.indexOf(enemy)];
 }
 
-function attemptSpawn() {
-	if (chance(100 - spawnerChances[player.spawner.level]) || !player.spawner.on) return false;
+function attemptSpawn() { // attempt to spawn an enemy, this is the elimination stage with the rng and stuff
+	if (chance(100 - spawnerChances[player.spawner.level]) || !player.spawner.on || player.spawner.content.length >= player.spawner.limit) return false;
+
+	h = []; // the ids collected
+	i = []; // the chances to spawn respectively to h
+	j = []; // the final array with one numeric id for every chance
+	for (val of enemies) {
+		if (val.spawner.level.includes(player.spawner.level)) {
+			h.push(val.id);
+			i.push(val.spawner.chance[val.spawner.level.indexOf(player.spawner.level)]);
+			for (time = 0; time < i[h.indexOf(val.id)]; time++) {
+				j.push(enemynames.indexOf(val.id));
+			}
+		}
+	}
+
+	let spawned = enemies[randomValue(j)].id;
+	spawnEnemy(spawned);
+}
+
+function spawnEnemy(id) { // actually spawn the enemies now
+	player.spawner.content.push(id);
+
+	// create the visible enemy thingy
+	let enemydiv = document.createElement('div');
+	enemydiv.classList.add('enemy');
+
+	let enemyimg = document.createElement('img');
+	enemyimg.src = `media/enemies/${id}.png`;
+
+	enemydiv.appendChild(enemyimg);
+	document.getElementById
+}
+
+function addEnemies() { // create the enemies when you reenter enemy page
 	
 }
 
-function spawnEnemy(number) {
-	
-}
+function removeEnemies() { // remove enemies when leave enemy page
 
-function addEnemies() {
-	
 }

@@ -33,7 +33,7 @@ function start() {
 		},
 		spawner: {
 			on: false,
-			level: 0,
+			level: 1,
 			limit: 3,
 			content: [],
 		},
@@ -55,12 +55,22 @@ function start() {
 	};
 };
 
+
+function tick() {
+	return true;
+}
+const tickloop = setInterval(tick, 50);
+
+
+
+// main stuff
 const updateStats = setInterval(() => {
 	document.getElementById('currencyDisplay').innerHTML = formatWhole(player.currency);
 	document.getElementById('rbuDisplay').innerHTML = formatWhole(player.rbu);
 	player.allbuffs = player.buffs[new Decimal(0)].concat(player.buffs[1], player.buffs[2], player.buffs[3]);
+	document.getElementById('toggle-spawn-img').src = player.spawner.on ? 'media/spawner on.png' : 'media/spawner off.png';
 }, 50);
 
 const autoSave = setInterval(() => {
-	save();
+	//save();
 }, 15000);

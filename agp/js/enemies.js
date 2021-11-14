@@ -11,9 +11,10 @@ const enemies = [
 		accyfactor: d(1), drops: 0, id: 'redsquare',
 		isBoss: false, group: 'square',
 		img: '../media/enemies/red square.png',
+		rbuworth: d(10),
 		spawner: {
-			level: [1],
-			chance: [55],
+			level: [0, 1],
+			chance: [100, 55],
 		},
 	},
 	{
@@ -24,6 +25,7 @@ const enemies = [
 		accyfactor: d(1), drops: 0, id: 'greensquare',
 		isBoss: false, group: 'square',
 		img: '../media/enemies/green square.png',
+		rbuworth: d(15),
 		spawner: {
 			level: [1],
 			chance: [40],
@@ -34,9 +36,10 @@ const enemies = [
 		desc: 'A new player, that has gotten this cool gray sword and all.',
 		atk: d(2), hp: d(15), accy: d(75), blk: d(0),
 		curr: d(15), xp: d(15), levelt: d(4), type: 'normal',
-		accyfactor: d(1), drops: 0, id: 'bluesquare',
+		accyfactor: d(1), drops: 1, id: 'bluesquare',
 		isBoss: false, group: 'square',
 		img: '../media/enemies/green square.png',
+		rbuworth: d(30),
 		spawner: {
 			level: [1, 2],
 			chance: [5, 65],

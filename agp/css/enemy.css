@@ -13,3 +13,18 @@ img#toggle-spawn-img {
 	width: 100%;
 	height: 100%;
 }
+img#toggle-spawn-img:hover {
+	filter: brightness(110%);
+}
+img#toggle-spawn-img:active {
+	filter: brightness(80%);
+}
+
+div#enemy-field {
+	width: 90%;
+	height: calc(95% - 150px);
+	position: absolute;
+	top: 150px;
+	left: 5%;
+	background-color: #00000014;
+}

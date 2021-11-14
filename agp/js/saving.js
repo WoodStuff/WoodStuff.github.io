@@ -39,14 +39,14 @@ function hardReset(savefile = 'agpSave') {
 	return p;
 }
 function firststart(savefile = 'agpSave') {
-	if (localStorage.getItem(savefile) != null) {
+	if (localStorage.getItem(savefile) != null) { // if the savefile exists
 		load();
 		return false;
-	}
+	} 
 	
-	start();
-	save(savefile);
-	load(savefile);
+	start(); // generate savefile
+	save(savefile); // save the game so this doesn't happen again
+	load(savefile); // load the game because why not i forgot why so
 
 	return true;
 }
