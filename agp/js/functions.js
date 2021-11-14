@@ -30,3 +30,7 @@ function countValues(array, value) {
 function randomValue(array) {
 	return array[Math.floor(Math.random() * array.length)];
 }
+
+function randomNumber(min, max) {
+	return Math.floor(Math.random() * ((max + 1) - min)) + min;
+}

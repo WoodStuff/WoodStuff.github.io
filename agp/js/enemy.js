@@ -1,5 +1,6 @@
-const spawnerChances = [0, 40]; // chance for an enemy to spawn in every spawner per second
+const spawnerChances = [ 0,   40]; // chance for an enemy to spawn in every spawner per second
 const spawnerEnemies = [[0], [0, 1, 2]]; // enemies that spawn in every spawner by id
+//                       0    1
 
 const spawnTypes = ['enemy', 'resource', 'xp', 'progress', 'special']; // the different types of spawns there can be
 
@@ -47,13 +48,15 @@ function spawnEnemy(id) { // actually spawn the enemies now
 
 	// create the visible enemy thingy
 	let enemydiv = document.createElement('div');
-	enemydiv.classList.add('enemy');
+	enemydiv.classList.add('enemy', `enemy-${id}`);
+	enemydiv.style.left = `${randomNumber(0, 100)}%`;
+	enemydiv.style.top = `${randomNumber(0, 100)}%`;
 
 	let enemyimg = document.createElement('img');
 	enemyimg.src = `media/enemies/${id}.png`;
 
 	enemydiv.appendChild(enemyimg);
-	document.getElementById
+	document.getElementById('enemy-field').appendChild(enemydiv);
 }
 
 function addEnemies() { // create the enemies when you reenter enemy page

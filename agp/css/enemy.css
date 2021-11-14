@@ -9,7 +9,7 @@ div#toggle-spawn {
 	right: 25px;
 }
 
-img#toggle-spawn-img {
+img#toggle-spawn-img, div.enemy img {
 	width: 100%;
 	height: 100%;
 }
@@ -20,11 +20,22 @@ img#toggle-spawn-img:active {
 	filter: brightness(80%);
 }
 
-div#enemy-field {
+div#enemy-field-visible {
 	width: 90%;
 	height: calc(95% - 150px);
 	position: absolute;
 	top: 150px;
 	left: 5%;
 	background-color: #00000014;
+}
+div#enemy-field {
+	width: calc(100% - 96px);
+    height: calc(100% - 96px);
+	position: absolute;
+}
+
+div.enemy {
+	width: 96px;
+    height: 96px;
+    position: absolute;
 }
