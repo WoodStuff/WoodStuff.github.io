@@ -39,7 +39,8 @@ div.side {
 	display: inline;
 }
 
-.back, .next {
+.back, .next, .forfeit {
+	position: absolute;
 	width: 64px;
 	height: 64px;
 	transform: translate(32px, 32px);
@@ -50,10 +51,13 @@ div.side {
 .next {
 	background-image: url(../media/next.png);
 }
-.back:hover, .next:hover {
+.forfeit {
+	background-image: url(../media/forfeit.png);
+}
+.back:hover, .next:hover, .forfeit:hover {
 	filter: brightness(110%);
 }
-.back:active, .next:active {
+.back:active, .next:active, .forfeit:active {
 	width: 60px;
 	height: 60px;
 	filter: brightness(80%);
