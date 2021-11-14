@@ -1,5 +1,5 @@
 var player;
-const decimals = ['currency', 'rbu', 'rocks', 'attack', 'hp', 'accy', 'block'];
+const decimals = ['currency', 'rbu', 'rocks', 'attack', 'maxhp', 'hp', 'accy', 'block'];
 const objdecimals = {};
 const allobjdec = ['xp', 'bars'];
 
@@ -13,6 +13,7 @@ function start() {
 			total: new Decimal(0),
 		},
 		attack: new Decimal(2),
+		maxhp: new Decimal(10),
 		hp: new Decimal(10),
 		accy: new Decimal(75),
 		block: new Decimal(0),

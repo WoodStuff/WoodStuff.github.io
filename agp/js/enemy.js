@@ -24,7 +24,7 @@ function getEnemy(enemy) { // enter an enemy name, get its stats
 }
 
 function attemptSpawn() { // attempt to spawn an enemy, this is the elimination stage with the rng and stuff
-	if (chance(100 - spawnerChances[player.spawner.level]) || !player.spawner.on || player.spawner.content.length >= player.spawner.limit) return false;
+	if (chance(100 - spawnerChances[player.spawner.level]) || !player.spawner.on || player.spawner.content.length >= player.spawner.limit || player.inBattle) return false;
 
 	h = []; // the ids collected
 	i = []; // the chances to spawn respectively to h
