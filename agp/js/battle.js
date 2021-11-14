@@ -31,6 +31,7 @@ function fightEnemy(id) {
 	updateBattleStats();
 
 	battleTurns = setInterval(() => { battleTurn(id) }, 1200);
+	return true;
 }
 
 function battleTurn(id) {

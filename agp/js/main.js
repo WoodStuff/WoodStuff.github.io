@@ -69,9 +69,12 @@ const tickloop = setInterval(tick, 50);
 const updateStats = setInterval(() => {
 	document.getElementById('currencyDisplay').innerHTML = formatWhole(player.currency);
 	document.getElementById('rbuDisplay').innerHTML = formatWhole(player.rbu);
+	document.getElementById('levelDisplay').innerHTML = formatWhole(player.xp.level);
+	document.getElementById('xpDisplay').innerHTML = formatWhole(player.xp.current);
+	document.getElementById('maxXpDisplay').innerHTML = formatWhole(player.xp.max);
 	player.allbuffs = player.buffs[new Decimal(0)].concat(player.buffs[1], player.buffs[2], player.buffs[3]);
 	document.getElementById('toggle-spawn-img').src = player.spawner.on ? 'media/spawner on.png' : 'media/spawner off.png';
-}, 50);
+}, 100);
 
 const autoSave = setInterval(() => {
 	//save();
