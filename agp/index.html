@@ -17,6 +17,7 @@
 
 		<script src="js/enemy.js"></script>
 		<script src="js/enemies.js"></script>
+		<script src="js/battle.js"></script>
 
 		<title>AGP</title>
 	</head>
@@ -43,6 +44,19 @@
 					</div>
 					<div id="enemy-field-visible">
 						<div id="enemy-field"></div>
+					</div>
+				</div>
+
+				<div class="section" id="battle" style="display: none;">
+					<p id="battle-title">Vs. Red Square</p>
+					<div id="battle-player">
+						<p class="battle-stat" id="battle-player-hp">10/10 HP</p>
+						<img id="battle-player-img" src="media/player.png">
+						<p class="battle-stat" id="battle-player-atk">2 ATK</p>
+					</div>
+					<div id="battle-enemy">
+						<p class="battle-stat" id="battle-enemy-hp">7/7 HP</p>
+						<img id="battle-enemy-img" src="media/enemies/redsquare.png" width="128" height="128">
 					</div>
 				</div>
 

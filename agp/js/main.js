@@ -20,6 +20,7 @@ function start() {
 		rocks: new Decimal(0),
 		sword: 1,
 		shield: 0,
+		inBattle: false,
 		battles: {
 			total: 0,
 			won: 0,

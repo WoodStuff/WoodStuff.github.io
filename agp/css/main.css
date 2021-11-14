@@ -61,6 +61,19 @@ div.side {
 }
 
 
+p#battle-title {
+	font-size: 600%;
+}
+p#battle-title, p.battle-stat {
+	display: block;
+	text-align: center;
+	font-family: monospace;
+	margin: 0;
+}
+p.battle-stat {
+	font-size: 200%;
+}
+
 * {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	box-sizing: border-box;

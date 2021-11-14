@@ -30,12 +30,27 @@ div#enemy-field-visible {
 }
 div#enemy-field {
 	width: calc(100% - 96px);
-    height: calc(100% - 96px);
+	height: calc(100% - 96px);
 	position: absolute;
 }
 
 div.enemy {
 	width: 96px;
-    height: 96px;
-    position: absolute;
+	height: 96px;
+	position: absolute;
 }
+
+
+
+/* battle */
+div#battle-player {
+	position: absolute;
+	top: 30%;
+	left: 20%;
+}
+div#battle-enemy {
+	position: absolute;
+	top: 30%;
+	right: 20%;
+}
+

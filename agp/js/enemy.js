@@ -1,4 +1,4 @@
-const spawnerChances = [ 0,   40]; // chance for an enemy to spawn in every spawner per second
+const spawnerChances = [ 0,   90]; // chance for an enemy to spawn in every spawner per second
 const spawnerEnemies = [[0], [0, 1, 2]]; // enemies that spawn in every spawner by id
 //                       0    1
 
@@ -54,6 +54,11 @@ function spawnEnemy(id) { // actually spawn the enemies now
 	enemydiv.oncontextmenu = function() {
 		cancelEnemy(this.classList[1].slice(6));
 		this.remove();
+		return false;
+	}
+	enemydiv.onclick = function() {
+		this.remove();
+		fightEnemy(this.classList[1].slice(6));
 		return false;
 	}
 
