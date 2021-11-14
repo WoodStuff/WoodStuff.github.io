@@ -46,11 +46,19 @@ div.enemy {
 div#battle-player {
 	position: absolute;
 	top: 30%;
-	left: 20%;
+	left: calc(20% - 64px);
+	width: 256px;
 }
 div#battle-enemy {
 	position: absolute;
 	top: 30%;
-	right: 20%;
+	right: calc(20% - 64px);
+	width: 256px;
 }
 
+img#battle-player-img {
+	transform: translateX(64px);
+}
+img#battle-enemy-img {
+	transform: translateX(64px);
+}
