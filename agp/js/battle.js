@@ -60,20 +60,33 @@ function battleTurn(id) {
 
 	if (enemyHP.lte(0) && !playerHP.lte(0)) { // win
 		console.log('win');
+
 		document.getElementById('battle-result').innerHTML = 'You won!';
 		document.getElementById('battle-rewards').style.display = 'block';
 		document.getElementById('b-cr-value').innerHTML = format(getEnemy(id).curr);
 		document.getElementById('b-xp-value').innerHTML = format(getEnemy(id).xp);
+
 		player.currency = player.currency.add(getEnemy(id).curr);
 		addXP(getEnemy(id).xp);
+
+		player.battles.total++;
+		player.battles.won++;
 	}
 	if (enemyHP.lte(0) && playerHP.lte(0)) { // tie
 		console.log('tie');
+
 		document.getElementById('battle-result').innerHTML = 'It\'s a tie!';
+
+		player.battles.total++;
+		player.battles.tied++;
 	}
 	if (!enemyHP.lte(0) && playerHP.lte(0)) { // loss
 		console.log('loss');
+
 		document.getElementById('battle-result').innerHTML = `${getEnemy(id).name} won!`;
+
+		player.battles.total++;
+		player.battles.lost++;
 	}
 	
 }
