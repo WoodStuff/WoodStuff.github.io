@@ -36,7 +36,7 @@ const enemies = [
 		desc: 'A new player, that has gotten this cool gray sword and all.',
 		atk: d(2), hp: d(15), accy: d(75), blk: d(0),
 		curr: d(15), xp: d(15), levelt: d(4), type: 'normal',
-		accyfactor: d(1), drops: 1, id: 'bluesquare',
+		accyfactor: d(1), drops: 0, id: 'bluesquare',
 		isBoss: false, group: 'square',
 		img: '../media/enemies/green square.png',
 		rbuworth: d(30),
