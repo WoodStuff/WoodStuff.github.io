@@ -12,7 +12,7 @@ const breedEnemies = setInterval(() => {
 const limitSpawner = setInterval(() => {
 	if (!(player.spawner.content.length > player.spawner.limit)) return;
 	player.spawner.content = player.spawner.content.slice(0, player.spawner.limit);
-}, 50);
+}, 500);
 
 function toggleSpawner() { // what happens when clicking on top right toggle enemy spawner
 	player.spawner.on = !player.spawner.on;
