@@ -19,6 +19,11 @@ function switchTab(tabp = 'main') {
 	return player.tab;
 };
 
+function clickTile(tile) {
+	if (!player.tilesUnlocked.includes(tile)) return false;
+	switchTab(tile);
+}
+
 function addXP(amount) {
 	player.xp.current = player.xp.current.add(amount);
 	player.xp.total = player.xp.total.add(amount);
