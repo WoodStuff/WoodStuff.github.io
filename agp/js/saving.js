@@ -24,6 +24,7 @@ function load(savefile = 'agpSave') {
 	} // its not worth adding comments to it anyway because too much work
 	
 	switchTab(player.tab);
+	startUpdateStats();
 	return true;
 }
 function save(savefile = 'agpSave') {
