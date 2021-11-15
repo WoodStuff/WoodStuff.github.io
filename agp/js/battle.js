@@ -127,4 +127,5 @@ function forfeitFight() {
 	switchTab('enemy');
 	player.inBattle = false;
 	document.getElementById('battle-end').style.display = 'none';
+	clearInterval(battleTurns);
 }
