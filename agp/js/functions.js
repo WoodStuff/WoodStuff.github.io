@@ -26,6 +26,7 @@ function addXP(amount) {
 		do {
 			player.xp.current = player.xp.current.sub(player.xp.max);
 			let temp = player.xp.max;
+			player.xp.level = player.xp.level.plus(1);
 			player.xp.max = player.xp.max.add(25);
 			if (player.xp.max.eq(temp)) {
 				player.xp.max = player.xp.max.times(25);
