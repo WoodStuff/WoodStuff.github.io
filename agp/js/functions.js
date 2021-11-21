@@ -41,6 +41,11 @@ function addXP(amount) {
 }
 
 function updateTiles() {
+	tiles = ['enemy'];
+	if (player.battles.won > 0) tiles.push('area');
+
+	player.tilesUnlocked = tiles;
+
 	for (const tile of document.getElementsByClassName('tile')) {
 		const unlocked = player.tilesUnlocked.includes(tile.id.slice(5));
 		tile.classList.remove('tile-locked');
