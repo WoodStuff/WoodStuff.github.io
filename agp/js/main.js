@@ -41,6 +41,7 @@ function start() {
 			level: 1,
 			limit: 3,
 			content: [],
+			bestlevel: 1,
 		},
 		buffs: [
 			[],
