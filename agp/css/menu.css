@@ -38,3 +38,9 @@
 	top: 169px;
 	--bg: url(../media/tiles/shop.png);
 }
+
+#tile-rbu {
+	left: calc(100vh - (169px * 2));
+	bottom: 169px;
+	--bg: url(../media/tiles/rbu.png);
+}

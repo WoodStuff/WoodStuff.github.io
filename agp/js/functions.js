@@ -1,10 +1,11 @@
 function switchTab(tabp = 'main') {
-	const tabs = ['main', 'enemy', 'area', 'shop', 'battle'];
+	const tabs = ['main', 'enemy', 'area', 'shop', 'rbu', 'battle'];
 	const bgs = {
 		main: 'main',
 		enemy: 'red',
 		area: 'orange',
 		shop: 'yellow',
+		rbu: 'purple',
 		battle: 'red',
 	}
 	if (!tabs.includes(tabp)) throw new Error('Cannot switch tab to non-tab');
@@ -43,7 +44,7 @@ function addXP(amount) {
 
 function updateTiles() {
 	tiles = ['enemy'];
-	if (player.battles.won > 0) tiles.push('area', 'shop');
+	if (player.battles.won > 0) tiles.push('area', 'shop', 'rbu');
 
 	player.tilesUnlocked = tiles;
 
