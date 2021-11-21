@@ -63,6 +63,7 @@ function start() {
 
 
 function tick() {
+	updateTiles();
 	return true;
 }
 const tickloop = setInterval(tick, 50);

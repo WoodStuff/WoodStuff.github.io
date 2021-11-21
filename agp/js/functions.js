@@ -40,13 +40,21 @@ function addXP(amount) {
 	}
 }
 
+function updateTiles() {
+	for (const tile of document.getElementsByClassName('tile')) {
+		const unlocked = player.tilesUnlocked.includes(tile.id.slice(5));
+		tile.classList.remove('tile-locked');
+		if (!unlocked) tile.classList.add('tile-locked');
+	}
+}
+
 // utility
 function chance(ch) {
 	return Math.random() < (ch / 100);
 }
 
 function countValues(array, value) {
-    return array.filter((v) => (v === value)).length;
+	return array.filter((v) => (v === value)).length;
 }
 
 function randomValue(array) {
