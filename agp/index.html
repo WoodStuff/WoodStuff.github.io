@@ -36,6 +36,7 @@
 				<div class="section" id="main">
 					<div class="tile" id="tile-enemy" onclick="clickTile('enemy');"></div>
 					<div class="tile tile-locked" id="tile-area" onclick="clickTile('area');"></div>
+					<div class="tile tile-locked" id="tile-shop" onclick="clickTile('shop');"></div>
 				</div>
 
 				<div class="section" id="enemy" style="display: none;">
@@ -78,6 +79,10 @@
 				</div>
 
 				<div class="section" id="area" style="display: none;">
+					<div class="back" onclick="switchTab()"></div>
+				</div>
+
+				<div class="section" id="shop" style="display: none;">
 					<div class="back" onclick="switchTab()"></div>
 				</div>
 			</div>

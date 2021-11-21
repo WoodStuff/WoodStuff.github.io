@@ -32,3 +32,9 @@
 	bottom: 169px;
 	--bg: url(../media/tiles/area.png);
 }
+
+#tile-shop {
+	left: calc(100vh - (169px * 2));
+	top: 169px;
+	--bg: url(../media/tiles/shop.png);
+}
