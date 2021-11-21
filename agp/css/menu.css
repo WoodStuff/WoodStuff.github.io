@@ -5,7 +5,7 @@
 	--bg: url(../media/tiles/test.png);
 	background-image: var(--bg);
 }
-.locked {
+.tile-locked {
 	filter: grayscale(100%);
 	opacity: 0.35;
 	cursor: not-allowed;
