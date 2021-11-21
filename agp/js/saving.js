@@ -25,6 +25,11 @@ function load(savefile = 'agpSave') {
 	
 	switchTab(player.tab);
 	startUpdateStats();
+
+	for (enemy of player.spawner.content) {
+		renderEnemy(enemy);
+	}
+
 	return true;
 }
 function save(savefile = 'agpSave') {

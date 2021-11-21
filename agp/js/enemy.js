@@ -47,6 +47,10 @@ function spawnEnemy(id) { // actually spawn the enemies now
 	player.spawner.content.push(id);
 
 	// create the visible enemy thingy
+	renderEnemy(id);
+}
+
+function renderEnemy(id) {
 	let enemydiv = document.createElement('div');
 	enemydiv.classList.add('enemy', `enemy-${id}`);
 	enemydiv.style.left = `${randomNumber(0, 100)}%`;
