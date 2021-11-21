@@ -11,10 +11,10 @@
 	cursor: not-allowed;
 }
 
-.tile:not(.locked):hover {
+.tile:not(.tile-locked):hover {
 	filter: brightness(110%);
 }
-.tile:not(.locked):active {
+.tile:not(.tile-locked):active {
 	width: 166px;
 	height: 166px;
 	filter: brightness(80%);
