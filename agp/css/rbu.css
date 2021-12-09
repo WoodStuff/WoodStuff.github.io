@@ -1,0 +1,19 @@
+p#rbu-title {
+	font-size: 4em;
+	text-align: center;
+}
+
+button#collect-rbu {
+	background-image: url(../media/rbu\ button.png);
+    border: solid 5px black;
+    width: 30%;
+    height: 10%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-size: 100% 100%;
+	font-size: 2em;
+}
+button#collect-rbu:disabled {
+	filter: grayscale(100%);
+}

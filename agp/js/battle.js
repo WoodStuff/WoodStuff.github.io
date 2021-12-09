@@ -37,7 +37,7 @@ function fightEnemy(id) {
 	document.getElementById('battle-player-decrease').style.color = '#00000000';
 	document.getElementById('battle-enemy-decrease').style.color = '#00000000';
 
-	battleTurns = setInterval(() => { battleTurn(id) }, 1200);
+	battleTurns = setInterval(() => { battleTurn(id) }, player.TBA);
 	return true;
 }
 

@@ -87,6 +87,14 @@ p.battle-stat span {
 	font-family: monospace;
 }
 
+/* clickables */
+img#toggle-spawn-img:hover, div.enemy:hover, button#collect-rbu:hover {
+	filter: brightness(110%);
+}
+img#toggle-spawn-img:active, div.enemy:active, button#collect-rbu:active {
+	filter: brightness(80%);
+}
+
 * {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	box-sizing: border-box;
