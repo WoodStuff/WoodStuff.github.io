@@ -23,6 +23,8 @@ function load(savefile = 'agpSave') {
 		}
 	} // its not worth adding comments to it anyway because too much work
 	
+	for (const v in startData) if (player[v] == undefined) player[v] = startData[v];
+
 	switchTab(player.tab);
 	startUpdateStats();
 
