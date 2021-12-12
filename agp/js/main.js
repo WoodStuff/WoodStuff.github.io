@@ -11,9 +11,11 @@ const startData = {
 	hp: new Decimal(10),
 	accy: new Decimal(75),
 	block: new Decimal(0),
-	rbu: new Decimal(0),
-	rbuCollect: new Decimal(15),
-	rbuDisabled: false,
+	rbu: {
+		current: new Decimal(0),
+		collect: new Decimal(15),
+		disabled: false,
+	},
 	rocks: new Decimal(0),
 	sword: 1,
 	shield: 0,
@@ -58,8 +60,8 @@ const startData = {
 };
 
 var player;
-const decimals = ['currency', 'rbu', 'rocks', 'attack', 'maxhp', 'hp', 'accy', 'block'];
-const objdecimals = {};
+const decimals = ['currency', 'rocks', 'attack', 'maxhp', 'hp', 'accy', 'block'];
+const objdecimals = { rbu: ['current', 'collect'] };
 const allobjdec = ['xp', 'bars'];
 
 function start() {
@@ -71,7 +73,7 @@ function start() {
 function tick() {
 	updateTiles();
 
-	document.getElementById('collect-rbu').disabled = player.rbuDisabled;
+	document.getElementById('collect-rbu').disabled = player.rbu.disabled;
 
 	return true;
 }
@@ -83,13 +85,13 @@ var updateStats;
 function startUpdateStats() {
 	updateStats = setInterval(() => {
 		document.getElementById('currencyDisplay').innerHTML = formatWhole(player.currency);
-		document.getElementById('rbu-counter').innerHTML = document.getElementById('rbuDisplay').innerHTML = formatWhole(player.rbu);
+		document.getElementById('rbu-counter').innerHTML = document.getElementById('rbuDisplay').innerHTML = formatWhole(player.rbu.current);
 		document.getElementById('levelDisplay').innerHTML = formatWhole(player.xp.level);
 		document.getElementById('xpDisplay').innerHTML = formatWhole(player.xp.current);
 		document.getElementById('maxXpDisplay').innerHTML = formatWhole(player.xp.max);
 		player.allbuffs = player.buffs[new Decimal(0)].concat(player.buffs[1], player.buffs[2], player.buffs[3]);
 		document.getElementById('toggle-spawn-img').src = player.spawner.on ? 'media/spawner on.png' : 'media/spawner off.png';
-		document.getElementById('rbu-per-collect').innerHTML = player.rbuCollect;
+		document.getElementById('rbu-per-collect').innerHTML = player.rbu.collect;
 	}, 100);
 }
 
