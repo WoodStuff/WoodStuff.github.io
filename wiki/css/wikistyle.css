@@ -4,12 +4,15 @@
 t {
 	font-size: 3em;
 }
-h1, p, a, t, cat, strong, ul, ol, .segoe {
+h1, h2, p, a, t, cat, strong, ul, ol, .segoe {
 	font-family: "Segoe UI";
 }
 p {
 	margin-block-end: 0.5em;
 	margin-block-start: 0;
+}
+h2 {
+	font-size: 1.4em;
 }
 a, a.dead {
 	color: #0000d0;

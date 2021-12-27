@@ -11,7 +11,7 @@ const enemies = [
 		accyfactor: d(1), drops: 0, id: 'redsquare',
 		isBoss: false, group: 'square',
 		img: '../media/enemies/redsquare.png',
-		rbuworth: d(10),
+		rbuworth: d(5),
 		spawner: {
 			level: [0, 1],
 			chance: [100, 55],
@@ -25,7 +25,7 @@ const enemies = [
 		accyfactor: d(1), drops: 0, id: 'greensquare',
 		isBoss: false, group: 'square',
 		img: '../media/enemies/greensquare.png',
-		rbuworth: d(15),
+		rbuworth: d(10),
 		spawner: {
 			level: [1],
 			chance: [40],
