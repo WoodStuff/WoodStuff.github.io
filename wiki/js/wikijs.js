@@ -1,8 +1,8 @@
 let pageCategories = [];
 
 function linkchange() {
-	var input = document.getElementById("search").value;
-	var search = document.getElementById("searchbutton");
+	var input = document.getElementById('search').value.toLowerCase();
+	var search = document.getElementById('searchbutton');
 	search.href = input == '' ? '../index.html' : `../${input}`;
 }
 
