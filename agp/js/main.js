@@ -15,6 +15,7 @@ const startData = {
 		current: new Decimal(0),
 		collect: new Decimal(15),
 		disabled: false,
+		cooldown: 1,
 	},
 	rocks: new Decimal(0),
 	sword: 1,
@@ -73,6 +74,10 @@ function start() {
 function tick() {
 	updateTiles();
 
+	if (player.rbu.cooldown < 1) {
+		player.rbu.cooldown = 2;
+		player.rbu.disabled = false;
+	}
 	document.getElementById('collect-rbu').disabled = player.rbu.disabled;
 
 	return true;

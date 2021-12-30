@@ -92,9 +92,28 @@
 
 				<div class="section" id="rbu" style="display: none;">
 					<div class="back" onclick="switchTab()"></div>
-					<p id="rbu-title">You have <span id="rbu-counter">N</span> RBU</p>
+					<p class="section-title">You have <span id="rbu-counter">N</span> RBU</p>
 
 					<button id="collect-rbu">+<span id="rbu-per-collect">n</span> RBU</button>
+
+					<button id="buy-rbs">RB Shop</button>
+				</div>
+
+				<div class="section" id="rbshop" style="display: none;">
+					<div class="back" onclick="switchTab()"></div>
+					<p class="section-title">RB Shop</p>
+
+					<div id="select-rb">
+						<div id="selected-rb"></div>
+
+						<div id="first-rb"></div>
+						<div id="prev-rb"></div>
+
+						<div id="next-rb"></div>
+						<div id="last-rb"></div>
+
+						<button id="buy-rb">Buy (n RBU)</div>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,5 +1,5 @@
 function switchTab(tabp = 'main') {
-	const tabs = ['main', 'enemy', 'area', 'shop', 'rbu', 'battle'];
+	const tabs = ['main', 'enemy', 'area', 'shop', 'rbu', 'battle', 'rbshop'];
 	const bgs = {
 		main: 'main',
 		enemy: 'red',
@@ -7,6 +7,7 @@ function switchTab(tabp = 'main') {
 		shop: 'yellow',
 		rbu: 'purple',
 		battle: 'red',
+		rbshop: 'purple',
 	}
 	if (!tabs.includes(tabp)) throw new Error('Cannot switch tab to non-tab');
 

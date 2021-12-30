@@ -44,3 +44,8 @@
 	bottom: 169px;
 	--bg: url(../media/tiles/rbu.png);
 }
+
+p.section-title {
+	font-size: 4em;
+	text-align: center;
+}

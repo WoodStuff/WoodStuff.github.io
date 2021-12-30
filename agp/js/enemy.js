@@ -6,7 +6,7 @@ const spawnTypes = ['enemy', 'resource', 'xp', 'progress', 'special']; // the di
 
 const breedEnemies = setInterval(() => {
 	if (!player.spawner.on) return;
-	console.log(attemptSpawn());
+	attemptSpawn();
 }, 1000);
 
 const limitSpawner = setInterval(() => {

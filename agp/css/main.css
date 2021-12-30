@@ -88,11 +88,16 @@ p.battle-stat span {
 }
 
 /* clickables */
-img#toggle-spawn-img:hover, div.enemy:hover, button#collect-rbu:hover {
+img#toggle-spawn-img:hover, div.enemy:hover, button#collect-rbu:hover, button#buy-rbs:hover, button#buy-rb:hover {
 	filter: brightness(110%);
 }
-img#toggle-spawn-img:active, div.enemy:active, button#collect-rbu:active {
-	filter: brightness(80%);
+img#toggle-spawn-img:active, div.enemy:active, button#collect-rbu:active, button#buy-rbs:active, button#buy-rb:active,
+div#first-rb:active, div#prev-rb:active, div#next-rb:active, div#last-rb:active {
+	filter: brightness(80%) !important;
+}
+
+div#first-rb:hover, div#prev-rb:hover, div#next-rb:hover, div#last-rb:hover {
+	filter: brightness(120%);
 }
 
 * {
