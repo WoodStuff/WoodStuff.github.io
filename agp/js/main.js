@@ -14,6 +14,7 @@ const startData = {
 	rbu: {
 		current: new Decimal(0),
 		collect: new Decimal(15),
+		gained: new Decimal(0),
 		disabled: false,
 		cooldown: 1,
 	},
@@ -62,8 +63,10 @@ const startData = {
 
 var player;
 const decimals = ['currency', 'rocks', 'attack', 'maxhp', 'hp', 'accy', 'block'];
-const objdecimals = { rbu: ['current', 'collect'] };
+const objdecimals = { rbu: ['current', 'collect', 'gained'] };
 const allobjdec = ['xp', 'bars'];
+
+const d = x => new Decimal(x);
 
 function start() {
 	player = startData;

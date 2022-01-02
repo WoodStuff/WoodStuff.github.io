@@ -1,8 +1,6 @@
-const d = x => new Decimal(x);
-
 const enemynames = ['redsquare', 'greensquare', 'bluesquare'];
 
-const enemies = [
+const ENEMIES = [
 	{
 		name: 'Red Square',
 		desc: 'Why is he so weak? I mean, he is literally the color of blood!',

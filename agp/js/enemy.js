@@ -1,5 +1,5 @@
 const spawnerChances = [ 0,   90]; // chance for an enemy to spawn in every spawner per second
-const spawnerEnemies = [[0], [0, 1, 2]]; // enemies that spawn in every spawner by id
+const spawnerEnemies = [[0], [0, 1, 2]]; // ENEMIES that spawn in every spawner by id
 // spawner levels:       0    1
 
 const spawnTypes = ['enemy', 'resource', 'xp', 'progress', 'special']; // the different types of spawns there can be
@@ -20,7 +20,7 @@ function toggleSpawner() { // what happens when clicking on top right toggle ene
 
 function getEnemy(enemy) { // enter an enemy name, get its stats
 	if (!enemynames.includes(enemy)) throw new ReferenceError('Enemy does not exist');
-	return enemies[enemynames.indexOf(enemy)];
+	return ENEMIES[enemynames.indexOf(enemy)];
 }
 
 function attemptSpawn() { // attempt to spawn an enemy, this is the elimination stage with the rng and stuff
@@ -29,7 +29,7 @@ function attemptSpawn() { // attempt to spawn an enemy, this is the elimination 
 	h = []; // the ids collected
 	i = []; // the chances to spawn respectively to h
 	j = []; // the final array with one numeric id for every chance
-	for (val of enemies) {
+	for (val of ENEMIES) {
 		if (val.spawner.level.includes(player.spawner.level)) {
 			h.push(val.id);
 			i.push(val.spawner.chance[val.spawner.level.indexOf(player.spawner.level)]);
@@ -39,11 +39,11 @@ function attemptSpawn() { // attempt to spawn an enemy, this is the elimination 
 		}
 	}
 
-	let spawned = enemies[randomValue(j)].id;
+	let spawned = ENEMIES[randomValue(j)].id;
 	spawnEnemy(spawned);
 }
 
-function spawnEnemy(id) { // actually spawn the enemies now
+function spawnEnemy(id) { // actually spawn the ENEMIES now
 	player.spawner.content.push(id);
 
 	// create the visible enemy thingy
@@ -67,7 +67,7 @@ function renderEnemy(id) {
 	}
 
 	let enemyimg = document.createElement('img');
-	enemyimg.src = `media/enemies/${id}.png`;
+	enemyimg.src = `media/ENEMIES/${id}.png`;
 
 	enemydiv.appendChild(enemyimg);
 	document.getElementById('enemy-field').appendChild(enemydiv);

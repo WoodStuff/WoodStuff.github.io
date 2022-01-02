@@ -14,8 +14,12 @@
 		<script src="js/functions.js" defer></script>
 		<script src="js/saving.js" defer></script>
 
+		<script src="js/lists/enemies.js" defer></script>
+		<script src="js/lists/buffs.js" defer></script>
+		<script src="js/lists/swords.js" defer></script>
+		<script src="js/lists/shields.js" defer></script>
+
 		<script src="js/enemy.js" defer></script>
-		<script src="js/enemies.js" defer></script>
 		<script src="js/battle.js" defer></script>
 		<script src="js/rbu.js" defer></script>
 
@@ -104,7 +108,7 @@
 					<p class="section-title">RB Shop</p>
 
 					<div id="select-rb">
-						<div id="selected-rb"></div>
+						<div id="selected-rb" style="background-image:url(media/rbs/1.png);"></div>
 
 						<div id="first-rb"></div>
 						<div id="prev-rb"></div>
@@ -112,7 +116,7 @@
 						<div id="next-rb"></div>
 						<div id="last-rb"></div>
 
-						<button id="buy-rb">Buy (n RBU)</div>
+						<button id="buy-rb">Buy (<span id="rb-cost">n</span> RBU)</div>
 					</div>
 				</div>
 			</div>

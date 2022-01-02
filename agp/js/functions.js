@@ -56,6 +56,10 @@ function updateTiles() {
 	}
 }
 
+function hasBuff(buff) {
+	return player.allBuffs.includes(buff);
+}
+
 // utility
 function chance(ch) {
 	return Math.random() < (ch / 100);
