@@ -100,6 +100,11 @@ function startUpdateStats() {
 		player.allbuffs = player.buffs[new Decimal(0)].concat(player.buffs[1], player.buffs[2], player.buffs[3]);
 		document.getElementById('toggle-spawn-img').src = player.spawner.on ? 'media/spawner on.png' : 'media/spawner off.png';
 		document.getElementById('rbu-per-collect').innerHTML = player.rbu.collect;
+
+		player.attack = calcstats.attack();
+		player.maxhp = calcstats.maxhp();
+		player.accy = calcstats.accy();
+		player.block = calcstats.block();
 	}, 100);
 }
 
