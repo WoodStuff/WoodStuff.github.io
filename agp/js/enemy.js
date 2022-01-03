@@ -30,12 +30,11 @@ function attemptSpawn() { // attempt to spawn an enemy, this is the elimination 
 	i = []; // the chances to spawn respectively to h
 	j = []; // the final array with one numeric id for every chance
 	for (val of ENEMIES) {
-		if (val.spawner.level.includes(player.spawner.level)) {
-			h.push(val.id);
-			i.push(val.spawner.chance[val.spawner.level.indexOf(player.spawner.level)]);
-			for (time = 0; time < i[h.indexOf(val.id)]; time++) {
-				j.push(enemynames.indexOf(val.id));
-			}
+		if (!val.spawner.level.includes(player.spawner.level)) continue;
+		h.push(val.id);
+		i.push(val.spawner.chance[val.spawner.level.indexOf(player.spawner.level)]);
+		for (time = 0; time < i[h.indexOf(val.id)]; time++) {
+			j.push(enemynames.indexOf(val.id));
 		}
 	}
 
@@ -43,7 +42,7 @@ function attemptSpawn() { // attempt to spawn an enemy, this is the elimination 
 	spawnEnemy(spawned);
 }
 
-function spawnEnemy(id) { // actually spawn the ENEMIES now
+function spawnEnemy(id) { // actually spawn the enemies now
 	player.spawner.content.push(id);
 
 	// create the visible enemy thingy
