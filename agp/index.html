@@ -48,7 +48,7 @@
 					<div class="tile" id="tile-rbu" onclick="clickTile('rbu');"></div>
 				</div>
 
-				<div class="section" id="enemy" style="display: none;">
+				<div class="section" id="enemy" style="display:none;">
 					<div class="back" onclick="switchTab()"></div>
 					<div id="toggle-spawn" onclick="toggleSpawner()">
 						<img id="toggle-spawn-img" src="media/spawner off.png">
@@ -58,7 +58,7 @@
 					</div>
 				</div>
 
-				<div class="section" id="battle" style="display: none;">
+				<div class="section" id="battle" style="display:none;">
 					<div class="forfeit" onclick="forfeitFight()"></div>
 					<p id="battle-title">Vs. Red Square</p>
 					<div id="battle-player">
@@ -87,15 +87,15 @@
 					</div>
 				</div>
 
-				<div class="section" id="area" style="display: none;">
+				<div class="section" id="area" style="display:none;">
 					<div class="back" onclick="switchTab()"></div>
 				</div>
 
-				<div class="section" id="shop" style="display: none;">
+				<div class="section" id="shop" style="display:none;">
 					<div class="back" onclick="switchTab()"></div>
 				</div>
 
-				<div class="section" id="rbu" style="display: none;">
+				<div class="section" id="rbu" style="display:none;">
 					<div class="back" onclick="switchTab()"></div>
 					<p class="section-title">You have <span id="rbu-counter">N</span> RBU</p>
 
@@ -104,7 +104,7 @@
 					<button id="buy-rbs">RB Shop</button>
 				</div>
 
-				<div class="section" id="rbshop" style="display: none;">
+				<div class="section" id="rbshop" style="display:none;">
 					<div class="back" onclick="switchTab()"></div>
 					<p class="section-title">RB Shop</p>
 
@@ -117,8 +117,14 @@
 						<div id="next-rb"></div>
 						<div id="last-rb"></div>
 
-						<button id="buy-rb">Buy (<span id="rb-cost">45</span> RBU)</div>
+						<button id="buy-rb">Buy (<span id="rb-cost">n</span> RBU)</div>
 					</div>
+				</div>
+				<div class="section" id="selectrb" style="display:none;">
+					<div class="back" onclick="switchTab()"></div>
+					<p class="section-title">Select a Bonus!</p>
+					<p>Hover over a bonus to see its effect.</p>
+					<div id="bonuses"></div>
 				</div>
 			</div>
 		</div>

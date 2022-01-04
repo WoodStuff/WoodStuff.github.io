@@ -66,7 +66,7 @@ function renderEnemy(id) {
 	}
 
 	let enemyimg = document.createElement('img');
-	enemyimg.src = `media/ENEMIES/${id}.png`;
+	enemyimg.src = `media/enemies/${id}.png`;
 
 	enemydiv.appendChild(enemyimg);
 	document.getElementById('enemy-field').appendChild(enemydiv);

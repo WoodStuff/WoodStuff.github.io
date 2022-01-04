@@ -45,7 +45,7 @@ function navigateRB(direction) {
 	if (rbSelected > RBS.length - 1) rbSelected = RBS.length - 1;
 
 	document.getElementById('selected-rb').style.backgroundImage = `url(media/rbs/${rbSelected}.png)`;
-	document.getElementById('rb-cost').innerHTML = RBS[rbSelected].cost;
+	document.getElementById('rb-cost').innerHTML = formatWhole(RBS[rbSelected].cost);
 
 	return rbSelected;
 }
@@ -61,5 +61,10 @@ nextRbButton.addEventListener('click', () => navigateRB('next'));
 lastRbButton.addEventListener('click', () => navigateRB('last'));
 
 function buyRB() {
+	if (player.rbu.current.lt(RBS[rbSelected].cost)) return false;
+	player.rbu.current = player.rbu.current.minus(RBS[rbSelected].cost);
+
+	switchTab('selectrb');
+
 	return;
 }
