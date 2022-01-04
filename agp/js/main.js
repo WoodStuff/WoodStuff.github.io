@@ -83,6 +83,11 @@ function tick() {
 	}
 	document.getElementById('collect-rbu').disabled = player.rbu.disabled;
 
+	player.allbuffs = [];
+	for (const t of player.buffs) {
+		player.allbuffs = player.allbuffs.concat(t);
+	}
+
 	return true;
 }
 const tickloop = setInterval(tick, 50);
