@@ -88,6 +88,8 @@ function tick() {
 		player.allbuffs = player.allbuffs.concat(t);
 	}
 
+	if (player.battles.won > 0) document.getElementById('spawner-tutorial-thingy').style.display = 'none';
+
 	return true;
 }
 const tickloop = setInterval(tick, 50);
