@@ -51,6 +51,9 @@ function battleTurn(id) {
 	pastPHP = playerHP;
 	if (!playerMiss) enemyHP = enemyHP.sub(Decimal.max(playerATK.sub(enemyBLK), new Decimal(0)));
 	if (!enemyMiss) playerHP = playerHP.sub(Decimal.max(enemyATK.sub(playerBLK), new Decimal(0)));
+
+	customTurns(id);
+	
 	updateBattleStats();
 
 	if (!(enemyHP.lte(0) || playerHP.lte(0))) return; // battle has ended if continues past this
@@ -90,7 +93,10 @@ function battleTurn(id) {
 		player.battles.total++;
 		player.battles.lost++;
 	}
-	
+}
+
+function customTurns(id) {
+	if (hasBuff('healthpotion') && chance(10)) playerHP = playerHP.add(1);
 }
 
 function updateBattleStats(first = false) {
