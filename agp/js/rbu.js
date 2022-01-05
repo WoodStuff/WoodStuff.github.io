@@ -60,11 +60,60 @@ prevRbButton.addEventListener('click', () => navigateRB('prev'));
 nextRbButton.addEventListener('click', () => navigateRB('next'));
 lastRbButton.addEventListener('click', () => navigateRB('last'));
 
+const bonusBox = document.getElementById('bonuses');
 function buyRB() {
 	if (player.rbu.current.lt(RBS[rbSelected].cost)) return false;
 	player.rbu.current = player.rbu.current.minus(RBS[rbSelected].cost);
 
 	switchTab('selectrb');
 
+	let pool = buffnames[rbSelected].slice();
+
+	let i = 0;
+	while (i < RBS[rbSelected].buffs) {
+		let buff = document.createElement('div');
+		let selectedBuffId = randomValue(pool);
+		let selectedBuff = BUFFS[selectedBuffId];
+
+		buff.classList.add('buff', `buff-${selectedBuffId}`);
+		buff.title = selectedBuff.effect;
+		buff.onclick = function() {
+			pickBuff(this.classList[1].slice(5));
+			return false;
+		}
+		console.log(selectedBuff.name);
+		i++;
+		removeValue(pool, selectedBuffId)
+
+		let buffimg = document.createElement('img');
+		buffimg.classList.add('buffimg', `buffimg-${selectedBuffId}`);
+		buffimg.src = `media/buffs/${selectedBuffId}.png`;
+
+		buff.appendChild(buffimg);
+		bonusBox.appendChild(buff);
+	}
+
 	return;
 }
+
+function pickBuff(buff) {
+	console.log(buff);
+	while (bonusBox.firstChild) {
+		bonusBox.removeChild(bonusBox.lastChild);
+	}
+	document.getElementById('picked-buff').style.display = 'block';
+	document.getElementById('select-rb-back').style.display = 'block';
+
+	if (!hasBuff(buff)) {
+		player.buffs.push(buff);
+	}
+
+	document.getElementById('pbuff-name').innerHTML = BUFFS[buff].name;
+	document.getElementById('pbuff-img').src = `media/buffs/${buff}.png`;
+	document.getElementById('pbuff-effect').innerHTML = BUFFS[buff].effect;
+}
+
+document.getElementById('select-rb-back').addEventListener('click', () => {
+	document.getElementById('picked-buff').style.display = 'none';
+	document.getElementById('select-rb-back').style.display = 'none';
+});

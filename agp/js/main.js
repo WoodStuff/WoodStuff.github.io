@@ -22,6 +22,7 @@ const startData = {
 	sword: 1,
 	shield: 0,
 	inBattle: false,
+	inArea: false,
 	TBA: 1200,
 	tilesUnlocked: [
 		'enemy',
@@ -83,11 +84,6 @@ function tick() {
 	}
 	document.getElementById('collect-rbu').disabled = player.rbu.disabled;
 
-	player.allbuffs = [];
-	for (const t of player.buffs) {
-		player.allbuffs = player.allbuffs.concat(t);
-	}
-
 	if (player.battles.won > 0) document.getElementById('spawner-tutorial-thingy').style.display = 'none';
 
 	return true;
@@ -107,9 +103,10 @@ function startUpdateStats() {
 		document.getElementById('toggle-spawn-img').src = player.spawner.on ? 'media/spawner on.png' : 'media/spawner off.png';
 		document.getElementById('rbu-per-collect').innerHTML = player.rbu.collect;
 
-		if (!player.inBattle) {
+		if (!(player.inBattle || player.inArea)) {
 			player.attack = calcstats.attack();
-			player.maxhp = calcstats.maxhp();
+			player.maxhp = calcstats.hp();
+			player.hp = calcstats.hp();
 			player.accy = calcstats.accy();
 			player.block = calcstats.block();
 		}
@@ -117,5 +114,10 @@ function startUpdateStats() {
 }
 
 const autoSave = setInterval(() => {
-	save();
+	//save();
 }, 15000);
+
+
+function fixStuff() {
+	if (typeof player.buffs[0] == 'object') player.buffs = [];
+}

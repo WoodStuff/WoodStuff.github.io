@@ -122,10 +122,19 @@
 					</div>
 				</div>
 				<div class="section" id="selectrb" style="display:none;">
-					<div class="back" onclick="switchTab()"></div>
+					<div id="select-rb-back" class="back" style="display:none;" onclick="switchTab()"></div>
+
 					<p class="section-title">Select a Bonus!</p>
 					<p class="section-subtitle">Hover over a bonus to see its effect.</p>
 					<div id="bonuses"></div>
+					<div id="picked-buff" style="display:none;">
+						<p class="section-title" id="picked-buff-title">You've picked:</p>
+						<p class="section-subtitle" id="pbuff-name">Name</p>
+						<img id="pbuff-img"></img>
+						<p class="section-subtitle" id="pbuff-effect">Effect</p><br>
+
+						<p class="section-subtitle">Click the button at the top left to exit.</p>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,12 +1,12 @@
 button#collect-rbu, button#buy-rbs, button#buy-rb {
 	background-image: url(../media/rbu\ button.png);
-    border: solid 5px black;
-    width: 30vw;
-    height: 10vh;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background-size: 100% 100%;
+	border: solid 5px black;
+	width: 30vw;
+	height: 10vh;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	background-size: 100% 100%;
 	font-size: 2em;
 }
 button#buy-rbs {
@@ -53,7 +53,7 @@ button#buy-rb {
 	transform: translate(-50%, 10vh)
 }
 
-div.buff, img.buffimg {
+div.buff, img.buffimg, img#pbuff-img {
 	width: 64px;
 	height: 64px;
 	image-rendering: pixelated;
@@ -62,5 +62,19 @@ div#bonuses {
 	width: 100%;
 	height: 64px;
 	display: flex;
-    justify-content: center;
+	justify-content: center;
+}
+
+div#picked-buff {
+	text-align: center;
+}
+p.buff-info {
+	font-size: 1.2em;
+	margin: 0;
+}
+p#picked-buff-title {
+	margin: 1em;
+}
+img#pbuff-img {
+	transform: translateY(-66.66%);
 }

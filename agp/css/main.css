@@ -87,6 +87,10 @@ p.battle-stat span {
 	font-family: monospace;
 }
 
+.nomargin {
+	margin: 0;
+}
+
 /* clickables */
 img#toggle-spawn-img:hover, div.enemy:hover, button#collect-rbu:hover, button#buy-rbs:hover, button#buy-rb:hover, div.buff:hover {
 	filter: brightness(110%);

@@ -58,7 +58,20 @@ function updateTiles() {
 }
 
 function hasBuff(buff) {
-	return player.allBuffs.includes(buff);
+	return player.buffs.includes(buff);
+}
+
+function getBuffStats() {
+	let stats = {
+		atk: d(0), hp: d(0), accy: d(0), blk: d(0),
+	}
+	for (const buff of player.buffs) {
+		stats.atk = stats.atk.add(BUFFS[buff].atk);
+		stats.hp = stats.hp.add(BUFFS[buff].hp);
+		stats.accy = stats.accy.add(BUFFS[buff].accy);
+		stats.blk = stats.blk.add(BUFFS[buff].blk);
+	}
+	return stats;
 }
 
 // utility

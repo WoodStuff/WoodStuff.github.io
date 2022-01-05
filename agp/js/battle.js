@@ -14,7 +14,7 @@ function fightEnemy(id) {
 	switchTab('battle');
 	player.inBattle = true;
 
-	playerHP = player.hp;
+	playerHP = player.maxhp;
 	playerMaxHP = player.maxhp;
 	playerATK = player.attack;
 	playerACCY = player.accy;

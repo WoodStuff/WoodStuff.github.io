@@ -25,7 +25,7 @@ const BUFFS = {
 	targetplushie: {
 		name: 'Target Plushie', tier: 1,
 		description: 'Training with this plushie helps with your accuracy',
-		atk: d(0), hp: d(2), accy: d(5), blk: d(0),
+		atk: d(0), hp: d(0), accy: d(5), blk: d(0),
 		effect: '+5 accuracy',
 	},
 };
