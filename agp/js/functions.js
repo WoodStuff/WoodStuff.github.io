@@ -77,3 +77,11 @@ function randomValue(array) {
 function randomNumber(min, max) {
 	return Math.floor(Math.random() * ((max + 1) - min)) + min;
 }
+
+function removeValue(array, value) {
+	var index = array.indexOf(value);
+	if (index > -1) {
+		array.splice(index, 1);
+	}
+	return array;
+}

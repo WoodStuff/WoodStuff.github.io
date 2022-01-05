@@ -8,6 +8,13 @@ div#toggle-spawn {
 	top: 25px;
 	right: 25px;
 }
+p#spawner-tutorial-thingy {
+	position: absolute;
+	top: 50px;
+	right: 150px;
+	transform: translateY(-50%);
+	font-size: 1.5em;
+}
 
 img#toggle-spawn-img, div.enemy img {
 	width: 100%;

@@ -49,3 +49,9 @@ p.section-title {
 	font-size: 4em;
 	text-align: center;
 }
+p.section-subtitle {
+	font-size: 1.5em;
+    text-align: center;
+    margin: 0;
+    transform: translateY(-2em);
+}
