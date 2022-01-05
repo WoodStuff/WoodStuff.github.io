@@ -76,6 +76,8 @@ function start() {
 
 
 function tick() {
+	if (typeof player == 'undefined') return false;
+
 	updateTiles();
 
 	if (player.rbu.cooldown < 1) {
