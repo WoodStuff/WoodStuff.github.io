@@ -45,13 +45,7 @@ const startData = {
 		content: [],
 		bestlevel: 1,
 	},
-	buffs: [
-		[],
-		[],
-		[],
-		[],
-	],
-	allbuffs: [],
+	buffs: [],
 	bars: {
 		basic: {
 			progress: new Decimal(0),
