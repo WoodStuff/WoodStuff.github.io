@@ -114,7 +114,7 @@ function startUpdateStats() {
 }
 
 const autoSave = setInterval(() => {
-	//save();
+	save();
 }, 15000);
 
 
