@@ -53,6 +53,8 @@ function battleTurn(id) {
 	if (!enemyMiss) playerHP = playerHP.sub(Decimal.max(enemyATK.sub(playerBLK), new Decimal(0)));
 
 	customTurns(id);
+
+	if (playerHP.gt(playerMaxHP)) playerHP = playerMaxHP;
 	
 	updateBattleStats();
 
