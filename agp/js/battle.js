@@ -96,7 +96,7 @@ function battleTurn(id) {
 }
 
 function customTurns(id) {
-	if (hasBuff('healthpotion') && chance(10)) playerHP = playerHP.add(1);
+	if (hasBuff('healthpotion') && chance(25)) playerHP = playerHP.add(1);
 }
 
 function updateBattleStats(first = false) {
