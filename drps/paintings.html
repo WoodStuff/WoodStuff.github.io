@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DRPS Paintings</title>
+	<style>
+		* {
+			box-sizing: border-box;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+		p.title, p.cost {
+			font-weight: bold;
+			text-align: center;
+			margin: 0;
+		}
+		p.title {
+			font-style: italic;
+		}
+	</style>
+</head>
+<body>
+	<h1>Nirmoll's Paintings</h1>
+	<br>
+
+
+
+	<script>
+		const paintings = [
+			['nirmol', 'https://cdn.discordapp.com/attachments/692839780538384555/929743856356958228/nirmol.png', 10],
+			['eg', 'https://cdn.discordapp.com/attachments/692839780538384555/929747875238412303/eg.png', 10],
+			['op poton', 'https://cdn.discordapp.com/attachments/692839780538384555/929748601444368494/op_poton.png', 10],
+		];
+
+		for (const p of paintings) {
+			let div = document.createElement('div');
+			let text = document.createElement('p');
+			let img = document.createElement('img');
+			let cost = document.createElement('p');
+
+			text.innerHTML = `"${p[0]}"`;
+			text.classList.add('title');
+
+			img.src = p[1];
+			img.width = 128;
+			img.height = 128;
+
+			cost.innerHTML = `Cost: ${p[2]}YP`;
+			cost.classList.add('cost');
+
+			div.style.width = '128px';
+
+			div.appendChild(text);
+			div.appendChild(img);
+			div.appendChild(cost);
+			div.appendChild(document.createElement('br'));
+			div.appendChild(document.createElement('br'));
+
+			document.body.appendChild(div);
+		}
+	</script>
+</body>
+</html>
