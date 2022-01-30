@@ -3,7 +3,7 @@ let pageCategories = [];
 function linkchange() {
 	var input = document.getElementById('search').value.toLowerCase();
 	var search = document.getElementById('searchbutton');
-	search.href = input == '' ? '../index.html' : `../${input}`;
+	search.href = input == '' ? '../index.html/' : `../${input}/`;
 }
 
 function loadPage() {
