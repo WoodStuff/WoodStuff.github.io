@@ -7,6 +7,23 @@ function linkchange() {
 }
 
 function loadPage() {
+	let moreFiles = ['css/special.css'];
+	
+	for (const file of moreFiles) {
+		let type = file.slice(-3) == 'css' ? 'link' : 'script'
+		let add = document.createElement(type);
+		if (type == 'link') {
+			add.rel = 'stylesheet';
+			add.href = file;
+		}
+		else {
+			add.type = 'text/javascript';
+			add.src = file;
+		}
+
+		document.head.appendChild(add);
+	}
+
 	specifyCategories();
 	document.title = `${document.getElementsByTagName('t')[0].innerHTML} | Egg Wiki`
 

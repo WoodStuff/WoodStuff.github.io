@@ -1,0 +1,16 @@
+img.right {
+	float: right;
+}
+
+img.small {
+	width: 64px;
+	height: 64px;
+}
+img.medium {
+	width: 128px;
+	height: 128px;
+}
+img.large {
+	width: 256px;
+	height: 256px;
+}
