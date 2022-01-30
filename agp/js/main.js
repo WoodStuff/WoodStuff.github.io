@@ -61,8 +61,6 @@ const decimals = ['currency', 'rocks', 'attack', 'maxhp', 'hp', 'accy', 'block']
 const objdecimals = { rbu: ['current', 'collect', 'gained'] };
 const allobjdec = ['xp', 'bars'];
 
-const d = x => new Decimal(x);
-
 function start() {
 	player = startData;
 	startUpdateStats();

@@ -2802,3 +2802,5 @@ for (var i = 0; i < 10; ++i)
   return Decimal;
 
 }));
+
+const d = x => new Decimal(x);

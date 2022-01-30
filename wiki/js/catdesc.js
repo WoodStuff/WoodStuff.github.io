@@ -4,4 +4,5 @@ const catdescs = {
 	base: 'The main wiki functionality',
 	pages: 'The website\'s pages',
 	agp: 'Everything related to AGP',
+	agpenemies: 'The enemies of AGP',
 }
