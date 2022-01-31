@@ -1,9 +1,23 @@
+const aliases = {
+	index: ['home', 'main', 'main page'],
+	website: ['woodstuff.github.io', 'woodstuffgithubio', 'woodstuff github io'],
+	subpages: ['list of subpages', 'games', 'pages', 'game', 'page'],
+	redsquare: ['red square'],
+	greensquare: ['green square'],
+	bluesquare: ['blue square'],
+};
+
 let pageCategories = [];
 
 function linkchange() {
 	let input = document.getElementById('search').value.toLowerCase();
 	let search = document.getElementById('searchbutton');
-	search.href = input == '' ? '../index.html' : `../${input}`;
+	if (Object.values(aliases).flat().includes(input)) {
+		for (const page in aliases) {
+			if (aliases[page].includes(input)) return search.href = page;
+		}
+	}
+	search.href = input == '' ? '../index.html/' : `../${input}/`;
 }
 
 function loadPage() {
