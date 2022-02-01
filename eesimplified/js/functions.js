@@ -1,0 +1,1 @@
+const el = x => document.getElementById(x);

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>EE: Simplified</title>
+	<script src="js/lib/break_eternity.js" defer></script>
+	<script src="js/lib/format.js" defer></script>
+
+	<script src="js/main.js" defer></script>
+	<script src="js/saving.js" defer></script>
+	<script src="js/functions.js" defer></script>
+	<link rel="stylesheet" href="css/main.css">
+	<script src="https://kit.fontawesome.com/8c07ded0d5.js" crossorigin="anonymous"></script>
+</head>
+<body onload="firststart();">
+	<div id="top">
+		<button id="shop-tab" class="tab selected">Shop</button>
+		<button id="campaigns-tab" class="tab">Campaigns</button>
+		<button id="settings-tab" class="tab"><i class="fas fa-cog"></i></button>
+		<div id="resources">
+			<div id="energy-div">
+				<img src="media/energy.png" alt="energy" width="29" height="40">
+				<div id="energy-resource">
+					<div id="energy-count"><span id="energy">a</span>/<span id="max-energy">b</span><br></div>
+					<span id="energy-ps">c energy/s</span>
+				</div>
+			</div>
+			<div id="gem-div">
+				<img src="media/gem.png" alt="gems" width="50" height="40">
+				<span id="gems">0</span>
+			</div>
+		</div>
+	</div>
+	<p id="title">Everybody Edits Simplified</p>
+	<div id="game-container">
+		<div id="panel">
+			<div id="shop">
+				<div id="tabs"></div>
+			</div>
+			<div id="campaigns" style="display:none;"></div>
+			<div id="settings" style="display:none;"></div>
+		</div>
+	</div>
+</body>
+</html>

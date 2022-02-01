@@ -1,0 +1,100 @@
+@font-face {
+    font-family: nfc;
+    src: url('../nokiafc.ttf') format('truetype');
+}
+
+* {
+	font-family: nfc;
+	image-rendering: pixelated;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	background-color: #000000;
+}
+
+div#top {
+	width: 100%;
+	height: 10%;
+	background: linear-gradient(#444444, #000000);
+	border-bottom: solid 3px #666666;
+	font-size: 0;
+}
+div#top button.tab {
+	border-style: solid;
+	height: 100%;
+	width: 10%;
+	background: linear-gradient(#aaaaaa, #777777);
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-right: solid 3px #666666;
+	color: white;
+	font-size: 16px;
+}
+div#top button.tab:hover {
+	background: linear-gradient(#cccccc, #888888);
+}
+div#top button.tab:active {
+	background: linear-gradient(#bbbbbb, #777777);
+}
+div#top button.tab.selected {
+	background: linear-gradient(#00aa00, #007700);
+	cursor: default;
+}
+
+div#top button#settings-tab.tab {
+	width: 10vh;
+	font-size: 32px;
+    position: absolute;
+    height: 10%;
+}
+
+div#top div#resources {
+	position: absolute;
+	right: calc((10vh - 40px) / 2);
+	top: calc((10vh - 40px) / 2);
+	height: 40px;
+	font-size: 14px;
+	color: white;
+	display: flex;
+    align-items: center;
+}
+
+div#resources div:not(#energy-resource, #energy-count) {
+	display: flex;
+    align-items: center;
+	padding-left: 32px;
+}
+
+div#resources div img {
+	padding-right: 6px;
+}
+
+span#energy-ps {
+	position: absolute;
+	font-size: 10px;
+	color: #cccccc;
+}
+
+p#title {
+	color: #df6518;
+	font-size: 2em;
+	margin: 0;
+	padding: 1em;
+}
+
+div#game-container {
+	width: 99%;
+	height: calc(90% - 6em - 20px);
+	background-color: red;
+}
+div#panel {
+	width: 100%;
+	height: 100%;
+	border: solid 1px #bbbbbb;
+	border-radius: 5vh 5vh;
+}
