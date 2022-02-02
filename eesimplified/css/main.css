@@ -7,6 +7,7 @@
 	font-family: nfc;
 	image-rendering: pixelated;
 	user-select: none;
+	color: white;
 }
 
 html, body {
@@ -101,4 +102,9 @@ div#panel {
 	height: 90%;
 	border: solid 1px #bbbbbb;
 	border-radius: 1vh 1vh;
+}
+div#panel > div {
+	width: 100%;
+	height: 100%;
+	margin: 0;
 }

@@ -1,12 +1,15 @@
 const el = x => document.getElementById(x);
 
 function switchShopTab(tab) {
+	let pastTab = getShopTab();
 	let tabs = ['featured', 'smileys', 'blocks', 'worlds', 'auras', 'npcs', 'classic', 'crew', 'services'];
-	if (!tabs.includes(tab)) return false;
-	for (const button of document.querySelectorAll('.shop-tab.selected')) {
-		button.classList.remove('selected');
-		el(`shop-tab-${tab}`).classList.add('selected');
-	}
+	if (!tabs.includes(tab) || tab == pastTab) return false;
+	
+	el(`shop-tab-${pastTab}`).classList.remove('selected');
+	el(`shop-tab-${tab}`).classList.add('selected');
+
+	el(`items-${pastTab}`).style.display = 'none';
+	el(`items-${tab}`).style.display = 'block';
 }
 
 function getShopTab() {

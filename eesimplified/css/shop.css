@@ -33,3 +33,13 @@ img.tab-icon {
 	transform: translateX(-2px);
 	margin-right: 4px;
 }
+
+div#items {
+	width: calc(100% - 44px);
+	height: calc(100% - 44px);
+	transform: translateX(22px);
+}
+div.shop-items {
+	width: 100%;
+	height: 100%;
+}
