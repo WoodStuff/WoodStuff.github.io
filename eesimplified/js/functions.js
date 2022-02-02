@@ -8,3 +8,8 @@ function switchShopTab(tab) {
 		el(`shop-tab-${tab}`).classList.add('selected');
 	}
 }
+
+function getShopTab() {
+	let element = document.querySelector('.shop-tab.selected');
+	return element.id.slice(9);
+}
