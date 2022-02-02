@@ -7,8 +7,8 @@ const BUFFS = {
 	swordplushie: {
 		name: 'Sword Plushie', tier: 1,
 		description: 'A tiny sword to help defeat those squares',
-		atk: d(1), hp: d(0), accy: d(0), blk: d(0),
-		effect: '+1 attack',
+		atk: d(0.5), hp: d(0), accy: d(0), blk: d(0),
+		effect: '+0.5 attack',
 	},
 	heartplushie: {
 		name: 'Heart Plushie', tier: 1,
