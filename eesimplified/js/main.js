@@ -24,6 +24,7 @@ const startData = {
 	campaignsComplete: {},
 	inCampaign: false,
 	tab: 'shop',
+	shoptab: 'featured',
 };
 
 var player;

@@ -1,0 +1,35 @@
+div#shop div#tabs {
+	display: flex;
+	height: 22px;
+	justify-content: center;
+	column-gap: 8px;
+}
+button.shop-tab {
+	width: 10%;
+	height: 100%;
+	background: linear-gradient(#222222, #000000);
+	border: solid 1px #bbbbbb;
+	border-radius: 0.5vh 0.5vh 0 0;
+	transform: translateY(-22.5px);
+	cursor: pointer;
+	color: white;
+	font-size: 0.6em;
+	display: flex;
+	align-items: center;
+}
+button.shop-tab:hover {
+	background: linear-gradient(#333333, #111111);
+}
+button.shop-tab:active {
+	background: linear-gradient(#1d1d1d, #000000);
+}
+button.shop-tab.selected {
+	background: linear-gradient(#888888, #777777);
+	cursor: default;
+}
+
+img.tab-icon {
+	float: left;
+	transform: translateX(-2px);
+	margin-right: 4px;
+}

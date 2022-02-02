@@ -11,7 +11,9 @@
 	<script src="js/main.js" defer></script>
 	<script src="js/saving.js" defer></script>
 	<script src="js/functions.js" defer></script>
+
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/shop.css">
 	<script src="https://kit.fontawesome.com/8c07ded0d5.js" crossorigin="anonymous"></script>
 </head>
 <body onload="firststart();">
@@ -37,7 +39,17 @@
 	<div id="game-container">
 		<div id="panel">
 			<div id="shop">
-				<div id="tabs"></div>
+				<div id="tabs">
+					<button onclick="switchShopTab('featured')" class="shop-tab selected" id="shop-tab-featured"><img class="tab-icon" src="media/tabicons/featured.png">Featured</button>
+					<button onclick="switchShopTab('smileys')" class="shop-tab" id="shop-tab-smileys"><img class="tab-icon" src="media/tabicons/smileys.png">Smileys</button>
+					<button onclick="switchShopTab('blocks')" class="shop-tab" id="shop-tab-blocks"><img class="tab-icon" src="media/tabicons/blocks.png">Blocks</button>
+					<button onclick="switchShopTab('worlds')" class="shop-tab" id="shop-tab-worlds"><img class="tab-icon" src="media/tabicons/worlds.png">Worlds</button>
+					<button onclick="switchShopTab('auras')" class="shop-tab" id="shop-tab-auras"><img class="tab-icon" src="media/tabicons/auras.png">Auras</button>
+					<button onclick="switchShopTab('npcs')" class="shop-tab" id="shop-tab-npcs"><img class="tab-icon" src="media/tabicons/npcs.png">NPCs</button>
+					<button onclick="switchShopTab('classic')" class="shop-tab" id="shop-tab-classic"><img class="tab-icon" src="media/tabicons/classic.png">Classic</button>
+					<button onclick="switchShopTab('crew')" class="shop-tab" id="shop-tab-crew"><img class="tab-icon" src="media/tabicons/crew.png">Crew</button>
+					<button onclick="switchShopTab('services')" class="shop-tab" id="shop-tab-services"><img class="tab-icon" src="media/tabicons/services.png">Services</button>
+				</div>
 			</div>
 			<div id="campaigns" style="display:none;"></div>
 			<div id="settings" style="display:none;"></div>
