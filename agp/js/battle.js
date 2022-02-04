@@ -113,8 +113,8 @@ function updateBattleStats(first = false) {
 	document.getElementById('battle-enemy-blk').innerHTML = `${format(enemyBLK)} BLK`;
 
 	if (first) return true;
-	document.getElementById('battle-player-decrease').innerHTML = enemyMiss ? 'Missed!' : `-${pastPHP - playerHP}`;
-	document.getElementById('battle-enemy-decrease').innerHTML = playerMiss ? 'Missed!' : `-${pastEHP - enemyHP}`;
+	document.getElementById('battle-player-decrease').innerHTML = enemyMiss ? 'Missed!' : `${(pastPHP.sub(playerHP)) * -1}`;
+	document.getElementById('battle-enemy-decrease').innerHTML = playerMiss ? 'Missed!' : `${(pastEHP.sub(enemyHP)) * -1}`;
 	document.getElementById('battle-player-decrease').style.color = '#790000';
 	document.getElementById('battle-enemy-decrease').style.color = '#790000';
 	setTimeout(decreaseStuff, 200);
