@@ -96,16 +96,60 @@ img#toggle-spawn-img:hover, div.enemy:hover, button#collect-rbu:hover, button#bu
 	filter: brightness(110%);
 }
 img#toggle-spawn-img:active, div.enemy:active, button#collect-rbu:active, button#buy-rbs:active, button#buy-rb:active, div.buff:active,
-div#first-rb:active, div#prev-rb:active, div#next-rb:active, div#last-rb:active {
+div#first-rb:active, div#prev-rb:active, div#next-rb:active, div#last-rb:active, .consumable-item:active {
 	filter: brightness(80%) !important;
 }
 
-div#first-rb:hover, div#prev-rb:hover, div#next-rb:hover, div#last-rb:hover {
+div#first-rb:hover, div#prev-rb:hover, div#next-rb:hover, div#last-rb:hover, .consumable-item:hover {
 	filter: brightness(120%);
+}
+
+.notrsf {
+	transform: none !important;
+}
+
+.consumable-item {
+	border: solid #010101;
+	border-radius: 5px;
+	width: 50px;
+	height: 50px;
+	background-color: #00000025;
+	position: absolute;
+	background-size: 45px;
+}
+.consumable-count {
+	position: absolute;
+	user-select: none;
+	width: 500px;
 }
 
 * {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	box-sizing: border-box;
 	transition: 0.1s;
+}
+
+
+/* consumable positioning */
+
+#use-squarespawn {
+	top: 50px;
+	right: 150px;
+	background-image: url('../media/items/squarespawn.png');
+}
+#use-rburecharge {
+	right: calc(35vw - 10% - 50px);
+	background-image: url('../media/items/rburecharge.png');
+	transform: translateY(calc(5vh - 25px));
+}
+#e-consumable-count {
+	top: 100px;
+	right: 150px;
+	text-align: right;
+}
+#r-consumable-count {
+	transform: translateY(calc(10vh));
+    text-align: right;
+    width: 30vw;
+    left: calc(35vw - 8.888%);
 }

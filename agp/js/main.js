@@ -27,6 +27,7 @@ const startData = {
 	tilesUnlocked: [
 		'enemy',
 	],
+	items: {},
 	battles: {
 		total: 0,
 		won: 0,
@@ -57,9 +58,9 @@ const startData = {
 };
 
 var player;
-const decimals = ['currency', 'rocks', 'attack', 'maxhp', 'hp', 'accy', 'block'];
+const decimalstats = ['currency', 'rocks', 'attack', 'maxhp', 'hp', 'accy', 'block'];
 const objdecimals = { rbu: ['current', 'collect', 'gained'] };
-const allobjdec = ['xp', 'bars'];
+const allobjdec = ['xp', 'bars', 'items'];
 
 function start() {
 	player = startData;
@@ -104,14 +105,32 @@ function startUpdateStats() {
 			player.accy = calcstats.accy();
 			player.block = calcstats.block();
 		}
+
+		const counts = document.getElementsByClassName('consumable-count');
+		let hovered = '';
+		for (const item of document.getElementsByClassName('consumable-item')) {
+			if (getItemCount(item.id.slice(4)).eq(0)) item.style.display = 'none';
+			else item.style.display = 'block';
+			if (!item.matches(':hover')) continue;
+			hovered = item.id.slice(4);
+			break;
+		}
+		for (const count of counts) {
+			if (hovered == '') {
+				count.innerHTML = '';
+				continue;
+			}
+			count.innerHTML = `${getItem(hovered).display}: ${formatWhole(getItemCount(hovered))}`;
+		}
 	}, 100);
 }
 
 const autoSave = setInterval(() => {
-	save();
+	//save();
 }, 15000);
 
 
 function fixStuff() {
 	if (typeof player.buffs[0] == 'object') player.buffs = [];
+	if (player.items == undefined) player.items = {};
 }

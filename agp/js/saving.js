@@ -4,7 +4,7 @@ function load(savefile = 'agpSave') {
 
 	for (const v in player) {// some random af code i dont understand that converts some strings into decimals because json sucks
 		if (typeof player[v] != 'object') {
-			if (decimals.includes(v)) player[v] = new Decimal(player[v]);
+			if (decimalstats.includes(v)) player[v] = new Decimal(player[v]);
 		}
 		else {
 			if (objdecimals.hasOwnProperty(v) || allobjdec.includes(v)) {

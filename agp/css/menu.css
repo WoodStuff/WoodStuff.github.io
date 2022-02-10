@@ -4,6 +4,7 @@
 	position: absolute;
 	--bg: url(../media/tiles/test.png);
 	background-image: var(--bg);
+	user-select: none;
 }
 .tile-locked {
 	filter: grayscale(100%);

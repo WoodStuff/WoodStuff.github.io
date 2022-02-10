@@ -42,6 +42,13 @@ div.enemy {
 	position: absolute;
 }
 
+div#enemy-top {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100px;
+}
+
 
 
 /* battle */

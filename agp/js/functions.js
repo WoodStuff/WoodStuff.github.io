@@ -20,6 +20,8 @@ function switchTab(tabp = 'main') {
 
 	player.tab = tabp;
 
+	if (tabp == 'shop') generateShopItems();
+
 	return player.tab;
 };
 
@@ -42,6 +44,10 @@ function addXP(amount) {
 			}
 		} while (player.xp.current.gte(player.xp.max));
 	}
+}
+
+function addRBU(amount) {
+	player.rbu.current = player.rbu.current.add(amount);
 }
 
 function updateTiles() {
@@ -76,6 +82,10 @@ function getBuffStats() {
 	return stats;
 }
 
+function spawnerMaxed() {
+	return player.spawner.content.length >= player.spawner.limit;
+}
+
 // utility
 function chance(ch) {
 	return Math.random() < (ch / 100);
@@ -99,4 +109,8 @@ function removeValue(array, value) {
 		array.splice(index, 1);
 	}
 	return array;
+}
+
+function el(e) {
+	return document.getElementById(e);
 }

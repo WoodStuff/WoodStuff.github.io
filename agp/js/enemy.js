@@ -1,4 +1,4 @@
-const spawnerChances = [ 0,   65]; // chance for an enemy to spawn in every spawner per second
+const spawnerChances = [ 0,   35]; // chance for an enemy to spawn in every spawner per second
 const spawnerEnemies = [[0], [0, 1, 2]]; // enemies that spawn in every spawner by id
 // spawner levels:       0    1
 

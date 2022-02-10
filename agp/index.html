@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="css/menu.css">
 
 		<link rel="stylesheet" href="css/enemy.css">
+		<link rel="stylesheet" href="css/shop.css">
 		<link rel="stylesheet" href="css/rbu.css">
 
 		<script src="js/main.js" defer></script>
@@ -19,9 +20,11 @@
 		<script src="js/lists/buffs.js" defer></script>
 		<script src="js/lists/swords.js" defer></script>
 		<script src="js/lists/shields.js" defer></script>
+		<script src="js/lists/items.js" defer></script>
 
 		<script src="js/enemy.js" defer></script>
 		<script src="js/battle.js" defer></script>
+		<script src="js/shop.js" defer></script>
 		<script src="js/rbu.js" defer></script>
 
 		<script src="js/lib/break_eternity.js"></script>
@@ -51,14 +54,51 @@
 				<div class="section" id="enemy" style="display:none;">
 					<div class="back" onclick="switchTab()"></div>
 					<p id="spawner-tutorial-thingy">Click to toggle enemy spawning!</p>
-					<div id="toggle-spawn" onclick="toggleSpawner()">
-						<img id="toggle-spawn-img" src="media/spawner off.png">
+					<div id="enemy-top">
+						<div id="enemy-items">
+							<div id="use-squarespawn" class="consumable-item e-consumable-item" onclick="useConsumable('squarespawn')"></div>
+						</div>
+						<span id="e-consumable-count" class="consumable-count"></span>
+						<div id="toggle-spawn" onclick="toggleSpawner()">
+							<img id="toggle-spawn-img" src="media/spawner off.png">
+						</div>
 					</div>
 					<div id="enemy-field-visible">
 						<div id="enemy-field"></div>
 					</div>
 				</div>
 
+				<div class="section" id="area" style="display:none;">
+					<div class="back" onclick="switchTab()"></div>
+				</div>
+
+				<div class="section" id="shop" style="display:none;">
+					<div class="back" onclick="switchTab()"></div>
+					<p class="section-title">The Shop</p>
+					<p class="section-subtitle">You get an item for buying in the shop, they're not insta-use.</p>
+					<div id="items"></div>
+				</div>
+
+				<div class="section" id="rbu" style="display:none;">
+					<div class="back" onclick="switchTab()"></div>
+					<p class="section-title">You have <span id="rbu-counter">N</span> RBU</p>
+
+					<button id="collect-rbu">+<span id="rbu-per-collect">n</span> RBU</button>
+					<div id="rbu-items">
+						<span id="r-consumable-count" class="consumable-count"></span>
+						
+						<div id="use-rburecharge" class="consumable-item r-consumable-item" onclick="useConsumable('rburecharge')"></div>
+					</div>
+
+					<button id="buy-rbs">RB Shop</button>
+				</div>
+
+
+
+
+
+
+				
 				<div class="section" id="battle" style="display:none;">
 					<div class="forfeit" onclick="forfeitFight()"></div>
 					<p id="battle-title">Vs. Red Square</p>
@@ -86,23 +126,6 @@
 							<p class="battle-stat" id="battle-xp-reward">+<span id="b-xp-value">0</span> XP</p>
 						</div>
 					</div>
-				</div>
-
-				<div class="section" id="area" style="display:none;">
-					<div class="back" onclick="switchTab()"></div>
-				</div>
-
-				<div class="section" id="shop" style="display:none;">
-					<div class="back" onclick="switchTab()"></div>
-				</div>
-
-				<div class="section" id="rbu" style="display:none;">
-					<div class="back" onclick="switchTab()"></div>
-					<p class="section-title">You have <span id="rbu-counter">N</span> RBU</p>
-
-					<button id="collect-rbu">+<span id="rbu-per-collect">n</span> RBU</button>
-
-					<button id="buy-rbs">RB Shop</button>
 				</div>
 
 				<div class="section" id="rbshop" style="display:none;">
