@@ -15,6 +15,8 @@ function buyItem(item) {
 	if (player.items[item]) player.items[item] = player.items[item].add(1);
 	else player.items[item] = new Decimal(1);
 
+	i.onBuy();
+
 	performBuyChecks();
 }
 function getItemCount(item) {
