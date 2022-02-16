@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="css/menu.css">
 
 		<link rel="stylesheet" href="css/enemy.css">
+		<link rel="stylesheet" href="css/area.css">
 		<link rel="stylesheet" href="css/shop.css">
 		<link rel="stylesheet" href="css/rbu.css">
 
@@ -21,9 +22,11 @@
 		<script src="js/lists/swords.js" defer></script>
 		<script src="js/lists/shields.js" defer></script>
 		<script src="js/lists/items.js" defer></script>
+		<script src="js/lists/areas.js" defer></script>
 
 		<script src="js/enemy.js" defer></script>
 		<script src="js/battle.js" defer></script>
+		<script src="js/area.js" defer></script>
 		<script src="js/shop.js" defer></script>
 		<script src="js/rbu.js" defer></script>
 
@@ -70,6 +73,20 @@
 
 				<div class="section" id="area" style="display:none;">
 					<div class="back" onclick="switchTab()"></div>
+					<p class="section-title">Pick a Zone</p>
+
+					<div id="pick-zone">
+						<div id="first-zone"></div>
+						<div id="prev-zone"></div>
+
+						<span id="picked-zone">0</span>
+
+						<div id="next-zone"></div>
+						<div id="last-zone"></div>
+
+						<button id="select-zone">Go to Zone 0</button>
+					</div>
+					<button id="go-to-area-info">Area Information</button>
 				</div>
 
 				<div class="section" id="shop" style="display:none;">
@@ -128,6 +145,13 @@
 					</div>
 				</div>
 
+				<div class="section" id="selectarea" style="display:none;">
+					<div class="back" onclick="switchTab('area')"></div>
+				</div>
+				<div class="section" id="areainfo" style="display:none;">
+					<div class="back" onclick="switchTab('area')"></div>
+				</div>
+
 				<div class="section" id="rbshop" style="display:none;">
 					<div class="back" onclick="switchTab()"></div>
 					<p class="section-title">RB Shop</p>
@@ -141,22 +165,22 @@
 						<div id="next-rb"></div>
 						<div id="last-rb"></div>
 
-						<button id="buy-rb">Buy (<span id="rb-cost">45</span> RBU)</div>
+						<button id="buy-rb">Buy (<span id="rb-cost">45</span> RBU)</button>
 					</div>
-					<div class="section" id="selectrb" style="display:none;">
-						<div id="select-rb-back" class="back" style="display:none;" onclick="switchTab()"></div>
-	
-						<p class="section-title">Select a Bonus!</p>
-						<p class="section-subtitle">Hover over a bonus to see its effect.</p>
-						<div id="bonuses"></div>
-						<div id="picked-buff" style="display:none;">
-							<p class="section-title" id="picked-buff-title">You've picked:</p>
-							<p class="section-subtitle" id="pbuff-name">Name</p>
-							<img id="pbuff-img"></img>
-							<p class="section-subtitle" id="pbuff-effect">Effect</p><br>
-	
-							<p class="section-subtitle">Click the button at the top left to exit.</p>
-						</div>
+				</div>
+				<div class="section" id="selectrb" style="display:none;">
+					<div id="select-rb-back" class="back" style="display:none;" onclick="switchTab()"></div>
+
+					<p class="section-title">Select a Bonus!</p>
+					<p class="section-subtitle">Hover over a bonus to see its effect.</p>
+					<div id="bonuses"></div>
+					<div id="picked-buff" style="display:none;">
+						<p class="section-title" id="picked-buff-title">You've picked:</p>
+						<p class="section-subtitle" id="pbuff-name">Name</p>
+						<img id="pbuff-img"></img>
+						<p class="section-subtitle" id="pbuff-effect">Effect</p><br>
+
+						<p class="section-subtitle">Click the button at the top left to exit.</p>
 					</div>
 				</div>
 			</div>

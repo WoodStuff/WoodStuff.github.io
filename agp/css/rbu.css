@@ -24,29 +24,13 @@ div#selected-rb, div#first-rb, div#prev-rb, div#next-rb, div#last-rb {
 	background-position: 50%;
 	position: absolute;
 	left: 50%;
-	transform: translateX(-50%);
+	transform: translateX(var(--offset));
 }
 div#selected-rb {
 	width: 64px;
 	height: 64px;
 	background-position: 0;
 	transform: translate(-50%, -6px);
-}
-div#first-rb {
-	background-image: url(../media/double\ left\ arrow.png);
-	transform: translateX(-250%);
-}
-div#prev-rb {
-	background-image: url(../media/left\ arrow.png);
-	transform: translateX(-175%);
-}
-div#next-rb {
-	background-image: url(../media/right\ arrow.png);
-	transform: translateX(75%);
-}
-div#last-rb {
-	background-image: url(../media/double\ right\ arrow.png);
-	transform: translateX(150%);
 }
 
 button#buy-rb {

@@ -1,5 +1,5 @@
 function switchTab(tabp = 'main') {
-	const tabs = ['main', 'enemy', 'area', 'shop', 'rbu', 'battle', 'rbshop', 'selectrb'];
+	const tabs = ['main', 'enemy', 'area', 'shop', 'rbu', 'battle', 'selectarea', 'areainfo', 'rbshop', 'selectrb'];
 	const bgs = {
 		main: 'main',
 		enemy: 'red',
@@ -7,6 +7,8 @@ function switchTab(tabp = 'main') {
 		shop: 'yellow',
 		rbu: 'purple',
 		battle: 'red',
+		selectarea: 'orange',
+		areainfo: 'orange',
 		rbshop: 'purple',
 		selectrb: 'purple',
 	}
