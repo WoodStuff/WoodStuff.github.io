@@ -10,9 +10,15 @@ function switchShopTab(tab) {
 
 	el(`items-${pastTab}`).style.display = 'none';
 	el(`items-${tab}`).style.display = 'block';
+
+	renderShopItems();
 }
 
 function getShopTab() {
 	let element = document.querySelector('.shop-tab.selected');
 	return element.id.slice(9);
+}
+
+function switchTab(tab) {
+	return false;
 }

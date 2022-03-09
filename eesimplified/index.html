@@ -11,6 +11,8 @@
 	<script src="js/main.js" defer></script>
 	<script src="js/saving.js" defer></script>
 	<script src="js/functions.js" defer></script>
+	<script src="js/items.js" defer></script>
+	<script src="js/shop.js" defer></script>
 
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/shop.css">
@@ -18,9 +20,9 @@
 </head>
 <body onload="firststart();">
 	<div id="top">
-		<button id="shop-tab" class="tab selected">Shop</button>
-		<button id="campaigns-tab" class="tab">Campaigns</button>
-		<button id="settings-tab" class="tab"><i class="fas fa-cog"></i></button>
+		<button onclick="switchTab('shop')" id="shop-tab" class="tab selected">Shop</button>
+		<button onclick="switchTab('campaigns')" id="campaigns-tab" class="tab">Campaigns</button>
+		<button onclick="switchTab('settings')" id="settings-tab" class="tab"><i class="fas fa-cog"></i></button>
 		<div id="resources">
 			<div id="energy-div">
 				<img src="media/energy.png" alt="energy" width="29" height="40">
@@ -52,7 +54,6 @@
 				</div>
 				<div id="items">
 					<div class="shop-items" id="items-featured">
-						<div class="item"></div>
 					</div>
 					<div class="shop-items" id="items-smileys" style="display:none;">
 					</div>
@@ -63,7 +64,6 @@
 					<div class="shop-items" id="items-auras" style="display:none;">
 					</div>
 					<div class="shop-items" id="items-npcs" style="display:none;">
-						Npc tab
 					</div>
 					<div class="shop-items" id="items-classic" style="display:none;">
 					</div>

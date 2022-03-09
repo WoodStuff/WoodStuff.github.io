@@ -43,3 +43,18 @@ div.shop-items {
 	width: 100%;
 	height: 100%;
 }
+
+div.item {
+	background-color: #212121;
+	width: 80%;
+	height: 112px;
+	border: solid 2px #3f3f3f;
+	border-radius: 1vh;
+	margin: auto;
+	margin-bottom: 16px;
+	box-shadow: inset -4px -4px 6px 0px #000000, 
+				inset 4px 4px 6px 0px rgba(0, 0, 0, 0.95);
+}
+div.item > img.item-img {
+	margin: auto;
+}
