@@ -110,7 +110,7 @@ function useConsumable(item) {
 			break;
 
 		case 'rburecharge':
-			gainRBU(true);
+			gainRBU(player.rbu.collect);
 			break;
 
 		default:
