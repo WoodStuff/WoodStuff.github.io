@@ -8,7 +8,7 @@ const buyRBButton = document.getElementById('buy-rb');
 function gainRBU() {
 	player.rbu.disabled = true;
 	player.rbu.cooldown = 2;
-	player.rbu.current = player.rbu.current.add(player.rbu.collect);
+	addRBU(player.rbu.collect);
 }
 
 function openRBShop() {
