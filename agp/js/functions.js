@@ -1,23 +1,22 @@
-function switchTab(tabp = 'main') {
-	const tabs = ['main', 'enemy', 'area', 'shop', 'rbu', 'battle', 'selectarea', 'areainfo', 'rbshop', 'selectrb'];
+function switchTab(tabp = 'main', subtab = 'main') {
+	const tabs = ['main', 'enemy', 'area', 'shop', 'rbu'];
 	const bgs = {
 		main: 'main',
 		enemy: 'red',
 		area: 'orange',
 		shop: 'yellow',
 		rbu: 'purple',
-		battle: 'red',
-		selectarea: 'orange',
-		areainfo: 'orange',
-		rbshop: 'purple',
-		selectrb: 'purple',
 	}
 	if (!tabs.includes(tabp)) throw new Error('Cannot switch tab to non-tab');
 
-	for (v in tabs) {
+	for (const v in tabs) {
+		for (const s of document.getElementById(tabs[v]).children) {
+			s.style.display = 'none';
+		}
 		document.getElementById(tabs[v]).style.display = 'none';
 	}
-	document.getElementById(tabp).style.display = 'block';
+	document.getElementById(`${tabp}-${subtab}`).style.display = 'block';
+	document.getElementById(`${tabp}`).style.display = 'block';
 	document.getElementById('bg').src = `media/bg/${bgs[tabp]}.png`;
 
 	player.tab = tabp;

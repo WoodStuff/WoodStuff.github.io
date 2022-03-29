@@ -50,7 +50,7 @@ prevZoneButton.addEventListener('click', () => navigateZone('prev'));
 nextZoneButton.addEventListener('click', () => navigateZone('next'));
 lastZoneButton.addEventListener('click', () => navigateZone('last'));
 selectZoneButton.addEventListener('click', selectArea);
-areaInfoButton.addEventListener('click', () => switchTab('areainfo'));
+areaInfoButton.addEventListener('click', () => switchTab('area', 'info'));
 
 function navigateZone(direction) {
 	switch (direction) {
@@ -84,5 +84,5 @@ function navigateZone(direction) {
 }
 
 function selectArea() {
-	switchTab('selectarea');
+	switchTab('area', 'select');
 }

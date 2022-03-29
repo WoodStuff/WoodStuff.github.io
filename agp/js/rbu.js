@@ -12,7 +12,7 @@ function gainRBU() {
 }
 
 function openRBShop() {
-	switchTab('rbshop');
+	switchTab('rbu', 'rbshop');
 }
 
 rbuButton.addEventListener('click', gainRBU);
@@ -65,7 +65,7 @@ function buyRB() {
 	if (player.rbu.current.lt(RBS[rbSelected].cost)) return false;
 	player.rbu.current = player.rbu.current.minus(RBS[rbSelected].cost);
 
-	switchTab('selectrb');
+	switchTab('rbu', 'select');
 
 	let pool = buffnames[rbSelected].slice();
 

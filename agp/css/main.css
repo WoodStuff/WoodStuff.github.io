@@ -11,9 +11,15 @@ body {
 	position: absolute;
 	margin: auto;
 	width: 85%;
-	height: 100%;
 	left: 15%;
 	top: 0px;
+	height: 100%;
+}
+.subsection {
+	position: absolute;
+	margin: auto;
+	width: 100%;
+	height: 100%;
 }
 img#bg {
 	width: 100vw;

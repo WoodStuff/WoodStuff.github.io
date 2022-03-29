@@ -11,7 +11,7 @@ function fightEnemy(id) {
 		player.spawner.content.splice(index, 1);
 	}
 
-	switchTab('battle');
+	switchTab('enemy', 'battle');
 	player.inBattle = true;
 
 	playerHP = player.maxhp;
