@@ -35,13 +35,13 @@
 }
 
 #tile-shop {
-	left: calc(100vh - (11.25vw * 2));
+	left: calc(11.25vw * 2.75);
 	top: 20vh;
 	--bg: url(../media/tiles/shop.png);
 }
 
 #tile-rbu {
-	left: calc(100vh - (11.25vw * 2));
+	left: calc(11.25vw * 2.75);
 	bottom: 20vh;
 	--bg: url(../media/tiles/rbu.png);
 }
