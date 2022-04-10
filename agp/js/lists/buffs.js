@@ -36,6 +36,6 @@ const buffcount = Object.keys(BUFFS).length;
 const RBS = [
 	{ cost: d(0), buffs: 1 },  // 15 * 0
 	{ cost: d(45), buffs: 2 },  // 15 * 3
-	{ cost: d(165), buffs: 2 }, // 15 * 11
-	{ cost: d(840), buffs: 2 }, // 15 * 56
+	/* { cost: d(165), buffs: 2 }, // 15 * 11
+	{ cost: d(840), buffs: 2 }, // 15 * 56 */
 ]

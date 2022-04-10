@@ -16,6 +16,7 @@ const limitSpawner = setInterval(() => {
 
 function toggleSpawner() { // what happens when clicking on top right toggle enemy spawner
 	player.spawner.on = !player.spawner.on;
+	document.getElementById('toggle-spawn').title = `The spawner is currently ${player.spawner.on ? 'on.' : 'off!'} Click to toggle.`;
 }
 
 function getEnemy(enemy) { // enter an enemy name, get its stats
