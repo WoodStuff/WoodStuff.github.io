@@ -1,10 +1,10 @@
 .tile {
-	width: 169px;
-	height: 169px;
+	width: 22.5vh;
+	height: 22.5vh;
 	position: absolute;
 	--bg: url(../media/tiles/test.png);
 	background-image: var(--bg);
-	user-select: none;
+	background-size: cover;
 }
 .tile-locked {
 	filter: grayscale(100%);
@@ -23,26 +23,26 @@
 }
 
 #tile-enemy {
-	left: 169px;
-	top: 169px;
+	left: 11.25vw;
+	top: 20vh;
 	--bg: url(../media/tiles/enemy.png);
 }
 
 #tile-area {
-	left: 169px;
-	bottom: 169px;
+	left: 11.25vw;
+	bottom: 20vh;
 	--bg: url(../media/tiles/area.png);
 }
 
 #tile-shop {
-	left: calc(100vh - (169px * 2));
-	top: 169px;
+	left: calc(100vh - (11.25vw * 2));
+	top: 20vh;
 	--bg: url(../media/tiles/shop.png);
 }
 
 #tile-rbu {
-	left: calc(100vh - (169px * 2));
-	bottom: 169px;
+	left: calc(100vh - (11.25vw * 2));
+	bottom: 20vh;
 	--bg: url(../media/tiles/rbu.png);
 }
 
