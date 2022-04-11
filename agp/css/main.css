@@ -154,6 +154,18 @@ div#last-rb, div#last-zone {
 	--offset: 150%;
 }
 
+a#info-hub {
+	position: absolute;
+	bottom: 1%;
+	color: hsl(0, 55%, 26%);
+}
+a#info-hub:hover {
+	color: hsl(0, 55%, 36%);
+}
+a#info-hub:active {
+	color: hsl(0, 55%, 16%);
+}
+
 * {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	box-sizing: border-box;
