@@ -4,7 +4,7 @@
 	position: absolute;
 	--bg: url(../media/tiles/test.png);
 	background-image: var(--bg);
-	background-size: cover;
+	background-size: 22.5vh;
 }
 .tile-locked {
 	filter: grayscale(100%);
@@ -16,10 +16,10 @@
 	filter: brightness(110%);
 }
 .tile:not(.tile-locked):active {
-	width: 166px;
-	height: 166px;
+	width: 22.1005917vh;
+	height: 22.1005917vh;
 	filter: brightness(80%);
-	transform: translate(3px, 3px);
+	transform: translate(0.399408284vh, 0.399408284vh);
 }
 
 #tile-enemy {
