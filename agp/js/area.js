@@ -1,6 +1,6 @@
 var zoneSelected = 0;
 
-const difficulties = {
+const DIFFS = {
 	basic: {
 		dp: [0, 100],
 		color: '#676ab8',
@@ -83,6 +83,15 @@ function navigateZone(direction) {
 	return rbSelected;
 }
 
+function getDifficulty(dp) {
+	for (const d in DIFFS) {
+		if (dp >= DIFFS[d].dp[0] && dp <= DIFFS[d].dp[1]) return d;
+	}
+	return null;
+}
+
 function selectArea() {
 	switchTab('area', 'select');
+
+	
 }

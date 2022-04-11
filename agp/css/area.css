@@ -23,7 +23,6 @@ div#pick-zone > div {
 button#select-zone, button#go-to-area-info {
 	background-image: url(../media/area\ button.png);
 	border: solid 5px black;
-	width: 30vw;
 	height: 10vh;
 	position: absolute;
 	left: 50%;
@@ -31,6 +30,7 @@ button#select-zone, button#go-to-area-info {
 	font-size: 2em;
 }
 button#select-zone {
+	width: 30vw;
 	transform: translate(calc(-50% + 6px), 64px);
 }
 button#go-to-area-info {
