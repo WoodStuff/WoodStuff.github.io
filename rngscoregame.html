@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Rng score game</title>
+
+		<style>
+			* {
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			}
+			body {
+				background-color: #ededed;
+			}
+			div#info {
+				width: 100%;
+				height: 2em;
+				background-color: #00000022;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 50px;
+			}
+			span#score, span#highscore {
+				text-align: center;
+				font-weight: bold;
+			}
+			div#gameing {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			input#number {
+				width: 10em;
+			}
+			p#status {
+				font-size: 1.25em;
+				width: 100%;
+				text-align: center;
+			}
+			div#history > p {
+				margin: 0;
+				text-align: center;
+			}
+		</style>
+		<script>
+			let points = 0;
+			let round = 1;
+			function valid(value) {
+				return value >= 1 && value <= 99 && !isNaN(value);
+			}
+			function attempt() {
+				const value = parseInt(document.getElementById('number').value);
+				if (!valid(value)) return result('invalid');
+
+				if (Math.random() < value / 100) return result('lose');
+				points += value;
+
+				result('success');
+			}
+			function result(outcome = 'invalid') {
+				const status = document.getElementById('status');
+				const value = parseInt(document.getElementById('number').value);
+				const history = document.getElementById('history');
+				const highscore = localStorage.getItem('RSGhighscore');
+				let newbest = false;
+				let previousbest = 0;
+				switch (outcome) {
+					case 'success':
+						status.style.display = 'block';
+						status.style.color = '#22b14c';
+						status.style.backgroundColor = '#adebc0';
+						status.innerHTML = `Success! (+${value} points)`;
+
+						var entry = document.createElement('p');
+						entry.innerHTML = `<b>R${round}:</b> +${value} points`;
+						history.appendChild(entry);
+
+						round++;
+						
+						break;
+
+					case 'lose':
+						if (points > highscore) {
+							previousbest = highscore;
+							localStorage.setItem('RSGhighscore', points);
+							newbest = true;
+						}
+
+						status.style.display = 'block';
+						status.style.color = '#ed1c24';
+						status.style.backgroundColor = '#f2c2c4';
+						status.innerHTML = `Game over!${newbest ? ` New best! (${previousbest} -> ${localStorage.getItem('RSGhighscore')})` : ''}`;
+
+						var entry = document.createElement('p');
+						entry.innerHTML = `<b>R${round}:</b> Game over, tried to get +${value} points`;
+						history.appendChild(entry);
+
+						document.getElementById('attempt').disabled = true;
+						document.getElementById('tryagain').style.display = 'inline';
+						break;
+
+					case 'invalid':
+						status.style.display = 'block';
+						status.style.color = '#ffc90e';
+						status.style.backgroundColor = '#fff3c6';
+						status.innerHTML = 'Invalid number input!';
+						break;
+				
+					default:
+						break;
+				}
+			}
+			function tryagain() {
+				document.getElementById('attempt').disabled = false;
+				document.getElementById('tryagain').style.display = 'none';
+				document.getElementById('status').style.display = 'none';
+				points = 0;
+				round = 1;
+				
+				const history = document.getElementById('history');
+				while (history.firstChild) {
+					history.removeChild(history.lastChild);
+				}
+			}
+			setInterval(() => {
+				const value = valid(document.getElementById('number').value) ? document.getElementById('number').value : '?';
+				document.getElementById('morepoints').innerHTML = value;
+				document.getElementById('failchance').innerHTML = value;
+
+				document.getElementById('score').innerHTML = points;
+				document.getElementById('highscore').innerHTML = localStorage.getItem('RSGhighscore');
+				document.getElementById('round').innerHTML = round;
+			}, 50);
+
+			function start() {
+				if (localStorage.getItem('RSGhighscore') == null) {
+					localStorage.setItem('RSGhighscore', 0);
+				}
+			}
+		</script>
+	</head>
+	<body onload="start();">
+		<div id="gameing">
+			<div id="info">
+				<span>Score: <span id="score">0</span></span>
+				<span>Highscore: <span id="highscore">0</span></span>
+			</div>
+			<p>Round <span id="round">1</span></p>
+
+			<label for="number">Number input (1-99):</label>
+			<input type="number" name="number" id="number" min="1" max="99" value="50">
+			<div id="summary">
+				<span id="summary-points">+<span id="morepoints">1</span> points, <span id="failchance">1</span>% chance of loss</span>
+			</div><br>
+			<button onclick="attempt();" id="attempt">Attempt</button><br>
+			<button onclick="tryagain();" id="tryagain" style="display:none;">Try Again</button>
+			<p id="status" style="display:none;"></p>
+
+			<h2>History</h2>
+			<div id="history"></div>
+		</div>
+	</body>
+</html>
