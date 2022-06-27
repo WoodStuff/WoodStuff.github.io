@@ -37,10 +37,10 @@
 					throws.push(i - 1);
 					throws.push(i - 1);
 				}
-				throws.push(Math.floor(Math.random() * (parts - 1)));
+				throws.push(Math.floor(Math.random() * (parts)));
 				
 				for (let i = 1; i <= votes; i++) {
-					let thing = Math.floor(Math.random() * (throws.length - 1)) + 1;
+					let thing = Math.floor(Math.random() * (throws.length));
 					let vote = throws[thing];
 					count[vote]++;
 				}
