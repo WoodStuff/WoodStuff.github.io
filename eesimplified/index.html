@@ -8,6 +8,8 @@
 	<script src="js/lib/break_eternity.js" defer></script>
 	<script src="js/lib/format.js" defer></script>
 
+	<script src="js/class/Player.js" defer></script>
+
 	<script src="js/main.js" defer></script>
 	<script src="js/saving.js" defer></script>
 	<script src="js/functions.js" defer></script>
@@ -20,9 +22,9 @@
 </head>
 <body onload="firststart();">
 	<div id="top">
-		<button onclick="switchTab('shop')" id="shop-tab" class="tab selected">Shop</button>
-		<button onclick="switchTab('campaigns')" id="campaigns-tab" class="tab">Campaigns</button>
-		<button onclick="switchTab('settings')" id="settings-tab" class="tab"><i class="fas fa-cog"></i></button>
+		<button onclick="player.switchTab('shop')" id="shop-tab" class="tab selected">Shop</button>
+		<button onclick="player.switchTab('campaigns')" id="campaigns-tab" class="tab">Campaigns</button>
+		<button onclick="player.switchTab('settings')" id="settings-tab" class="tab"><i class="fas fa-cog"></i></button>
 		<div id="resources">
 			<div id="energy-div">
 				<img src="media/energy.png" alt="energy" width="29" height="40">
@@ -42,15 +44,15 @@
 		<div id="panel">
 			<div id="shop">
 				<div id="tabs">
-					<button onclick="switchShopTab('featured')" class="shop-tab selected" id="shop-tab-featured"><img class="tab-icon" src="media/tabicons/featured.png">Featured</button>
-					<button onclick="switchShopTab('smileys')" class="shop-tab" id="shop-tab-smileys"><img class="tab-icon" src="media/tabicons/smileys.png">Smileys</button>
-					<button onclick="switchShopTab('blocks')" class="shop-tab" id="shop-tab-blocks"><img class="tab-icon" src="media/tabicons/blocks.png">Blocks</button>
-					<button onclick="switchShopTab('worlds')" class="shop-tab" id="shop-tab-worlds"><img class="tab-icon" src="media/tabicons/worlds.png">Worlds</button>
-					<button onclick="switchShopTab('auras')" class="shop-tab" id="shop-tab-auras"><img class="tab-icon" src="media/tabicons/auras.png">Auras</button>
-					<button onclick="switchShopTab('npcs')" class="shop-tab" id="shop-tab-npcs"><img class="tab-icon" src="media/tabicons/npcs.png">NPCs</button>
-					<button onclick="switchShopTab('classic')" class="shop-tab" id="shop-tab-classic"><img class="tab-icon" src="media/tabicons/classic.png">Classic</button>
-					<button onclick="switchShopTab('crew')" class="shop-tab" id="shop-tab-crew"><img class="tab-icon" src="media/tabicons/crew.png">Crew</button>
-					<button onclick="switchShopTab('services')" class="shop-tab" id="shop-tab-services"><img class="tab-icon" src="media/tabicons/services.png">Services</button>
+					<button onclick="player.switchShopTab('featured')" class="shop-tab selected" id="shop-tab-featured"><img class="tab-icon" src="media/tabicons/featured.png">Featured</button>
+					<button onclick="player.switchShopTab('smileys')" class="shop-tab" id="shop-tab-smileys"><img class="tab-icon" src="media/tabicons/smileys.png">Smileys</button>
+					<button onclick="player.switchShopTab('blocks')" class="shop-tab" id="shop-tab-blocks"><img class="tab-icon" src="media/tabicons/blocks.png">Blocks</button>
+					<button onclick="player.switchShopTab('worlds')" class="shop-tab" id="shop-tab-worlds"><img class="tab-icon" src="media/tabicons/worlds.png">Worlds</button>
+					<button onclick="player.switchShopTab('auras')" class="shop-tab" id="shop-tab-auras"><img class="tab-icon" src="media/tabicons/auras.png">Auras</button>
+					<button onclick="player.switchShopTab('npcs')" class="shop-tab" id="shop-tab-npcs"><img class="tab-icon" src="media/tabicons/npcs.png">NPCs</button>
+					<button onclick="player.switchShopTab('classic')" class="shop-tab" id="shop-tab-classic"><img class="tab-icon" src="media/tabicons/classic.png">Classic</button>
+					<button onclick="player.switchShopTab('crew')" class="shop-tab" id="shop-tab-crew"><img class="tab-icon" src="media/tabicons/crew.png">Crew</button>
+					<button onclick="player.switchShopTab('services')" class="shop-tab" id="shop-tab-services"><img class="tab-icon" src="media/tabicons/services.png">Services</button>
 				</div>
 				<div id="items">
 					<div class="shop-items" id="items-featured">

@@ -1,5 +1,5 @@
 function renderShopItems() {
-	const tab = getShopTab();
+	const tab = player.getShopTab();
 	for (item of ITEMS[tab]) {
 		const box = document.createElement('div');
 		box.classList.add('item');

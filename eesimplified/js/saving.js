@@ -1,31 +1,37 @@
 function load(savefile = 'eesSave') {
 	if (localStorage.getItem(savefile) == null) start();
-	player = JSON.parse(decodeURIComponent(escape(atob(localStorage.getItem(savefile)))));
+	let save = JSON.parse(decodeURIComponent(escape(atob(localStorage.getItem(savefile)))));
 
-	for (const v in player) {// some random af code i dont understand that converts some strings into decimals because json sucks
-		if (typeof player[v] != 'object') {
-			if (decimalstats.includes(v)) player[v] = new Decimal(player[v]);
+	for (const v in save) {// some random af code i dont understand that converts some strings into decimals because json sucks
+		if (typeof save[v] != 'object') {
+			if (decimalstats.includes(v)) save[v] = new Decimal(save[v]);
 		}
 		else {
 			if (objdecimals.hasOwnProperty(v) || allobjdec.includes(v)) {
-				for (const val in player[v]) {
+				for (const val in save[v]) {
 					if (allobjdec.includes(v)) {
-						if (typeof player[v][val] != 'object') player[v][val] = new Decimal(player[v][val]);
+						if (typeof save[v][val] != 'object') save[v][val] = new Decimal(save[v][val]);
 						else {
-							for (const value in player[v][val]) {
-								if (typeof player[v][val][value] == 'string') player[v][val][value] = new Decimal(player[v][val][value]);
+							for (const value in save[v][val]) {
+								if (typeof save[v][val][value] == 'string') save[v][val][value] = new Decimal(save[v][val][value]);
 							}
 						}
 					}
-					else if (objdecimals[v].includes(val)) player[v][val] = new Decimal(player[v][val]);
+					else if (objdecimals[v].includes(val)) save[v][val] = new Decimal(save[v][val]);
 				}
 			}
 		}
 	} // its not worth adding comments to it anyway because too much work
+	// if any of you feel like refactoring this i beg you please do it
+
+	for (const v in save) {
+		player[v] = save[v];
+	}
 	
+	const startData = new Player();
 	for (const v in startData) if (player[v] == undefined) player[v] = startData[v];
 
-	//switchTab(player.tab);
+	//player.switchTab(player.tab);
 	startUpdateStats();
 
 	return true;
