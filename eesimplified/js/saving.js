@@ -33,6 +33,7 @@ function load(savefile = 'eesSave') {
 
 	//player.switchTab(player.tab);
 	startUpdateStats();
+	renderShopItems();
 
 	return true;
 }
