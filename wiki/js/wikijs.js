@@ -82,7 +82,7 @@ function handleTemplate(template, values) {
 			return list;
 	
 		default:
-			return document.createElement('p').innerHTML = `No such template!`
+			return null;
 	}
 }
 
