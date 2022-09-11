@@ -55,6 +55,8 @@ div.item {
 	box-shadow: inset -4px -4px 6px 0px #000000, 
 				inset 4px 4px 6px 0px rgba(0, 0, 0, 0.95);
 }
+
+
 div.item > img.item-img {
-	margin: auto;
+	transform: translate(50%, 50%);
 }
