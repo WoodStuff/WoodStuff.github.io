@@ -62,7 +62,7 @@ function specifyCategories() {
 		else catContainer.innerHTML += ', ';
 
 		const a = document.createElement('a');
-		a.href = `category/${cat}.html`; // set the category links
+		a.setAttribute('p', `c-${cat}`); // set the p attribute so the text won't appear purple, this gets finished later on in killlinks
 		a.title = catDescs[cat]; // set the description for category
 		a.innerHTML = catNames[cat];
 
