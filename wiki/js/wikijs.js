@@ -1,5 +1,5 @@
 let pageCategories = [];
-const pageID = location.href.split('/').findLast(() => true).slice(0, -5);
+var pageID;
 
 function linkchange() {
 	let input = document.getElementById('search').value.toLowerCase();
@@ -13,6 +13,8 @@ function linkchange() {
 }
 
 function loadPage() {
+	pageID = document.querySelector('meta[name="id"]').content;
+
 	let moreFiles = ['css/special.css'];
 	
 	for (const file of moreFiles) {
