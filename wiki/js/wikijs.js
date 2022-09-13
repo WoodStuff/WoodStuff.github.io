@@ -1,23 +1,15 @@
-const aliases = {
-	index: ['home', 'main', 'main page'],
-	website: ['woodstuff.github.io', 'woodstuffgithubio', 'woodstuff github io'],
-	subpages: ['list of subpages', 'games', 'pages', 'game', 'page'],
-	redsquare: ['red square'],
-	greensquare: ['green square'],
-	bluesquare: ['blue square'],
-};
-
 let pageCategories = [];
+const pageID = location.href.split('/').findLast(() => true).slice(0, -5);
 
 function linkchange() {
 	let input = document.getElementById('search').value.toLowerCase();
 	let search = document.getElementById('searchbutton');
 	if (Object.values(aliases).flat().includes(input)) {
 		for (const page in aliases) {
-			if (aliases[page].includes(input)) return search.href = page;
+			if (aliases[page].includes(input)) input = page;
 		}
 	}
-	search.href = input == '' ? '../index.html/' : `../${input}/`;
+	search.href = input == '' ? '../index.html/' : `../${input}.html`;
 }
 
 function loadPage() {
@@ -38,24 +30,74 @@ function loadPage() {
 		document.head.appendChild(add);
 	}
 
+	const pageTitle = document.createElement('t');
+	pageTitle.id = 'title';
+	pageTitle.innerHTML = getPageInfo(pageID).title;
+	document.getElementById('page').appendChild(pageTitle);
+
 	specifyCategories();
 	document.title = `${document.getElementsByTagName('t')[0].innerHTML} | Egg Wiki`
 
 	loadTemplates();
+
+	killLinks();
 }
 
 function specifyCategories() {
-	document.querySelectorAll('a[data-cat]').forEach(a => {
+	document.getElementById('article').appendChild(document.createElement('br'));
+	document.getElementById('article').appendChild(document.createElement('br'));
+	document.getElementById('article').appendChild(document.createElement('br'));
+
+	const catContainer = document.createElement('cat');
+	catContainer.innerHTML = '<b>Categories:</b>';
+	
+	let firstRun = true;
+	const catList = getPageInfo(pageID).categories;
+
+	for (const cat of catList) {
+		if (firstRun) {
+			catContainer.innerHTML += ' ';
+			firstRun = false;
+		}
+		else catContainer.innerHTML += ', ';
+
+		const a = document.createElement('a');
+		a.href = `category/${cat}`; // set the category links
+		a.title = catDescs[cat]; // set the description for category
+		a.innerHTML = catNames[cat];
+
+		pageCategories.push(cat);
+		catContainer.appendChild(a);
+	}
+
+	document.getElementById('article').appendChild(catContainer);
+
+	/*document.querySelectorAll('a[data-cat]').forEach(a => {
 		a.href = `category/${a.dataset.cat}`; // set the category links
 		a.title = catdescs[a.dataset.cat]; // set the description for category
 		pageCategories.push(a.dataset.cat);
-	});
+	});*/
 }
 
 function loadTemplates() {
 	for (el of document.getElementsByTagName('temp')) {
 		el.replaceWith(handleTemplate(el.attributes.tid.value, el.attributes))
 	}
+}
+
+function killLinks() {
+	document.querySelectorAll('a[p]').forEach(link => {
+		const value = link.attributes.p.value;
+		
+		if (value.startsWith('c-')) { // category
+			if (!implementedCats.includes(value.slice(2))) link.classList.add('dead');
+			else link.href = `category/${value.slice(2)}.html`;
+		}
+		else { // page
+			if (!getPageInfo(value)) link.classList.add('dead');
+			else link.href = `${value}.html`;
+		}
+	});
 }
 
 function handleTemplate(template, values) {

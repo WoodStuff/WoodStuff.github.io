@@ -1,0 +1,45 @@
+// This doesn't hold the content of the pages, just basic information
+const PAGES = [{ name: 'index', title: 'Main Page', categories: ['main', 'base'], aliases: ['home', 'main', 'main page'] }];
+
+addPage('website',
+			'woodstuff.github.io',
+			['main'],
+			['woodstuff.github.io', 'woodstuffgithubio', 'woodstuff github io']);
+addPage('subpages',
+			'Subpages',
+			['main', 'lists'],
+			['list of subpages', 'games', 'pages', 'game', 'page', 'sub pages']);
+addPage('agp',
+			'AGP',
+			['pages', 'agp', 'ags'],
+			[]);
+addPage('redsquare',
+			'Red Square',
+			['agp', 'agpenemies'],
+			['red square']);
+addPage('greensquare',
+			'Green Square',
+			['agp', 'agpenemies'],
+			['green square']);
+addPage('bluesquare',
+			'Blue Square',
+			['agp', 'agpenemies'],
+			['blue square']);
+
+function addPage(name, title, categories, aliases) {
+	PAGES.push( { name: name, title: title, categories: categories, aliases: aliases } )
+}
+
+const aliases = {};
+for (const page in PAGES) {
+	if (Object.hasOwnProperty.call(PAGES, page)) {
+		const P = PAGES[page];
+		if (P.aliases.length != 0) {
+			aliases[P.name] = P.aliases;
+		}
+	}
+}
+
+function getPageInfo(id) {
+	return PAGES.find(i => i.name == id);
+}
