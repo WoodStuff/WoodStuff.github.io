@@ -4,7 +4,7 @@ const PAGES = [{ name: 'index', title: 'Main Page', categories: ['main', 'base']
 addPage('website',
 			'woodstuff.github.io',
 			['main'],
-			['woodstuff.github.io', 'woodstuffgithubio', 'woodstuff github io']);
+			['woodstuff.github.io', 'woodstuffgithubio', 'woodstuff github io', 'site']);
 addPage('subpages',
 			'Subpages',
 			['main', 'lists'],
@@ -29,6 +29,14 @@ addPage('whitesquare',
 			'White Square',
 			['agp', 'agpenemies'],
 			['white square']);
+addPage('wiki',
+			'Wiki',
+			[''],
+			['']);
+
+
+
+
 
 function addPage(name, title, categories, aliases) {
 	PAGES.push( { name: name, title: title, categories: categories, aliases: aliases } )
