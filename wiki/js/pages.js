@@ -1,45 +1,53 @@
 // This doesn't hold the content of the pages, just basic information
-const PAGES = [{ name: 'index', title: 'Main Page', categories: ['main', 'base'], aliases: ['home', 'main', 'main page'] }];
+const PAGES = [{ name: 'index', title: 'Main Page', description: 'The main page of the wiki', categories: ['main', 'base'], aliases: ['home', 'main', 'main page'] }];
 
 addPage('website',
-			'woodstuff.github.io',
-			['main'],
-			['woodstuff.github.io', 'woodstuffgithubio', 'woodstuff github io', 'site']);
+		'woodstuff.github.io',
+		'The page about the main website',
+		['main'],
+		['woodstuff.github.io', 'woodstuffgithubio', 'woodstuff github io', 'site']);
 addPage('subpages',
-			'Subpages',
-			['main', 'lists'],
-			['list of subpages', 'games', 'pages', 'game', 'page', 'sub pages']);
+		'Subpages',
+		'A list of all subpages on the website',
+		['main', 'lists'],
+		['list of subpages', 'games', 'pages', 'game', 'page', 'sub pages']);
 addPage('agp',
-			'AGP',
-			['pages', 'agp'],
-			['ags']);
+		'AGP',
+		'A game where you slaughter squares for blue shapes',
+		['pages', 'agp'],
+		['ags']);
 addPage('redsquare',
-			'Red Square',
-			['agp', 'agpenemies'],
-			['red square']);
+		'Red Square',
+		'AGP\'s weakest enemy',
+		['agp', 'agpenemies'],
+		['red square']);
 addPage('greensquare',
-			'Green Square',
-			['agp', 'agpenemies'],
-			['green square']);
+		'Green Square',
+		'A middle strength AGP enemy',
+		['agp', 'agpenemies'],
+		['green square']);
 addPage('bluesquare',
-			'Blue Square',
-			['agp', 'agpenemies'],
-			['blue square']);
+		'Blue Square',
+		'A pretty strong AGP enemy',
+		['agp', 'agpenemies'],
+		['blue square']);
 addPage('whitesquare',
-			'White Square',
-			['agp', 'agpenemies'],
-			['white square']);
+		'White Square',
+		'An upcoming AGP enemy',
+		['agp', 'agpenemies'],
+		['white square']);
 addPage('wiki',
-			'Wiki',
-			[''],
-			['']);
+		'Wiki',
+		'An information board of most of the website\'s things',
+		[''],
+		['pages']);
 
 
 
 
 
-function addPage(name, title, categories, aliases) {
-	PAGES.push( { name: name, title: title, categories: categories, aliases: aliases } )
+function addPage(name, title, description, categories, aliases) {
+	PAGES.push( { name: name, title: title, description: description, categories: categories, aliases: aliases } )
 }
 
 const aliases = {};
