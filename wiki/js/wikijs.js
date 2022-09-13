@@ -15,11 +15,6 @@ function linkchange() {
 function loadPage() {
 	pageID = document.querySelector('meta[name="id"]').content;
 
-	const metaDesc = document.createElement('meta');
-	metaDesc.name = 'description';
-	metaDesc.content = getPageInfo(pageID).description;
-	document.head.appendChild(metaDesc);
-
 	let moreFiles = ['css/special.css'];
 	
 	for (const file of moreFiles) {
