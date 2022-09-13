@@ -62,7 +62,7 @@ function specifyCategories() {
 		else catContainer.innerHTML += ', ';
 
 		const a = document.createElement('a');
-		a.href = `category/${cat}`; // set the category links
+		a.href = `category/${cat}.html`; // set the category links
 		a.title = catDescs[cat]; // set the description for category
 		a.innerHTML = catNames[cat];
 
