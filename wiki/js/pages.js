@@ -11,8 +11,8 @@ addPage('subpages',
 			['list of subpages', 'games', 'pages', 'game', 'page', 'sub pages']);
 addPage('agp',
 			'AGP',
-			['pages', 'agp', 'ags'],
-			[]);
+			['pages', 'agp'],
+			['ags']);
 addPage('redsquare',
 			'Red Square',
 			['agp', 'agpenemies'],
@@ -25,6 +25,10 @@ addPage('bluesquare',
 			'Blue Square',
 			['agp', 'agpenemies'],
 			['blue square']);
+addPage('whitesquare',
+			'White Square',
+			['agp', 'agpenemies'],
+			['white square']);
 
 function addPage(name, title, categories, aliases) {
 	PAGES.push( { name: name, title: title, categories: categories, aliases: aliases } )
