@@ -8,7 +8,7 @@
 		<script type="text/javascript" src="js/pages.js" defer></script>
 		<script src="https://kit.fontawesome.com/8c07ded0d5.js" crossorigin="anonymous"></script>
 		
-		<meta name="description" content="">
+		<meta name="description" content="A wiki article about itself">
 
 
 		<meta name="id" content="wiki">
@@ -20,7 +20,35 @@
 		</div>
 		<div id="page">
 			<div id="article" class="content shadow">
-				
+				<p>The wiki is a subpage that has some information about the website. Everything had to manually be made because
+				Github Pages unfortunately doesn't support MediaWiki.</p>
+				<p>The woodstuff.github.io wiki truly is a special wiki, as it contains no ads.</p>
+				<h1>How hard is it to add a page?</h1>
+				<p>It definitely takes some more work than adding another .html file.</p>
+				<h2>How can I add a page?</h2>
+				<ol>
+					<li>Fork the repository (<a href="https://github.com/WoodStuff/woodstuff.github.io">here</a>), you don't need to do this step
+					if you've already forked it</li>
+					<li>In the wiki folder, make a new html file</li>
+					<li>In js/pages.js, create a new <code>addPage()</code> at the bottom of the chain. The parameters:
+						<ol>
+							<li>The ID of the page, make this the same as the name of the HTML file you created but without the .html</li>
+							<li>The display name of the page (as it appears above the article)</li>
+							<li>The categories the page belongs to, see catdesc.js for a list</li>
+							<li>The aliases of the page, what the user can search and still be taken to this page</li>
+						</ol>
+					</li>
+					<li>Copy-paste an existing page for the newly-created HTML file</li>
+					<li>Set the 2 metas at the top: id should be the page id and description should be a short description</li>
+					<li>Write the page</li>
+					<li>Make the pull request</li>
+				</ol>
+				<p>Some things you should know while making a page:</p>
+				<ul>
+					<li>Links that lead to another wiki page shouldn't have a href attribute but p, like
+						<code>&lt;a p="redsquare"&gt;</code></li>
+					<li>Templates exist (but there's only one at the moment), check the AGP square pages for an example of how you can use them</li>
+				</ul>
 			</div>
 		</div>
 		<div id="links" class="content shadow">

@@ -31,8 +31,8 @@ addPage('whitesquare',
 		['white square']);
 addPage('wiki',
 		'Wiki',
-		[''],
-		['']);
+		['pages'],
+		['egg wiki', 'eggwiki']);
 
 
 

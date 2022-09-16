@@ -20,9 +20,20 @@ t {
 h2 {
 	font-size: 1.4em;
 }
+code {
+	background-color: #e5e5e5;
+	border-radius: 3px;
+	padding: 3px;
+	transition: 0.6s;
+	cursor: default;
+}
+code:hover {
+	background-color: #d9d9d9;
+	transition: 0.6s;
+}
 
 /* main page stuff */
-a, a.dead {
+a, a.dead, a.blue.blue {
 	color: #0000d0;
 	text-decoration: none;
 }
@@ -33,7 +44,7 @@ a.dead {
 	color: #d00000;
 	cursor: default;
 }
-a:hover {
+a:hover, a.blue.blue:hover {
 	text-decoration: underline;
 	color: #4747eb;
 }
@@ -43,7 +54,7 @@ a:not([p]):hover {
 a.dead:hover {
 	color: #eb4747;
 }
-a:active, a.dead:active, a:not([p]):active {
+a:active, a.dead:active, a:not([p]):active, a.blue.blue:active {
 	color: limegreen;
 }
 
