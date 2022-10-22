@@ -8,7 +8,7 @@ addPage('website',
 addPage('subpages',
 		'Subpages',
 		['main', 'lists'],
-		['list of subpages', 'games', 'pages', 'game', 'page', 'sub pages']);
+		['list of subpages', 'games', 'pages', 'game', 'page', 'sub pages', 'subpage']);
 addPage('agp',
 		'AGP',
 		['pages', 'agp'],
