@@ -33,6 +33,10 @@ addPage('wiki',
 		'Wiki',
 		['pages'],
 		['egg wiki', 'eggwiki']);
+addPage('allpages',
+		'List of all pages',
+		['base', 'lists'],
+		['pages', 'all pages', 'list of all pages', 'lists of all pages', 'all wiki pages', 'page list', 'pages list', 'wiki pages']);
 
 
 
