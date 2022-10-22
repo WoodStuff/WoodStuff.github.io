@@ -1,5 +1,3 @@
 # WoodStuff.github.io
-
-hello
-
-this is a funny website with stuff i never get to complete
+welcome to the WoodStuff.github.io repository
+here i make random stuff and games idk
