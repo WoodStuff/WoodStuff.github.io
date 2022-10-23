@@ -1,0 +1,17 @@
+* {
+	box-sizing: border-box;
+}
+html, body {
+	margin: 0;
+	background-color: black;
+	height: 100%;
+}
+
+div#top {
+	height: 28%;
+	border-bottom: solid 7px white;
+}
+div#currency-container {
+	height: 65%;
+	background-color: #333333;
+}
