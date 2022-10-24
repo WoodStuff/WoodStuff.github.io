@@ -1,6 +1,7 @@
 declare type CompareResult = -1 | 0 | 1;
 declare type OmegaNumSource = OmegaNum | number | string | OmegaNumSource[];
 
+/** The main type of number used for the game. */
 declare class OmegaNum {
 	get array(): number[]
 	constructor(value?: OmegaNumSource);

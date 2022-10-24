@@ -7,8 +7,13 @@ class Player {
 		this.letters = {
 			a: new OmegaNum(0),
 		}
+		this.persecond = {
+			a: new OmegaNum(1),
+		}
 		/** @type {Letter[]} */
 		this.unlockedLetters = ['a'];
+		/** @type {string[]} */
+		this.tab = ['Main', 'Main']
 	}
 
 	/**
@@ -18,8 +23,8 @@ class Player {
 	 * @returns {OmegaNum} The amount of currency.
 	 */
 	addCurrency(amount, _letter = 'a') {
-		this.a = this.a.add(amount);
-		return this.a;
+		this.letters[_letter] = this.letters[_letter].add(amount);
+		return this.letters[_letter];
 	}
 	/**
 	 * Get the amount of a letter currency.
@@ -27,7 +32,7 @@ class Player {
 	 * @returns {OmegaNum} The amount of that currency.
 	 */
 	getCurrency(_letter = 'a') {
-		return this.a;
+		return this.letters[_letter];
 	}
 	/**
 	 * Unlocks a currency type.

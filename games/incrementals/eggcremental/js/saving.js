@@ -1,16 +1,9 @@
 function save(savefile = 'eggcrementalSave') {
-	localStorage.setItem(savefile, btoa(encodeURIComponent(JSON.stringify(game))));
+	localStorage.setItem(savefile, btoa(encodeURIComponent(JSON.stringify(player))));
 }
 
 function load(savefile = 'eggcrementalSave') {
-	game = new Player();
-	/** @type {Player} */
-	const savedGame = JSON.parse(decodeURIComponent(atob(localStorage.getItem(savefile))));
-	
-	for (const stat in savedGame) {
-		game[stat] = savedGame[stat];
-	}
-
+	player = JSON.parse(decodeURIComponent(atob(localStorage.getItem(savefile))));
 	// the save has been reconstructed but the omeganums are broken, fix them here
 
 	// 1. flatten the object
@@ -22,11 +15,11 @@ function load(savefile = 'eggcrementalSave') {
 		}
 		return result;
 	}
-	game = flatten(game, '');
+	player = flatten(player, '');
 
 	// 2. replace everything that should be an omeganum with an omeganum
-	for (const value in game) {
-		if (game[value].array) game[value] = new OmegaNum(game[value])
+	for (const value in player) {
+		if (player[value].array) player[value] = new OmegaNum(player[value])
 	}
 	
 	// 3. unflatten the object
@@ -40,7 +33,13 @@ function load(savefile = 'eggcrementalSave') {
 		}
 		return result;
 	}
-	game = unflatten(game);
+	player = unflatten(player);
 	
 	// omeganums are back!! yay :D
+}
+
+function hardReset(c = true) {
+	if (c && !confirm('Are you sure you want to hard reset? There is no going back!')) return;
+	localStorage.removeItem('eggcrementalSave');
+	location.reload();
 }

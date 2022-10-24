@@ -1,5 +1,8 @@
 * {
 	box-sizing: border-box;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	transition: 0.02s;
+	user-select: none;
 }
 html, body {
 	margin: 0;
@@ -13,5 +16,56 @@ div#top {
 }
 div#currency-container {
 	height: 65%;
-	background-color: #333333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+div#tab-container {
+	height: 35%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+div#subtab-container {
+	height: 9.491%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+div.letter-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	transform: translateY(-10%);
+}
+span.letter-icon {
+	font-size: 10vh;
+	height: 10vh;
+	font-family: 'Bahnschrift', sans-serif;
+	opacity: 0.9;
+}
+span.letter-count {
+	font-size: 4vh;
+	height: 4vh;
+	font-family: 'Bahnschrift', sans-serif;
+	color: white;
+}
+
+button.tab-button {
+	color: white;
+	min-width: 150px;
+	height: 90%;
+	font-weight: bold;
+	font-size: 2.5vh;
+	background-color: black;
+	border: solid white 5px;
+	border-radius: 10px;
+}
+button.tab-button:hover {
+	background-color: #333;
+}
+button.tab-button:active {
+	background-color: #666;
 }
