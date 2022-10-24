@@ -50,11 +50,16 @@ function regenerateLetters() {
 		letterBox.appendChild(letterIcon);
 
 		const letterCount = document.createElement('span');
-		letterCount.innerHTML = '0';
+		letterCount.innerHTML = player.getCurrency(letter);
 		letterCount.id = `letter-count-${letter}`;
 		letterCount.classList.add('letter-count');
 		letterBox.appendChild(letterCount);
 
+		const letterPerSecond = document.createElement('span');
+		letterPerSecond.innerHTML = `${player.getPS(letter)}<sub>/s</sub>`;
+		letterPerSecond.id = `letter-ps-${letter}`;
+		letterPerSecond.classList.add('letter-ps');
+		letterBox.appendChild(letterPerSecond);
 
 		document.getElementById('currency-container').appendChild(letterBox);
 	}
@@ -65,6 +70,9 @@ function regenerateTabs() {
 		tabElement.id = `tab-button-${tab}`;
 		tabElement.innerHTML = TABINFO[tab].name;
 		tabElement.classList.add('tab-button');
+		tabElement.onclick = () => {
+			player.tab[0] = tab;
+		}
 
 		document.getElementById('tab-container').appendChild(tabElement);
 
@@ -73,8 +81,11 @@ function regenerateTabs() {
 			subtabElement.id = `subtab-button-${tab}-${subtab}`;
 			subtabElement.innerHTML = TABINFO[tab].subtabDisplay[TABINFO[tab].subtabs.indexOf(subtab)];
 			subtabElement.classList.add('tab-button', 'subtab-button', `subtab-button-${tab}`);
+			subtabElement.onclick = () => {
+				player.tab[1] = subtab;
+			}
 
-			const subtabContainer = document.getElementById('subtab-container')
+			const subtabContainer = document.getElementById('subtab-container');
 			subtabContainer.appendChild(subtabElement);
 
 			if (subtabContainer.childElementCount == 1) subtabContainer.style.display = 'none';
@@ -86,7 +97,11 @@ function regenerateTabs() {
 function updateStats_HTML() {
 	document.querySelectorAll('span.letter-count').forEach(l => {
 		const letter = l.id.slice(-1);
-		l.innerHTML = new OmegaNum(player.getCurrency(letter)).floor();
+		l.innerHTML = player.getCurrency(letter).floor();
+	})
+	document.querySelectorAll('span.letter-ps').forEach(l => {
+		const letter = l.id.slice(-1);
+		l.innerHTML = `${player.getPS(letter).floor()}<sub>/s</sub>`;
 	})
 }
 function updateStats_JS() {

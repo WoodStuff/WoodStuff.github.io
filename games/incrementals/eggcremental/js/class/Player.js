@@ -41,4 +41,12 @@ class Player {
 	unlockCurrency(_letter = 'a') {
 		if (this.unlockedLetters.includes(_letter)) this.unlockedLetters.push(_letter);
 	}
+	/**
+	 * Get the amount of a letter currency gained per second.
+	 * @param {Letter} _letter The currency of which rate of generation to get.
+	 * @returns {OmegaNum} The generation of that currency.
+	 */
+	getPS(_letter = 'a') {
+		return this.persecond[_letter];
+	}
 }

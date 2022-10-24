@@ -52,6 +52,12 @@ span.letter-count {
 	font-family: 'Bahnschrift', sans-serif;
 	color: white;
 }
+span.letter-ps {
+	font-size: 2vh;
+	height: 2vh;
+	font-family: 'Bahnschrift', sans-serif;
+	color: #999;
+}
 
 button.tab-button {
 	color: white;
