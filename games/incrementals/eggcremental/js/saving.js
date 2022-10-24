@@ -25,11 +25,14 @@ function load(savefile = 'eggcrementalSave') {
 	// 3. unflatten the object
 	function unflatten(data) {
 		var result = new Player();
+		for (const i in result) {
+			delete result[i];
+		}
 		for (var i in data) {
-			var keys = i.split('.')
+			var keys = i.split('.');
 			keys.reduce(function(r, e, j) {
-				return r[e] || (r[e] = isNaN(Number(keys[j + 1])) ? (keys.length - 1 == j ? data[i] : {}) : [])
-			}, result)
+				return r[e] || (r[e] = isNaN(Number(keys[j + 1])) ? (keys.length - 1 == j ? data[i] : {}) : []);
+			}, result);
 		}
 		return result;
 	}
@@ -43,3 +46,5 @@ function hardReset(c = true) {
 	localStorage.removeItem('eggcrementalSave');
 	location.reload();
 }
+
+let saveInterval = setInterval(save, 15000);
