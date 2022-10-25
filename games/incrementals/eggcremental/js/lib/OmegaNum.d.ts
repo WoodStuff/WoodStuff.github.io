@@ -57,6 +57,8 @@ declare class OmegaNum {
 	isneg(): boolean;
 	isNegative(): boolean;
 
+	toString(): string;
+
 	abs(): OmegaNum;
 	absoluteValue(): OmegaNum;
 	arrow(arrows: OmegaNumSource): Function;
