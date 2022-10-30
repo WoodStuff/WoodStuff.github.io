@@ -1,5 +1,6 @@
 let pageCategories = [];
-var pageID;
+/** @type {string} */
+let pageID;
 
 function linkchange() {
 	let input = document.getElementById('search').value.toLowerCase();
@@ -43,6 +44,8 @@ function loadPage() {
 	loadTemplates();
 
 	killLinks();
+
+	runPageScripts(pageID);
 }
 
 function specifyCategories() {
@@ -100,6 +103,26 @@ function killLinks() {
 			else link.href = `${value}.html`;
 		}
 	});
+}
+
+function runPageScripts(id) {
+	switch (id) {
+		case 'allpages':
+			for (const page of PAGES) {
+				const link = document.createElement('a');
+				link.innerHTML = page.title;
+				link.setAttribute('p', page.name);
+
+				const li = document.createElement('li');
+				li.appendChild(link);
+
+				document.querySelector('ul').appendChild(li);
+			}
+			break;
+	
+		default:
+			break;
+	}
 }
 
 function handleTemplate(template, values) {
