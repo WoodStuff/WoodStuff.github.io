@@ -45,12 +45,12 @@ function regenerateLetters() {
 		const letterIcon = document.createElement('span');
 		letterIcon.innerHTML = letter;
 		letterIcon.style.color = letterColors[letter];
-		letterIcon.style.opacity = 0.9;
+		letterIcon.style.opacity = '0.9';
 		letterIcon.classList.add('letter-icon');
 		letterBox.appendChild(letterIcon);
 
 		const letterCount = document.createElement('span');
-		letterCount.innerHTML = player.getCurrency(letter);
+		letterCount.innerHTML = player.getCurrency(letter).toString();
 		letterCount.id = `letter-count-${letter}`;
 		letterCount.classList.add('letter-count');
 		letterBox.appendChild(letterCount);
@@ -97,7 +97,7 @@ function regenerateTabs() {
 function updateStats_HTML() {
 	document.querySelectorAll('span.letter-count').forEach(l => {
 		const letter = l.id.slice(-1);
-		l.innerHTML = player.getCurrency(letter).floor();
+		l.innerHTML = player.getCurrency('a').floor().toString();
 	})
 	document.querySelectorAll('span.letter-ps').forEach(l => {
 		const letter = l.id.slice(-1);

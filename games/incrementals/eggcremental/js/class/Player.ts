@@ -2,14 +2,15 @@
  * All properties of the game, like currencies etc.
  */
 class Player {
+	letters: string;
+	persecond: string;
+	unlockedLetters: Letter[];
+	tab: string[];
+
 	/** @constructor */
 	constructor() {
-		this.letters = {
-			a: new OmegaNum(0),
-		}
-		this.persecond = {
-			a: new OmegaNum(1),
-		}
+		this.letters = 'h'
+		this.persecond = 'h'
 		/** @type {Letter[]} */
 		this.unlockedLetters = ['a'];
 		/** @type {string[]} */
@@ -22,7 +23,7 @@ class Player {
 	 * @param {Letter} _letter The currency to add.
 	 * @returns {OmegaNum} The amount of currency.
 	 */
-	addCurrency(amount, _letter = 'a') {
+	addCurrency(amount: OmegaNumSource, _letter: Letter = 'a'): OmegaNum {
 		this.letters[_letter] = this.letters[_letter].add(amount);
 		return this.letters[_letter];
 	}
@@ -31,22 +32,22 @@ class Player {
 	 * @param {Letter} _letter The currency of which amount to get.
 	 * @returns {OmegaNum} The amount of that currency.
 	 */
-	getCurrency(_letter = 'a') {
+	getCurrency(_letter: Letter = 'a'): OmegaNum {
 		return this.letters[_letter];
 	}
 	/**
 	 * Unlocks a currency type.
 	 * @param {Letter} _letter The currency to unlock.
 	 */
-	unlockCurrency(_letter = 'a') {
-		if (this.unlockedLetters.includes(_letter)) this.unlockedLetters.push(_letter);
+	unlockCurrency(_letter: Letter = 'a') {
+		if (this.unlockedLetters.find(a => a == _letter)) this.unlockedLetters.push(_letter);
 	}
 	/**
 	 * Get the amount of a letter currency gained per second.
 	 * @param {Letter} _letter The currency of which rate of generation to get.
 	 * @returns {OmegaNum} The generation of that currency.
 	 */
-	getPS(_letter = 'a') {
+	getPS(_letter: Letter = 'a'): OmegaNum {
 		return this.persecond[_letter];
 	}
 }
