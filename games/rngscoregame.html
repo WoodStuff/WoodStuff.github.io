@@ -4,6 +4,11 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta content="RNG Score Game" property="og:title" />
+		<meta content="Play the RNG Score Game today!" property="og:description" />
+		<meta content="../media/nirmoll.png" property="og:image" />
+		<meta content="#22B14C" data-react-helmet="true" name="theme-color" />
 		<title>Rng score game</title>
 
 		<style>
@@ -99,6 +104,7 @@
 
 						document.getElementById('attempt').disabled = true;
 						document.getElementById('tryagain').style.display = 'inline';
+						document.getElementById('share').style.display = 'inline';
 						break;
 
 					case 'invalid':
@@ -115,6 +121,7 @@
 			function tryagain() {
 				document.getElementById('attempt').disabled = false;
 				document.getElementById('tryagain').style.display = 'none';
+				document.getElementById('share').style.display = 'none';
 				document.getElementById('status').style.display = 'none';
 				points = 0;
 				round = 1;
@@ -139,6 +146,10 @@
 					localStorage.setItem('RSGhighscore', 0);
 				}
 			}
+
+			function share() {
+				navigator.clipboard.writeText(`I got ${points} points in ${round} rounds in RNG Score Game. Try to beat my score!\nPlay at https://woodstuff.github.io/games/rngscoregame.html`);
+			}
 		</script>
 	</head>
 	<body onload="start();">
@@ -156,6 +167,7 @@
 			</div><br>
 			<button onclick="attempt();" id="attempt">Attempt</button><br>
 			<button onclick="tryagain();" id="tryagain" style="display:none;">Try Again</button>
+			<button onclick="share();" id="share" style="display:none;">Share</button>
 			<p id="status" style="display:none;"></p>
 
 			<h2>History</h2>
