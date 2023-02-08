@@ -1,7 +1,8 @@
 /**
  * The player.
+ * @type {Player}
  */
-let player = new Player();
+let player;
 
 /** Frames per second; for HTML updates */
 const FPS = 60;
@@ -22,6 +23,7 @@ const TABINFO = {
 }
 
 function start() {
+	player = new Player();
 	if (localStorage.getItem('eggcrementalSave') != null) load();
 	
 	regenerateLetters();
@@ -97,7 +99,7 @@ function regenerateTabs() {
 function updateStats_HTML() {
 	document.querySelectorAll('span.letter-count').forEach(l => {
 		const letter = l.id.slice(-1);
-		l.innerHTML = player.getCurrency('a').floor().toString();
+		l.innerHTML = player.getCurrency(letter).floor().toString();
 	})
 	document.querySelectorAll('span.letter-ps').forEach(l => {
 		const letter = l.id.slice(-1);
