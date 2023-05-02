@@ -1,5 +1,6 @@
 * {
 	color: #121212;
+	font-family: "Segoe UI";
 }
 .content {
 	margin: 65px;
@@ -10,9 +11,17 @@ t {
 	font-family: "Segoe UI";
 	font-weight: bold;
 }
-h1, p, .segoe {
-	font-family: "Segoe UI";
-}
 body {
 	background-color: #FAFAFA;
+}
+a {
+	color: #0000d0;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+	color: #4747eb;
+}
+a:active {
+	color: limegreen;
 }
