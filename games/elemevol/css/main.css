@@ -1,0 +1,11 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+div#tab-container {
+	height: 35%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
