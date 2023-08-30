@@ -76,12 +76,6 @@ function specifyCategories() {
 	}
 
 	document.getElementById('article').appendChild(catContainer);
-
-	/*document.querySelectorAll('a[data-cat]').forEach(a => {
-		a.href = `category/${a.dataset.cat}`; // set the category links
-		a.title = catdescs[a.dataset.cat]; // set the description for category
-		pageCategories.push(a.dataset.cat);
-	});*/
 }
 
 function loadTemplates() {
