@@ -51,6 +51,10 @@
 				margin: auto;
 			}
 
+			p#feedback {
+				font-size: 2em;
+			}
+
 			a {
 				color: #0000d0;
 				text-decoration: none;
@@ -102,8 +106,16 @@
 				lastSum = n1 + n2;
 			}
 			function check() {
-				if (n1 + n2 == Object.values(words).indexOf(el("n").value.toLowerCase()) + 1) correct++;
-				else wrong++;
+				const val = Object.values(words).indexOf(el("n").value.toLowerCase()) + 1;
+				if (n1 + n2 == val) {
+					correct++;
+					el("feedback").innerHTML = `Correct! ${n1} + ${n2} = ${n1 + n2}`;
+				}
+				else {
+					wrong++;
+					const add = val != 0 ? `, not ${val}` : "";
+					el("feedback").innerHTML = `Wrong! ${n1} + ${n2} = ${n1 + n2}${add}`;
+				}
 				
 				el("n").value = "";
 				el("score").innerHTML = correct - wrong;
@@ -137,6 +149,8 @@
 
 			<input id="n" placeholder="Numbaro"><br>
 			<input type="button" id="btn" value="Done!" onclick="check()">
+
+			<p id="feedback"></p>
 		</div>
 	</body>
 </html>
