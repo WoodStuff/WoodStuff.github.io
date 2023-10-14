@@ -114,7 +114,7 @@
 				else {
 					wrong++;
 					const add = val != 0 ? `, not ${val}` : "";
-					el("feedback").innerHTML = `Wrong! ${n1} + ${n2} = ${n1 + n2}${add}`;
+					el("feedback").innerHTML = `Wrong! ${n1} + ${n2} = ${n1 + n2} (${words[n1 + n2]})${add}`;
 				}
 				
 				el("n").value = "";
