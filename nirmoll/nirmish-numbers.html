@@ -90,12 +90,16 @@
 
 			let correct = 0;
 			let wrong = 0;
+			let lastSum = 0;
 
 			function round() {
-				n1 = rng(1, 10);
-				n2 = rng(1, 10);
-				el("n1").innerHTML = words[n1];
-				el("n2").innerHTML = words[n2];
+				do {
+					n1 = rng(1, 10);
+					n2 = rng(1, 10);
+					el("n1").innerHTML = words[n1];
+					el("n2").innerHTML = words[n2];
+				} while (n1 + n2 == lastSum);
+				lastSum = n1 + n2;
 			}
 			function check() {
 				if (n1 + n2 == Object.values(words).indexOf(el("n").value.toLowerCase()) + 1) correct++;
