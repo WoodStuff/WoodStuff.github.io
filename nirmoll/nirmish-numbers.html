@@ -106,7 +106,7 @@
 				lastSum = n1 + n2;
 			}
 			function check() {
-				const val = Object.values(words).indexOf(el("n").value.toLowerCase()) + 1;
+				const val = Object.values(words).indexOf(el("n").value.toLowerCase().replace(/[\\\]]/g, '')) + 1;
 				if (n1 + n2 == val) {
 					correct++;
 					el("feedback").innerHTML = `Correct! ${n1} + ${n2} = ${n1 + n2}`;
