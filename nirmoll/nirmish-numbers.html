@@ -36,7 +36,7 @@
 			input#n {
 				width: 10vw;
 			}
-			input#n, button {
+			input {
 				font-size: 1.6em;
 			}
 
@@ -76,7 +76,7 @@
 				 8: "ahem",
 				 9: "neuñe",
 				10: "cyn",
-				11: "oinecyn",
+				11: "aincyn",
 				12: "twacyn",
 				13: "trišcyn",
 				14: "krac̄ryn",
@@ -111,9 +111,20 @@
 			}
 			const el = (id) => document.getElementById(id);
 			const rng = (min, max) => Math.floor(Math.random() * ((max + 1) - min)) + min;
+
+			function enter() {
+				const inputField = document.getElementById("n");
+				const button = document.getElementById("btn");
+
+				inputField.addEventListener("keydown", function(event) {
+					if (event.key === "Enter" || event.keyCode === 13) {
+						button.click();
+					}
+				});
+			}
 		</script>
 	</head>
-	<body onload="round()">
+	<body onload="round(); enter()">
 		<div id="gameing">
 			<div id="info">
 				<span>Score: <span id="score">0</span> (<span id="percent">?</span>%), ✔ <span id="win">0</span> / <span id="lose">0</span> ✘</span>
@@ -121,7 +132,7 @@
 			<p id="numbers"><span id="n1">0</span> + <span id="n2">0</span></p>
 
 			<input id="n" placeholder="Numbaro"><br>
-			<button onclick="check()">Done!</button>
+			<input type="button" id="btn" value="Done!" onclick="check()">
 		</div>
 	</body>
 </html>
