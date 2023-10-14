@@ -19,7 +19,7 @@
 		<ul>
 			<li><a href="#1">How to make a website (like this one)</a></li>
 			<li><a href="#2">How to make a minecraft mod</a></li>
-			<li><a href="#3"></a></li>
+			<li><a href="#3">How to make a MediaWiki wiki</a></li>
 		</ul>
 
 		<t id="1">How to make a website (like this one)</t>
@@ -40,12 +40,12 @@
 			<li>Learn HTML</li>
 		</ol>
 
-		<t id="1">How to make a minecraft mod</t>
+		<t id="2">How to make a minecraft mod</t>
 		<ol>
 			<li>Make a folder</li>
 			<li>Go to <a href="https://files.minecraftforge.net/net/minecraftforge/forge/" target="_blank">forge download</a> and download MDK from recommended (latest if there's none)</li>
 			<li>Unzip</li>
-			<li>Copypaste to the folder you made from the MDK folder:
+			<li>From the MDK folder, move these to the folder you made in step 1:
 				<ul>
 					<li>src</li>
 					<li>gradle</li>
@@ -61,6 +61,21 @@
 			<li>Make sure runClient is chosen at the top right dropdown</li>
 			<li>To run, click green arrow</li>
 			<li><a href="https://www.youtube.com/@ModdingByKaupenjoe">This man</a> makes good modding tutorials</li>
+		</ol>
+
+		<t id="3">How to make a MediaWiki wiki</t>
+		<p><b>Note:</b> Only you will be able to view this wiki as it will be localhosted.</p>
+		<p><b>Tip:</b> If you don't know how to do something, use ChatGPT. I was absolutely clueless what I was doing and I managed to make one with only the help of ChatGPT</p>
+		<ol>
+			<li>Download <a href="https://www.apachefriends.org/">XAMPP</a>, this is the thing we will be using to localhost the wiki</li>
+			<li>Run the installer, make sure to check Apache and MySQL when the thing shows up, also pay attention to where it'll be installed</li>
+			<li><a href="https://www.mediawiki.org/wiki/Download">Download MediaWiki</a></li>
+			<li>Unzip MediaWiki</li>
+			<li>Copy the MediaWiki folder that's inside the one you unzipped; do NOT copy the one that has another single MediaWiki folder</li>
+			<li>Drop it into the location in step 2 and into the htdocs folder, for example if XAMPP was downloaded in C:\ the location you would drop the folder into would be C:\xampp\htdocs</li>
+			<li>Feel free to rename that folder you copied over, this will be the name in the search bar, if you set it to "thingwiki" you'd access the wiki at localhost/thingwiki</li>
+			<li>Open C:\xampp\php and search for this line: <code>;extension=intl</code>. Remove the semicolon</li>
+			<li>Wip, use chatgpt for the rest</li>
 		</ol>
 	</body>
 </html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Learn Nirmish Numbers</title>
+
+		<style>
+			* {
+				color: #121212;
+				font-family: "Segoe UI";
+			}
+			body {
+				background-color: #9ccdab;
+			}
+			div#info {
+				width: 100%;
+				height: 2em;
+				background-color: #00000022;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 50px;
+				font-size: 2em;
+			}
+			div#gameing {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			span#score, span#comp {
+				text-align: center;
+				font-weight: bold;
+			}
+			input#n {
+				width: 10vw;
+			}
+			input#n, button {
+				font-size: 1.6em;
+			}
+
+			p#numbers {
+				text-align: center;
+				font-size: 5em;
+				font-weight: bold;
+				margin: 10vh 0;
+			}
+
+			div.input > input {
+				margin: auto;
+			}
+
+			a {
+				color: #0000d0;
+				text-decoration: none;
+			}
+			a:hover {
+				text-decoration: underline;
+				color: #4747eb;
+			}
+			a:active {
+				color: limegreen;
+			}
+		</style>
+
+		<script>
+			const words = {
+				 1: "ain",
+				 2: "twa",
+				 3: "triš",
+				 4: "kwac̄ry",
+				 5: "mulś",
+				 6: "þesk",
+				 7: "sibon",
+				 8: "ahem",
+				 9: "neuñe",
+				10: "cyn",
+				11: "oinecyn",
+				12: "twacyn",
+				13: "trišcyn",
+				14: "krac̄ryn",
+				15: "mulścyn",
+				16: "þeskcyn",
+				17: "siboncyn",
+				18: "ahemcyn",
+				19: "neuñecyn",
+				20: "zyntwa",
+			}
+
+			let correct = 0;
+			let wrong = 0;
+
+			function round() {
+				n1 = rng(1, 10);
+				n2 = rng(1, 10);
+				el("n1").innerHTML = words[n1];
+				el("n2").innerHTML = words[n2];
+			}
+			function check() {
+				if (n1 + n2 == Object.values(words).indexOf(el("n").value.toLowerCase()) + 1) correct++;
+				else wrong++;
+				
+				el("n").value = "";
+				el("score").innerHTML = correct - wrong;
+				el("win").innerHTML = correct;
+				el("lose").innerHTML = wrong;
+				el("percent").innerHTML = Math.round(correct / (correct + wrong) * 1000) / 10;
+
+				round();
+			}
+			const el = (id) => document.getElementById(id);
+			const rng = (min, max) => Math.floor(Math.random() * ((max + 1) - min)) + min;
+		</script>
+	</head>
+	<body onload="round()">
+		<div id="gameing">
+			<div id="info">
+				<span>Score: <span id="score">0</span> (<span id="percent">?</span>%), ✔ <span id="win">0</span> / <span id="lose">0</span> ✘</span>
+			</div>
+			<p id="numbers"><span id="n1">0</span> + <span id="n2">0</span></p>
+
+			<input id="n" placeholder="Numbaro"><br>
+			<button onclick="check()">Done!</button>
+		</div>
+	</body>
+</html>
