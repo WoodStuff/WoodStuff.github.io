@@ -30,19 +30,19 @@
 				align-items: center;
 			}
 			div#letterButton {
-				    display: flex;
-			justify-content: center;
-			flex-wrap: wrap;
-			margin-top: 20px;
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
+				margin-top: 20px;
 			}
 			div#letterButton > button{
-			font-size: 2em;
-			font-weight: bold;
-			margin: 5px;
-			padding: 10px 20px;
-			cursor: pointer;
-			user-select: none; /* Makes text unselectable */
-			outline: none; /* Removes the default focus outline */
+				font-size: 2em;
+				font-weight: bold;
+				margin: 5px;
+				padding: 10px 20px;
+				cursor: pointer;
+				user-select: none; /* Makes text unselectable */
+				outline: none; /* Removes the default focus outline */
 			}
 			span#score, span#comp {
 				text-align: center;
@@ -121,6 +121,7 @@
 				lastSum = n1 + n2;
 			}
 			function check() {
+				if (el("n").value == "") return;
 				const val = Object.values(words).indexOf(el("n").value.toLowerCase().replace(/[\\\]]/g, '')) + 1;
 				if (n1 + n2 == val) {
 					correct++;
@@ -153,11 +154,12 @@
 					}
 				});
 			}
+			
 			function insertCustomCharacter(character) {
-            const inputField = document.getElementById('n');
-            inputField.value += character;
-			inputField.focus();
-        }
+				const inputField = el('n');
+				inputField.value += character;
+				inputField.focus();
+			}
 		</script>
 	</head>
 	<body onload="round(); enter()">
