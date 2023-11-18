@@ -29,6 +29,21 @@
 				flex-direction: column;
 				align-items: center;
 			}
+			div#letterButton {
+				    display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			margin-top: 20px;
+			}
+			div#letterButton > button{
+			font-size: 2em;
+			font-weight: bold;
+			margin: 5px;
+			padding: 10px 20px;
+			cursor: pointer;
+			user-select: none; /* Makes text unselectable */
+			outline: none; /* Removes the default focus outline */
+			}
 			span#score, span#comp {
 				text-align: center;
 				font-weight: bold;
@@ -138,6 +153,11 @@
 					}
 				});
 			}
+			function insertCustomCharacter(character) {
+            const inputField = document.getElementById('n');
+            inputField.value += character;
+			inputField.focus();
+        }
 		</script>
 	</head>
 	<body onload="round(); enter()">
@@ -151,6 +171,17 @@
 			<input type="button" id="btn" value="Done!" onclick="check()">
 
 			<p id="feedback"></p>
+		</div>
+		<div id="letterButton">
+		<button onclick="insertCustomCharacter('š')">š</button>
+		<button onclick="insertCustomCharacter('ś')">ś</button>
+		<button onclick="insertCustomCharacter('ŝ')">ŝ</button>
+		<button onclick="insertCustomCharacter('þ')">þ</button>
+		<button onclick="insertCustomCharacter('ż')">ż</button>
+		<button onclick="insertCustomCharacter('ź')">ź</button>
+		<button onclick="insertCustomCharacter('c̄')">c̄</button>
+		<button onclick="insertCustomCharacter('č')">č</button>
+		<button onclick="insertCustomCharacter('ñ')">ñ</button>
 		</div>
 	</body>
 </html>
