@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Learn Nirmish Numbers</title>
+		<title>Learn Larger Nirmish Numbers</title>
 
 		<style>
 			* {
@@ -12,7 +12,7 @@
 				font-family: "Segoe UI";
 			}
 			body {
-				background-color: #9ccdab;
+				background-color: #c2cd9c;
 			}
 			div#info {
 				width: 100%;
@@ -43,11 +43,6 @@
 				cursor: pointer;
 				user-select: none; /* Makes text unselectable */
 				outline: none; /* Removes the default focus outline */
-			}
-			div#advancedRedirect {
-            position: fixed;
-            top: 10px; /* Adjust top position as needed */
-            right: 10px; /* Adjust right position as needed */
 			}
 			span#score, span#comp {
 				text-align: center;
@@ -110,6 +105,86 @@
 				18: "ahemcyn",
 				19: "neuñecyn",
 				20: "zyntwa",
+				21: "zyntwa ain",
+				22: "zyntwa twa",
+				23: "zyntwa triš",
+				24: "zyntwa kwac̄ry",
+				25: "zyntwa mulś",
+				26: "zyntwa þesk",
+				27: "zyntwa sibon",
+				28: "zyntwa ahem",
+				29: "zyntwa neuñe",
+				30: "zyntriš",
+				31: "zyntriš ain",
+				32: "zyntriš twa",
+				33: "zyntriš triš",
+				34: "zyntriš kwac̄ry",
+				35: "zyntriš mulś",
+				36: "zyntriš þesk",
+				37: "zyntriš sibon",
+				38: "zyntriš ahem",
+				39: "zyntriš neuñe",
+				40: "zynkwac̄ry",
+				41: "zynkwac̄ry ain",
+				42: "zynkwac̄ry twa",
+				43: "zynkwac̄ry triš",
+				44: "zynkwac̄ry kwac̄ry",
+				45: "zynkwac̄ry mulś",
+				46: "zynkwac̄ry þesk",
+				47: "zynkwac̄ry sibon",
+				48: "zynkwac̄ry ahem",
+				49: "zynkwac̄ry neuñe",
+				50: "zynmulś",
+				51: "zynmulś ain",
+				52: "zynmulś twa",
+				53: "zynmulś triš",
+				54: "zynmulś kwac̄ry",
+				55: "zynmulś mulś",
+				56: "zynmulś þesk",
+				57: "zynmulś sibon",
+				58: "zynmulś ahem",
+				59: "zynmulś neuñe",
+				60: "zynþesk",
+				61: "zynþesk ain",
+				62: "zynþesk twa",
+				63: "zynþesk triš",
+				64: "zynþesk kwac̄ry",
+				65: "zynþesk mulś",
+				66: "zynþesk þesk",
+				67: "zynþesk sibon",
+				68: "zynþesk ahem",
+				69: "zynþesk neuñe",
+				70: "zynsibon",
+				71: "zynsibon ain",
+				72: "zynsibon twa",
+				73: "zynsibon triš",
+				74: "zynsibon kwac̄ry",
+				75: "zynsibon mulś",
+				76: "zynsibon þesk",
+				77: "zynsibon sibon",
+				78: "zynsibon ahem",
+				79: "zynsibon neuñe",
+				80: "zynahem",
+				81: "zynahem ain",
+				82: "zynahem twa",
+				83: "zynahem triš",
+				84: "zynahem kwac̄ry",
+				85: "zynahem mulś",
+				86: "zynahem þesk",
+				87: "zynahem sibon",
+				88: "zynahem ahem",
+				89: "zynahem neuñe",
+				90: "zyneuñe",
+				91: "zyneuñe ain",
+				92: "zyneuñe twa",
+				93: "zyneuñe triš",
+				94: "zyneuñe kwac̄ry",
+				95: "zyneuñe mulś",
+				96: "zyneuñe þesk",
+				97: "zyneuñe sibon",
+				98: "zyneuñe ahem",
+				99: "zyneuñe neuñe",
+				100: "stundert",
 			}
 
 			let correct = 0;
@@ -118,8 +193,8 @@
 
 			function round() {
 				do {
-					n1 = rng(1, 10);
-					n2 = rng(1, 10);
+					n1 = rng(1, 50);
+					n2 = rng(1, 50);
 					el("n1").innerHTML = words[n1];
 					el("n2").innerHTML = words[n2];
 				} while (n1 + n2 == lastSum);
@@ -190,9 +265,6 @@
 		<button onclick="insertCustomCharacter('c̄')">c̄</button>
 		<button onclick="insertCustomCharacter('č')">č</button>
 		<button onclick="insertCustomCharacter('ñ')">ñ</button>
-		</div>
-		<div id="advancedRedirect">
-		<button onclick="window.location.href = 'https://woodstuff.github.io/nirmoll/nirmish-numbers-advanced'">Advanced Numbers</button>
 		</div>
 	</body>
 </html>
