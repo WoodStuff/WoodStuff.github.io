@@ -125,6 +125,10 @@
 				let val = el("n").value;
 					 if (val.includes("C̄")) val = "_";
 				else if (val.includes("c̄")) val = "-";
+				if (key.indexOf(val) == -1) {
+					el("n").value = "";
+					return;
+				}
 				cor = key[letter + 32 * size];
 					 if (cor.includes("_")) cor = "C̄";
 				else if (cor.includes("-")) cor = "c̄";
