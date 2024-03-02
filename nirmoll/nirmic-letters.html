@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Learn Nirmish Numbers</title>
+		<title>Learn Nirmic Letters</title>
 
 		<style>
 			* {
@@ -29,13 +29,14 @@
 				flex-direction: column;
 				align-items: center;
 			}
-			div#letterButton {
+			div.letterButton {
 				display: flex;
 				justify-content: center;
 				flex-wrap: wrap;
 				margin-top: 20px;
 			}
-			div#letterButton > button{
+			div.letterButton > button {
+				width: 70px;
 				font-size: 2em;
 				font-weight: bold;
 				margin: 5px;
@@ -43,11 +44,6 @@
 				cursor: pointer;
 				user-select: none; /* Makes text unselectable */
 				outline: none; /* Removes the default focus outline */
-			}
-			div#advancedRedirect {
-            position: fixed;
-            top: 10px; /* Adjust top position as needed */
-            right: 10px; /* Adjust right position as needed */
 			}
 			span#score, span#comp {
 				text-align: center;
@@ -60,11 +56,10 @@
 				font-size: 1.6em;
 			}
 
-			p#numbers {
-				text-align: center;
-				font-size: 5em;
-				font-weight: bold;
-				margin: 10vh 0;
+			div#letter {
+				width: 300px; /* Width of a single sprite */
+				height: 300px; /* Height of a single sprite */
+				background-image: url('../media/nirmic.png'); /* URL to your spritesheet image */
 			}
 
 			div.input > input {
@@ -89,54 +84,58 @@
 		</style>
 
 		<script>
-			const words = {
-				 1: "ain",
-				 2: "twa",
-				 3: "triš",
-				 4: "kwac̄ry",
-				 5: "cheż",
-				 6: "þesk",
-				 7: "sibon",
-				 8: "ahem",
-				 9: "neuñe",
-				10: "cyn",
-				11: "aincyn",
-				12: "twacyn",
-				13: "trišcyn",
-				14: "kwac̄ryn",
-				15: "cheżcyn",
-				16: "þeskcyn",
-				17: "siboncyn",
-				18: "ahemcyn",
-				19: "neuñecyn",
-				20: "zyntwa",
-			}
+			const key = "ABC_ČDEFGHIKLMNÑOPRSŚŠŜÞTUVWYZŹŻabc-čdefghiklmnñoprsśšŝþtuvwyzźż"
 
 			let correct = 0;
 			let wrong = 0;
-			let lastSum = 0;
+			let letter;
+			let size;
+
+			let currentFrameX = 0;
+			let currentFrameY = 0;
+			const totalColumns = 32; // Total number of columns in your spritesheet
+			const totalRows = 2; // Total number of rows in your spritesheet
+			const spriteWidth = 300; // Width of a single sprite
+			const spriteHeight = 300; // Height of a single sprite
+
+			function setSpritePosition(x, y) {
+				letter = x;
+				size = y;
+				const spriteElement = el("letter");
+				if (x >= 0 && x < totalColumns && y >= 0 && y < totalRows) {
+					const backgroundPositionX = -x * spriteWidth;
+					const backgroundPositionY = -y * spriteHeight;
+					spriteElement.style.backgroundPosition = `${backgroundPositionX}px ${backgroundPositionY}px`;
+					currentFrameX = x;
+					currentFrameY = y;
+				} else {
+					console.error('Invalid sprite position:', x, y);
+				}
+			}
 
 			function round() {
-				do {
-					n1 = rng(1, 10);
-					n2 = rng(1, 10);
-					el("n1").innerHTML = words[n1];
-					el("n2").innerHTML = words[n2];
-				} while (n1 + n2 == lastSum);
-				lastSum = n1 + n2;
+				letter = rng(0, 31);
+				size = rng(0, 1);
+				setSpritePosition(letter, size);
 			}
 			function check() {
 				el("n").focus();
 				if (el("n").value == "") return;
-				const val = Object.values(words).indexOf(el("n").value.toLowerCase().replace(/[\\\]]/g, '')) + 1;
-				if (n1 + n2 == val) {
+
+				let val = el("n").value;
+					 if (val.includes("C̄")) val = "_";
+				else if (val.includes("c̄")) val = "-";
+				cor = key[letter + 32 * size];
+					 if (cor.includes("_")) cor = "C̄";
+				else if (cor.includes("-")) cor = "c̄";
+
+				if (letter + 32 * size == key.indexOf(val)) {
 					correct++;
-					el("feedback").innerHTML = `Correct! ${n1} + ${n2} = ${n1 + n2}`;
+					el("feedback").innerHTML = `Correct, it was ${cor}`;
 				}
 				else {
 					wrong++;
-					const add = val != 0 ? `, not ${val}` : "";
-					el("feedback").innerHTML = `Wrong! ${n1} + ${n2} = ${n1 + n2} (${words[n1 + n2]})${add}`;
+					el("feedback").innerHTML = `Wrong, it was ${cor}`;
 				}
 				
 				el("n").value = "";
@@ -165,6 +164,7 @@
 				const inputField = el('n');
 				inputField.value += character;
 				inputField.focus();
+				check();
 			}
 		</script>
 	</head>
@@ -173,14 +173,24 @@
 			<div id="info">
 				<span>Score: <span id="score">0</span> (<span id="percent">?</span>%), ✔ <span id="win">0</span> / <span id="lose">0</span> ✘</span>
 			</div>
-			<p id="numbers"><span id="n1">0</span> + <span id="n2">0</span></p>
+			<div id="letter"></div>
 
-			<input id="n" placeholder="Numbaro"><br>
-			<input type="button" id="btn" value="Done!" onclick="check()">
+			<input maxlength="2" id="n" placeholder="Litur" oninput="setTimeout(check, 1)"><br>
 
 			<p id="feedback"></p>
 		</div>
-		<div id="letterButton">
+		<div class="letterButton">
+			<button onclick="insertCustomCharacter('Š')">Š</button>
+			<button onclick="insertCustomCharacter('Ś')">Ś</button>
+			<button onclick="insertCustomCharacter('Ŝ')">Ŝ</button>
+			<button onclick="insertCustomCharacter('Þ')">Þ</button>
+			<button onclick="insertCustomCharacter('Ż')">Ż</button>
+			<button onclick="insertCustomCharacter('Ź')">Ź</button>
+			<button onclick="insertCustomCharacter('C̄')">C̄</button>
+			<button onclick="insertCustomCharacter('Č')">Č</button>
+			<button onclick="insertCustomCharacter('Ñ')">Ñ</button>
+		</div>
+		<div class="letterButton">
 			<button onclick="insertCustomCharacter('š')">š</button>
 			<button onclick="insertCustomCharacter('ś')">ś</button>
 			<button onclick="insertCustomCharacter('ŝ')">ŝ</button>
@@ -190,9 +200,6 @@
 			<button onclick="insertCustomCharacter('c̄')">c̄</button>
 			<button onclick="insertCustomCharacter('č')">č</button>
 			<button onclick="insertCustomCharacter('ñ')">ñ</button>
-		</div>
-		<div id="advancedRedirect">
-			<button onclick="window.location.href = 'https://woodstuff.github.io/nirmoll/nirmish-numbers-advanced'">Advanced Numbers</button>
 		</div>
 	</body>
 </html>
