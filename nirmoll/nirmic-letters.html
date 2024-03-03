@@ -24,6 +24,7 @@
 				gap: 50px;
 				font-size: 2em;
 			}
+			
 			div#gameing {
 				display: flex;
 				flex-direction: column;
@@ -48,6 +49,13 @@
 			span#score, span#comp {
 				text-align: center;
 				font-weight: bold;
+			}
+			div#case-check-div {
+				position: absolute;
+				right: 24px;
+			}
+			div#case-check-div > label {
+				font-size: 0.8em;
 			}
 			input#n {
 				width: 10vw;
@@ -122,18 +130,26 @@
 				el("n").focus();
 				if (el("n").value == "") return;
 
+				let cor = key[letter + 32 * size];
+					 if (cor.includes("_")) cor = "C̄";
+				else if (cor.includes("-")) cor = "c̄";
+
 				let val = el("n").value;
 					 if (val.includes("C̄")) val = "_";
 				else if (val.includes("c̄")) val = "-";
+
+				let check = key.indexOf(val);
+
 				if (key.indexOf(val) == -1) {
 					el("n").value = "";
 					return;
 				}
-				cor = key[letter + 32 * size];
-					 if (cor.includes("_")) cor = "C̄";
-				else if (cor.includes("-")) cor = "c̄";
 
-				if (letter + 32 * size == key.indexOf(val)) {
+				let correctNumber = letter + 32 * size;
+				if (el("case-check").checked) correctNumber %= 32;
+				if (el("case-check").checked) check %= 32;
+
+				if (correctNumber == check) {
 					correct++;
 					el("feedback").innerHTML = `Correct, it was ${cor}`;
 				}
@@ -176,6 +192,9 @@
 		<div id="gameing">
 			<div id="info">
 				<span>Score: <span id="score">0</span> (<span id="percent">?</span>%), ✔ <span id="win">0</span> / <span id="lose">0</span> ✘</span>
+				<div id="case-check-div">
+					<label for="case-check">No case check</label><input type="checkbox" name="case-check" id="case-check">
+				</div>
 			</div>
 			<div id="letter"></div>
 
