@@ -99,11 +99,13 @@ function regenerateTabs() {
 function updateStats_HTML() {
 	document.querySelectorAll('span.letter-count').forEach(l => {
 		const letter = l.id.slice(-1);
-		l.innerHTML = player.getCurrency(letter).floor().toString();
+		const str = player.getCurrency(letter).floor().toString();
+		if (l.innerHTML != str) l.innerHTML = str;
 	})
 	document.querySelectorAll('span.letter-ps').forEach(l => {
 		const letter = l.id.slice(-1);
-		l.innerHTML = `${player.getPS(letter).floor()}<sub>/s</sub>`;
+		const str = `${player.getPS(letter).floor()}<sub>/s</sub>`;
+		if (l.innerHTML != str) l.innerHTML = str;
 	})
 }
 function updateStats_JS() {
