@@ -59,19 +59,8 @@ span.letter-ps {
 	color: #999;
 }
 
-button.tab-button {
-	color: white;
-	min-width: 150px;
-	height: 90%;
-	font-weight: bold;
-	font-size: 2.5vh;
-	background-color: black;
-	border: solid white 5px;
-	border-radius: 10px;
-}
-button.tab-button:hover {
-	background-color: #333;
-}
-button.tab-button:active {
-	background-color: #666;
+div.subtab {
+	display: flex;
+	justify-content: center;
+	margin-top: 25px;
 }

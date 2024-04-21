@@ -1,0 +1,39 @@
+button {
+	color: white;
+	min-width: 150px;
+	min-height: 100px;
+	font-weight: bold;
+	font-size: 3vh;
+	background-color: black;
+	border: solid white 5px;
+	border-radius: 10px;
+}
+button:hover:hover {
+	background-color: #333;
+}
+button:active:active {
+	background-color: #666;
+}
+
+button.tab-button {
+	color: white;
+	min-width: 150px;
+	min-height: 30px;
+	height: 90%;
+	font-weight: bold;
+	font-size: 3vh;
+	background-color: black;
+	border: solid white 5px;
+	border-radius: 10px;
+}
+
+button.red {
+	color: #c74440;
+	border-color: #c74440;
+}
+button.red:hover {
+	background-color: hsl(2, 55%, 20%);
+}
+button.red:active {
+	background-color: hsl(2, 55%, 30%);
+}
