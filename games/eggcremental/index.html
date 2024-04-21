@@ -8,6 +8,7 @@
 		
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/button.css">
+		<link rel="stylesheet" href="css/variables.css">
 
 		<script src="js/lib/OmegaNum.js" defer></script>
 
@@ -15,6 +16,7 @@
 
 		<script src="js/main.js" defer></script>
 		<script src="js/saving.js" defer></script>
+		<script src="js/buttons.js" defer></script>
 	</head>
 	<body onload="start()">
 		<div id="top">
@@ -25,9 +27,9 @@
 		<div id="game">
 			<div class="tab" id="tab-main">
 				<div class="subtab" id="sub-main-main">
-					<button class="red xwide tall" onclick="player.addCurrency(1)">
+					<button id="a-click" class="red xwide tall" onclick="aClick()">
 						<letter l="a"></letter><br>
-						+<span id="a-click">1</span>
+						+<span id="a-click-number">1</span>
 					</button>
 				</div>
 			</div>

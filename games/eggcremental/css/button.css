@@ -1,30 +1,40 @@
 button {
-	color: white;
+	color: var(--white);
 	width: 150px;
 	height: 100px;
 	font-weight: bold;
 	font-size: 3vh;
 	background-color: black;
-	border: solid white 5px;
+	border: solid var(--white) 5px;
 	border-radius: 10px;
 	line-height: 1em;
 }
-button:hover:hover {
-	background-color: #333;
+button:hover:not(:disabled) {
+	background-color: var(--white-hover);
 }
-button:active:active {
-	background-color: #666;
+button:active:not(:disabled) {
+	background-color: var(--white-active);
+}
+button:disabled {
+	color: var(--white-disabled);
+	border-color: var(--white-disabled);
+	background-color: var(--white-hover);
 }
 
 button.red {
-	color: #c74440;
-	border-color: #c74440;
+	color: var(--red);
+	border-color: var(--red);
 }
-button.red:hover {
-	background-color: hsl(2, 55%, 20%);
+button.red:hover:not(:disabled) {
+	background-color: var(--red-hover);
 }
-button.red:active {
-	background-color: hsl(2, 55%, 30%);
+button.red:active:not(:disabled) {
+	background-color: var(--red-active);
+}
+button.red:disabled {
+	color: var(--red-disabled);
+	border-color: var(--red-disabled);
+	background-color: var(--red-hover);
 }
 
 button.short  { width: 100px;  }
