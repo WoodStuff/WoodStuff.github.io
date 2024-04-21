@@ -1,11 +1,13 @@
 :root {
 	--white: hsl(0, 0%, 100%);
-	--white-hover: hsl(0, 0%, 13%);
+	--white-hover: hsl(0, 0%, 20%);
 	--white-active: hsl(0, 0%, 40%);
-	--white-disabled: hsl(0, 0%, 60%);
+	--white-disabled: hsl(0, 0%, 15%);
+	--white-disabled-border: hsl(0, 0%, 60%);
 
 	--red: hsl(2, 55%, 52%);
 	--red-hover: hsl(2, 55%, 15%);
-	--red-active: hsl(2, 55%, 30%);
-	--red-disabled: hsl(2, 55%, 30%);
+	--red-active: hsl(2, 55%, 25%);
+	--red-disabled: hsl(2, 55%, 10%);
+	--red-disabled-border: hsl(2, 55%, 30%);
 }

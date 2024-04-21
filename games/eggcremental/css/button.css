@@ -16,9 +16,9 @@ button:active:not(:disabled) {
 	background-color: var(--white-active);
 }
 button:disabled {
-	color: var(--white-disabled);
-	border-color: var(--white-disabled);
-	background-color: var(--white-hover);
+	color: var(--white-disabled-border);
+	border-color: var(--white-disabled-border);
+	background-color: var(--white-disabled);
 }
 
 button.red {
@@ -32,9 +32,9 @@ button.red:active:not(:disabled) {
 	background-color: var(--red-active);
 }
 button.red:disabled {
-	color: var(--red-disabled);
-	border-color: var(--red-disabled);
-	background-color: var(--red-hover);
+	color: var(--red-disabled-border);
+	border-color: var(--red-disabled-border);
+	background-color: var(--red-disabled);
 }
 
 button.short  { width: 100px;  }
