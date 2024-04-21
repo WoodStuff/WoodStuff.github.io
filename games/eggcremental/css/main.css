@@ -64,3 +64,14 @@ div.subtab {
 	justify-content: center;
 	margin-top: 25px;
 }
+
+letter[l="a"] {
+	font-size: 5vh;
+	font-weight: normal;
+	font-family: 'Bahnschrift', sans-serif;
+	opacity: 0.9;
+	color: #c74440;
+}
+letter[l="a"]::before {
+	content: "a";
+}
