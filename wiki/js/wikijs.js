@@ -41,11 +41,11 @@ function loadPage() {
 	specifyCategories();
 	document.title = `${document.getElementsByTagName('t')[0].innerHTML} | Egg Wiki`
 
+	runPageScripts(pageID);
+	
 	loadTemplates();
 
 	killLinks();
-
-	runPageScripts(pageID);
 }
 
 function specifyCategories() {

@@ -20,7 +20,7 @@ class Player {
 			'a': new OmegaNum(0)
 		}
 		this.persecond = {
-			'a': new OmegaNum(1)
+			'a': new OmegaNum(0)
 		}
 		/** @type {Letter[]} */
 		this.unlockedLetters = ['a'];
