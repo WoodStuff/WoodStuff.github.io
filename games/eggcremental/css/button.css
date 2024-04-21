@@ -3,11 +3,15 @@ button {
 	width: 150px;
 	height: 100px;
 	font-weight: bold;
-	font-size: 3vh;
+	font-size: 1.5em;
 	background-color: black;
 	border: solid var(--white) 5px;
 	border-radius: 10px;
 	line-height: 1em;
+}
+button.tab-button {
+	min-height: 50px;
+	height: 90%;
 }
 button:hover:not(:disabled) {
 	background-color: var(--white-hover);
@@ -45,15 +49,5 @@ button.low    { height: 75px;  }
 button.tall   { height: 150px; }
 button.xtall  { height: 200px; }
 button.xxtall { height: 250px; }
-
-button.tab-button {
-	color: white;
-	min-width: 150px;
-	min-height: 30px;
-	height: 90%;
-	font-weight: bold;
-	font-size: 3vh;
-	background-color: black;
-	border: solid white 5px;
-	border-radius: 10px;
-}
+button.small { font-size: 1em; }
+button.big   { font-size: 2em; }

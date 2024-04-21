@@ -17,10 +17,12 @@ class Player {
 	/** @constructor */
 	constructor() {
 		this.letters = {
-			'a': new OmegaNum(0)
+			'a': new OmegaNum(0),
+			'b': new OmegaNum(0),
 		}
 		this.persecond = {
-			'a': new OmegaNum(0)
+			'a': new OmegaNum(0),
+			'b': new OmegaNum(0),
 		}
 		/** @type {Letter[]} */
 		this.unlockedLetters = ['a'];
@@ -51,7 +53,7 @@ class Player {
 	 * @param {Letter} _letter The currency to unlock.
 	 */
 	unlockCurrency(_letter = 'a') {
-		if (this.unlockedLetters.find(a => a == _letter)) this.unlockedLetters.push(_letter);
+		if (!this.unlockedLetters.find(a => a == _letter)) this.unlockedLetters.push(_letter);
 	}
 	/**
 	 * Get the amount of a letter currency gained per second.

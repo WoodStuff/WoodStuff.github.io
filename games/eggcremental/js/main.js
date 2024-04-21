@@ -38,6 +38,7 @@ function start() {
 function regenerateLetters() {
 	const letterColors = {
 		a: COLORS.RED,
+		b: COLORS.RED,
 	}
 
 	for (const letter of player.unlockedLetters) {
@@ -109,5 +110,5 @@ function updateStats_HTML() {
 	})
 }
 function updateStats_JS() {
-	player.unlockedLetters.forEach(l => player.addCurrency(player.persecond[l].div(TPS)));
+	player.unlockedLetters.forEach(l => player.addCurrency(player.persecond[l].div(TPS), l));
 }

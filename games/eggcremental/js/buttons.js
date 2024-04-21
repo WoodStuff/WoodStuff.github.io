@@ -2,5 +2,10 @@ function aClick() {
 	player.addCurrency(1);
 	const button = document.querySelector("button#a-click");
 	button.disabled = true;
-	setTimeout(() => button.disabled = false, 1000)
+	const html = button.innerHTML;
+	button.innerHTML = "Cooldown";
+	setTimeout(() => {
+		button.disabled = false;
+		button.innerHTML = html;
+	}, 1000)
 }

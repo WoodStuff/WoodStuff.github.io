@@ -19,6 +19,7 @@ div#currency-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	column-gap: 20px;
 }
 div#tab-container {
 	height: 35%;
@@ -65,13 +66,14 @@ div.subtab {
 	margin-top: 25px;
 }
 
-letter[l="a"] {
-	font-size: 5vh;
+letter.a {
 	font-weight: normal;
 	font-family: 'Bahnschrift', sans-serif;
 	opacity: 0.9;
 	color: #c74440;
 }
-letter[l="a"]::before {
+letter.a::before {
 	content: "a";
 }
+letter.big  { font-size: 1.5em; }
+letter.xbig { font-size: 2em;   }
