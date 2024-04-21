@@ -1,4 +1,6 @@
 function aClick() {
 	player.addCurrency(1);
-	document.querySelector("button#a-click").disabled = true;
+	const button = document.querySelector("button#a-click");
+	button.disabled = true;
+	setTimeout(() => button.disabled = false, 1000)
 }
