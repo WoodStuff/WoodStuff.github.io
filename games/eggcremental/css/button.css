@@ -27,24 +27,14 @@ button.red:active {
 	background-color: hsl(2, 55%, 30%);
 }
 
-button.wide {
-	width: 200px;
-}
-button.xwide {
-	width: 250px;
-}
-button.xxwide {
-	width: 300px;
-}
-button.tall {
-	height: 150px;
-}
-button.xtall {
-	height: 200px;
-}
-button.xxtall {
-	height: 250px;
-}
+button.short  { width: 100px;  }
+button.wide   { width: 200px;  }
+button.xwide  { width: 250px;  }
+button.xxwide { width: 300px;  }
+button.low    { height: 75px;  }
+button.tall   { height: 150px; }
+button.xtall  { height: 200px; }
+button.xxtall { height: 250px; }
 
 button.tab-button {
 	color: white;
