@@ -64,6 +64,9 @@ div.subtab {
 	display: flex;
 	justify-content: center;
 	margin-top: 25px;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 25px;
 }
 
 letter.a {
