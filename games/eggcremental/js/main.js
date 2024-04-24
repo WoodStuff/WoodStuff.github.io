@@ -21,6 +21,8 @@ const TABINFO = {
 		subtabDisplay: ['Main'],
 	},
 }
+/** @type {Timer[]} */
+let TIMERS = [];
 
 function start() {
 	player = new Player();
@@ -111,4 +113,9 @@ function updateStats_HTML() {
 }
 function updateStats_JS() {
 	player.unlockedLetters.forEach(l => player.addCurrency(player.persecond[l].div(TPS), l));
+
+	TIMERS = TIMERS.filter(t => t.getRemainingTime() > 0);
+	TIMERS.forEach(timer => {
+		timer.element.innerHTML = timer.formatRemainingTime();
+	});
 }
