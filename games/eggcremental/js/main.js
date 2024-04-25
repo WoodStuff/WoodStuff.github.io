@@ -102,14 +102,15 @@ function regenerateTabs() {
 function updateStats_HTML() {
 	document.querySelectorAll('span.letter-count').forEach(l => {
 		const letter = l.id.slice(-1);
-		const str = player.getCurrency(letter).floor().toString();
+		const str = player.getCurrency(letter).times(10).round().div(10).toString();
 		if (l.innerHTML != str) l.innerHTML = str;
 	})
 	document.querySelectorAll('span.letter-ps').forEach(l => {
 		const letter = l.id.slice(-1);
-		const str = `${player.getPS(letter).floor()}<sub>/s</sub>`;
+		const str = `${player.getPS(letter).times(10).round().div(10)}<sub>/s</sub>`;
 		if (l.innerHTML != str) l.innerHTML = str;
 	})
+	document.getElementById("a-gen-cost").innerHTML = new OmegaNum(2).pow(player.getPS().times(10)).round();
 }
 function updateStats_JS() {
 	player.unlockedLetters.forEach(l => player.addCurrency(player.persecond[l].div(TPS), l));

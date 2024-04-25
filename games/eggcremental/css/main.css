@@ -78,5 +78,6 @@ letter.a {
 letter.a::before {
 	content: "a";
 }
-letter.big  { font-size: 1.5em; }
-letter.xbig { font-size: 2em;   }
+letter.sbig, span.sbig { font-size: 1.25em; }
+letter.big,  span.big  { font-size: 1.5em; }
+letter.xbig, span.xbig { font-size: 2em;   }

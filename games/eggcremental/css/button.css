@@ -42,10 +42,12 @@ button.red:disabled {
 }
 
 button.short  { width: 100px;  }
+button.swide  { width: 175px;  }
 button.wide   { width: 200px;  }
 button.xwide  { width: 250px;  }
 button.xxwide { width: 300px;  }
 button.low    { height: 75px;  }
+button.stall  { height: 125px; }
 button.tall   { height: 150px; }
 button.xtall  { height: 200px; }
 button.xxtall { height: 250px; }
