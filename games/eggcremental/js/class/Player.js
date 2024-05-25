@@ -7,12 +7,11 @@
 class Player {
 	/** @type {LetterMap} */
 	letters;
-	/** @type {LetterMap} */
-	persecond;
 	/** @type {Letter[]} */
 	unlockedLetters;
 	/** @type {string[]} */
 	tab;
+	items;
 
 	/** @constructor */
 	constructor() {
@@ -20,14 +19,11 @@ class Player {
 			'a': new OmegaNum(0),
 			'b': new OmegaNum(0),
 		}
-		this.persecond = {
-			'a': new OmegaNum(0),
-			'b': new OmegaNum(0),
-		}
-		/** @type {Letter[]} */
 		this.unlockedLetters = ['a'];
-		/** @type {string[]} */
 		this.tab = ['Main', 'Main']
+		this.items = {
+			a1: new OmegaNum(0),
+		} 
 	}
 
 	/**
@@ -36,7 +32,7 @@ class Player {
 	 * @param {Letter} _letter The currency to add.
 	 * @returns {OmegaNum} The amount of currency.
 	 */
-	addCurrency(amount, _letter = 'a') {
+	addCurrency(amount = new OmegaNum(1), _letter = 'a') {
 		this.letters[_letter] = this.letters[_letter].add(amount);
 		return this.letters[_letter];
 	}
@@ -55,12 +51,17 @@ class Player {
 	unlockCurrency(_letter = 'a') {
 		if (!this.unlockedLetters.find(a => a == _letter)) this.unlockedLetters.push(_letter);
 	}
+	itemCount(id) {
+		return this.items[id];
+	}
+	addItems(id, amount = new OmegaNum(1)) {
+		this.items[id] = this.items[id].add(amount);
+	}
 	/**
-	 * Get the amount of a letter currency gained per second.
-	 * @param {Letter} _letter The currency of which rate of generation to get.
-	 * @returns {OmegaNum} The generation of that currency.
+	 * @param {string} id ID of the item.
+	 * @returns {OmegaNum}
 	 */
-	getPS(_letter = 'a') {
-		return this.persecond[_letter];
+	itemCost(id) {
+		return ITEMS[id].getCost(this.itemCount(id));
 	}
 }

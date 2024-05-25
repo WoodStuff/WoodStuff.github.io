@@ -47,4 +47,4 @@ function hardReset(c = true) {
 	location.reload();
 }
 
-let saveInterval = setInterval(save, 15000);
+//let saveInterval = setInterval(save, 15000);

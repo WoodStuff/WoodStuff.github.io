@@ -12,8 +12,8 @@ function aClick() {
 	TIMERS.push(timer);
 }
 function aGen() {
-	const cost = new OmegaNum(2).pow(player.getPS().times(10)).round();
+	const cost = player.itemCost("a1");
 	if (player.getCurrency().lt(cost)) return;
 	player.addCurrency(cost.times(-1));
-	player.persecond.a = player.persecond.a.add(0.1);
+	player.addItems("a1");
 }

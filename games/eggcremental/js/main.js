@@ -61,7 +61,7 @@ function regenerateLetters() {
 		letterBox.appendChild(letterCount);
 
 		const letterPerSecond = document.createElement('span');
-		letterPerSecond.innerHTML = `${player.getPS(letter)}<sub>/s</sub>`;
+		letterPerSecond.innerHTML = `${getPS(letter)}<sub>/s</sub>`;
 		letterPerSecond.id = `letter-ps-${letter}`;
 		letterPerSecond.classList.add('letter-ps');
 		letterBox.appendChild(letterPerSecond);
@@ -99,6 +99,18 @@ function regenerateTabs() {
 	}
 }
 
+function getPS(_letter = "a") {
+	switch (_letter) {
+		case "a":
+			let ps = new OmegaNum(0);
+			ps = ps.add(player.itemCount("a1"));
+			return ps;
+	
+		default:
+			return new OmegaNum(0);
+	}
+}
+
 function updateStats_HTML() {
 	document.querySelectorAll('span.letter-count').forEach(l => {
 		const letter = l.id.slice(-1);
@@ -107,13 +119,13 @@ function updateStats_HTML() {
 	})
 	document.querySelectorAll('span.letter-ps').forEach(l => {
 		const letter = l.id.slice(-1);
-		const str = `${player.getPS(letter).times(10).round().div(10)}<sub>/s</sub>`;
+		const str = `${getPS(letter).times(10).round().div(10)}<sub>/s</sub>`;
 		if (l.innerHTML != str) l.innerHTML = str;
 	})
-	document.getElementById("a-gen-cost").innerHTML = new OmegaNum(2).pow(player.getPS().times(10)).round();
+	document.getElementById("a-gen-cost").innerHTML = player.itemCost("a1").toString();
 }
 function updateStats_JS() {
-	player.unlockedLetters.forEach(l => player.addCurrency(player.persecond[l].div(TPS), l));
+	player.unlockedLetters.forEach(l => player.addCurrency(getPS(l).div(TPS), l));
 
 	TIMERS = TIMERS.filter(t => t.getRemainingTime() > 0);
 	TIMERS.forEach(timer => {
