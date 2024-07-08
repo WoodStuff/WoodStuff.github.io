@@ -21,6 +21,7 @@ class Player {
 		}
 		this.unlockedLetters = ['a'];
 		this.tab = ['Main', 'Main']
+		this.unlockedItems = ['a1'];
 		this.items = {
 			a1: new OmegaNum(0),
 		} 
@@ -51,6 +52,10 @@ class Player {
 	unlockCurrency(_letter = 'a') {
 		if (!this.unlockedLetters.find(a => a == _letter)) this.unlockedLetters.push(_letter);
 	}
+	/**
+	 * @param {string} id ID of the item.
+	 * @returns {OmegaNum}
+	 */
 	itemCount(id) {
 		return this.items[id];
 	}
@@ -63,5 +68,8 @@ class Player {
 	 */
 	itemCost(id) {
 		return ITEMS[id].getCost(this.itemCount(id));
+	}
+	unlockItem(item) {
+		if (!this.unlockedItems.find(a => a == item)) this.unlockedLetters.push(item);
 	}
 }

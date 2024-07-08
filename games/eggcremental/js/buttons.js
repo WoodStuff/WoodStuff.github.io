@@ -11,9 +11,3 @@ function aClick() {
 	}, 1000, button)
 	TIMERS.push(timer);
 }
-function aGen() {
-	const cost = player.itemCost("a1");
-	if (player.getCurrency().lt(cost)) return;
-	player.addCurrency(cost.times(-1));
-	player.addItems("a1");
-}

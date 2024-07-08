@@ -10,7 +10,7 @@ class Item {
 
 	/**
 	 * @constructor
-	 * @param {Function} cost
+	 * @param {Function<OmegaNum>} cost
 	 */
 	constructor(cost) {
 		this.amount = new OmegaNum(0);

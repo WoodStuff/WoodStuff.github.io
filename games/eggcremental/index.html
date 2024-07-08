@@ -35,10 +35,20 @@
 						+<span id="a-click-number">1</span>
 					</button>
 
-					<button id="a-generator" class="red stall" onclick="aGen()">
-						<span class="big"><letter class="a"></letter><sub>1</sub></span> <br style="height: 200px;">
-						Cost: <span id="a-gen-cost">1</span><letter class="a"></letter>
-					</button>
+					<div style="display:flex; column-gap:10px;">
+						<button id="a1" class="red stall" onclick="buyItem('a1')">
+							<span class="big"><letter class="a"></letter><sub>1</sub></span> <br style="height: 200px;">
+							Cost: <span id="a-gen-cost">1</span><letter class="a"></letter>
+						</button>
+						<button id="a2" class="red stall" onclick="buyItem('a2')" style="display:none;">
+							<span class="big"><letter class="a"></letter><sub>2</sub></span> <br style="height: 200px;">
+							Cost: <span id="a-click-cost">1</span><letter class="a"></letter>
+						</button>
+						<button id="a3" class="red stall" onclick="buyItem('a3')" style="display:none;">
+							<span class="big"><letter class="a"></letter><sub>3</sub></span> <br style="height: 200px;">
+							Cost: <span id="a-cooldown-cost">1</span><letter class="a"></letter>
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>

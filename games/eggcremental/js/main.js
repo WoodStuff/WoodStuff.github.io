@@ -103,11 +103,26 @@ function getPS(_letter = "a") {
 	switch (_letter) {
 		case "a":
 			let ps = new OmegaNum(0);
-			ps = ps.add(player.itemCount("a1"));
+			ps = ps.add(player.itemCount("a1").div(5));
 			return ps;
 	
 		default:
 			return new OmegaNum(0);
+	}
+}
+
+function buyItem(item) {
+	const cost = player.itemCost(item);
+	if (player.getCurrency().lt(cost)) return;
+	player.addCurrency(cost.times(-1));
+	player.addItems(item);
+
+	itemUnlocks();
+}
+function itemUnlocks() {
+	if (player.itemCount('a1') == 1) {
+		//document.getElementById('a2').style.display = 'inline-block';
+		//document.getElementById('a3').style.display = 'inline-block';
 	}
 }
 
