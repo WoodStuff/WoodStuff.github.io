@@ -73,9 +73,21 @@
 			<li>Unzip MediaWiki</li>
 			<li>Copy the MediaWiki folder that's inside the one you unzipped; do NOT copy the one that has another single MediaWiki folder</li>
 			<li>Drop it into the location in step 2 and into the htdocs folder, for example if XAMPP was downloaded in C:\ the location you would drop the folder into would be C:\xampp\htdocs</li>
-			<li>Feel free to rename that folder you copied over, this will be the name in the search bar, if you set it to "thingwiki" you'd access the wiki at localhost/thingwiki</li>
-			<li>Open C:\xampp\php and search for this line: <code>;extension=intl</code>. Remove the semicolon</li>
-			<li>Wip, use chatgpt for the rest</li>
+			<li>Feel free to rename that folder you copied over, this will be the name in the search bar, if you set it to "wiki" you'd access the wiki at localhost/wiki</li>
+			<li>Open C:\xampp\php\index.php and search for this line: <code>;extension=intl</code>. Remove the semicolon</li>
+			<li>Open XAMPP Control Panel and start Apache and MySQL</li>
+			<li>Go to <a href="http://localhost/phpmyadmin">localhost/phpmyadmin</a> and into the Databases tab</li>
+			<li>Create a database named <em>wiki</em>, don't change anything in the dropdown</li>
+			<li>Go on <a href="http://localhost/wiki">localhost/wiki</a> or what else you named it in step 7</li>
+			<li>It'll say something along the lines of "wiki is not setup yet", click the link below to set it up</li>
+			<li>Follow the instructions. A few things you have to set specifically:
+				<ul>
+					<li>Database name: <em>wiki</em> (this is the name of the database created in step 11)</li>
+					<li>Database account for web access: Checked (I don't know what this is for but ChatGPT told me to check it
+						so it might be important)</li>
+				</ul>
+			</li>
+			<li>When the wiki has been setup, you will have a functional wiki!</li>
 		</ol>
 	</body>
 </html>
